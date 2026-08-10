@@ -1,0 +1,56 @@
+{
+  "summary": "Bundle Builder feature fully verified end-to-end. Backend endpoints (config/preset/preview) return correct data with accurate tiered discount math (0/8/12/15%). Frontend /bundle page renders 5 slot cards, tier chips light up as items are added, preset auto-fills 3 slots with a 12% discount totalling 96.54 EUR (<100 EUR), variant picker dialog works, remove/change controls update the tier, 'Aggiungi tutto al carrello' pushes bundle-tagged items into the cart with the 'Nuovo PC' badge and crossed-out list prices, then routes to /checkout. Home CTA, nav link and IT->EN language switch (incl. tier labels '8% off/12% off/15% off') all functional.",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "backend_tests": {
+    "file": "/app/backend/tests/test_bundle.py",
+    "results": "7/7 passed",
+    "cases": [
+      "GET /api/bundle/config -> slots (os,office,security required; creative,utility optional) + tiers 8/12/15%",
+      "GET /api/bundle/preset/nuovo-pc -> 3 selections referencing windows-11-pro/w11p-1pc, office-2021-professional-plus/o21pp-1pc, kaspersky-standard/ks-1d1y",
+      "POST /api/bundle/preview count=1 -> discount_pct=0, discount_eur=0",
+      "POST /api/bundle/preview count=2 -> 8% (math verified within 0.01)",
+      "POST /api/bundle/preview count=3 -> 12% (subtotal 109.70, discount 13.16, total 96.54)",
+      "POST /api/bundle/preview count=4 -> 15%",
+      "POST /api/bundle/preview with invalid slug/variant -> silently dropped, no 500"
+    ]
+  },
+  "frontend_tests": {
+    "verified": [
+      "/bundle loads with data-testid=bundle-page and title 'Componi il tuo Nuovo PC.'",
+      "5 slot cards (bundle-slot-os/office/security/creative/utility) present",
+      "Tier chips 2+/3+/4+ visible; 2+ and 3+ chips highlight (!bg-white !text-black) at 3 items",
+      "bundle-preset-btn auto-fills 3 slots; summary shows subtotal 109,70 €, discount −13,16 € (−12%), total 96,54 €",
+      "bundle-remove-security drops to 2 items and only 2+ tier remains active with 8% discount",
+      "bundle-pick-creative opens variant picker dialog listing products; bundle-variant-* buttons select and update summary",
+      "bundle-add-all-btn adds items to cart (drawer opens showing 'Nuovo PC' badge on each row and crossed-out list price), toast confirms, then navigates to /checkout",
+      "Cart subtotal (201,34 €) reflects discounted unit prices (windows 35,11 / office 43,91 / lightroom 122,32) — matches 12% factor at time of add",
+      "home-bundle-cta present on Home; nav-link-bundle present and routes to /bundle",
+      "Language toggle IT->EN switches title to 'Build your New PC.' and tier labels to '8% off / 12% off / 15% off'"
+    ]
+  },
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Bundle picker Dialog", "issues": ["Radix warning: 'Missing Description or aria-describedby for DialogContent' — a11y nit, add DialogDescription."]}
+    ]
+  },
+  "critical_code_review_comments": [
+    "BundleBuilder.jsx line 60 uses `productsByCat &&` but Object.values still runs; low risk but redundant. Fine.",
+    "cart.js addBundle stores per-item unit price computed with discount factor at add-time — if the user re-opens the builder and adds again, tier could differ; acceptable for MVP but note that removing an item from the cart drawer does NOT re-price the remaining bundle items.",
+    "Preset endpoint silently swaps to variants[0] if variant id missing — could hide catalog drift; consider logging.",
+    "Dialog components missing aria-describedby (accessibility)."
+  ],
+  "test_report_links": [
+    "/app/backend/tests/test_bundle.py",
+    "/app/test_reports/pytest/bundle_results.xml"
+  ],
+  "action_items": [],
+  "updated_files": ["/app/backend/tests/test_bundle.py"],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Bundle Builder confirmed working. If cart drawer bundle re-pricing on remove is later added, retest that the discount recomputes."
+}

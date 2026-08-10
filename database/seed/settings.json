@@ -1,0 +1,16 @@
+[
+  {
+    "key": "site",
+    "logo_text": "LicenzPøl",
+    "logo_url": "",
+    "site_title": "LicenzPol — Il software giusto, senza fatica",
+    "site_description": "Sistemi operativi, Office, suite creative, CAD, sicurezza e strumenti aziendali. Consegna via email, fattura UE, assistenza in italiano.",
+    "primary_email": "support@licenzpol.example",
+    "ga4_measurement_id": "",
+    "gtm_container_id": "",
+    "meta_pixel_id": "",
+    "custom_head_html": "",
+    "custom_body_html": "",
+    "demo_banner": true
+  }
+]

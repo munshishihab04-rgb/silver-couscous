@@ -1,0 +1,44 @@
+{
+  "summary": "First-finish smoke test for LicenzPol. Backend endpoints and full frontend E2E purchase flow verified against public URL. Everything working; one minor spec inconsistency (slug 'software-made-simple' referenced in review does not exist in catalog).",
+  "tested_scope": ["backend", "frontend", "integration"],
+  "passed": [
+    "GET /api/ -> 200 {service:LicenzPol,status:ok}",
+    "GET /api/products -> 31 items in {total,items} envelope with realistic brands (Windows, Office, Nero, Norton, etc)",
+    "GET /api/products with filters (category=os, brand=Microsoft, platform=Windows, license_type=Perpetua, need=work, q=windows, sort=price_asc/desc, min_price/max_price) returns filtered/sorted subsets",
+    "GET /api/products/windows-11-pro -> full product incl. variants, features, activation, faq (200)",
+    "GET /api/products/does-not-exist -> 404",
+    "GET /api/categories and /api/needs return taxonomy arrays",
+    "GET /api/related/windows-11-pro returns related products in same category",
+    "POST /api/orders -> reference LP-XXXXXXXX, demo=true, status=demo_confirmed",
+    "GET /api/orders/{reference} retrieves created order (200)",
+    "POST /api/support -> {ok:true,id:...} (200)",
+    "Home page loads with nav, hero-cta-catalog, cart button",
+    "Language toggle (lang-toggle) switches IT<->EN",
+    "Navigate Home -> /catalog shows 31 product cards",
+    "Category filter filter-cat-os narrows to 4 cards",
+    "Product detail page opens with add-to-cart-button and add-to-compare-button",
+    "Add to cart opens drawer; cart-checkout-btn navigates to /checkout",
+    "Checkout step 1 form (email/first_name/last_name/country) advances via checkout-next-1",
+    "Checkout step 2 confirm-order creates order and displays order-reference (LP-A844A276) on success screen",
+    "No console/page errors during E2E flow"
+  ],
+  "failed": [
+    {
+      "area": "Spec/catalog",
+      "issue": "Review references slug 'software-made-simple' for product detail/related endpoints but no such product exists in catalog.py (only real software slugs). Tested with 'windows-11-pro' instead; both success and 404 semantics work.",
+      "evidence": "GET /api/products/software-made-simple -> 404; catalog has slugs like windows-11-pro, office-2021-professional-plus, norton-360-deluxe, etc.",
+      "priority": "LOW"
+    }
+  ],
+  "action_items": [
+    "None blocking for first-finish. Consider clarifying/aligning the 'software-made-simple' slug used in test IDs vs the actual catalog if that was intended as a real product."
+  ],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": {
+    "mocked": "Order creation is a DEMO by design (no real payment gateway). POST /api/orders returns demo=true and status=demo_confirmed.",
+    "credentials": "None required (guest checkout). /app/memory/test_credentials.md is empty which is expected.",
+    "urls_used": "REACT_APP_BACKEND_URL from /app/frontend/.env (https://software-made-simple.preview.emergentagent.com)"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": 1,
+  "collections": {
+    "products": 397,
+    "pages": 4,
+    "settings": 1
+  },
+  "excluded_sensitive_runtime_collections": [
+    "admin_users",
+    "analytics_events",
+    "login_attempts",
+    "orders"
+  ]
+}

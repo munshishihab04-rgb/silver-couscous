@@ -1,0 +1,130 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=outfit@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #050505;
+  --surface: #0F0F0F;
+  --surface-elev: #1A1A1A;
+  --text: #FFFFFF;
+  --muted: #A1A1AA;
+  --border: #27272A;
+  --accent: #ECECEC;
+  --blue: #007AFF;
+  --green: #32D74B;
+  --red: #FF3B30;
+  --orange: #FF9F0A;
+  --violet: #BF5AF2;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 0 0% 100%;
+    --radius: 0.75rem;
+  }
+}
+
+* { border-color: hsl(var(--border)); }
+
+html, body, #root { background: var(--bg); color: var(--text); }
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'ss01', 'ss02';
+}
+
+.font-display { font-family: 'Cabinet Grotesk', 'Outfit', ui-sans-serif; letter-spacing: -0.02em; }
+.font-heading { font-family: 'Outfit', ui-sans-serif; letter-spacing: -0.015em; }
+.font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+
+::selection { background: #ffffff; color: #050505; }
+
+/* Grain overlay */
+.grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Mesh backgrounds for category chips */
+.mesh-work    { background: radial-gradient(60% 60% at 30% 30%, rgba(0,122,255,0.35), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(0,122,255,0.15), transparent 60%), #0b0b0d; }
+.mesh-protect { background: radial-gradient(60% 60% at 30% 30%, rgba(50,215,75,0.35), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(50,215,75,0.10), transparent 60%), #0b0d0b; }
+.mesh-design  { background: radial-gradient(60% 60% at 30% 30%, rgba(255,59,48,0.30), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(255,159,10,0.20), transparent 60%), #0d0b0b; }
+.mesh-create  { background: radial-gradient(60% 60% at 30% 30%, rgba(255,159,10,0.30), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(255,59,48,0.15), transparent 60%), #0d0c0a; }
+.mesh-manage  { background: radial-gradient(60% 60% at 30% 30%, rgba(191,90,242,0.30), transparent 60%), radial-gradient(50% 50% at 80% 80%, rgba(0,122,255,0.15), transparent 60%), #0c0b0d; }
+
+.card-hover { transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .3s, background-color .3s; }
+.card-hover:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.22); }
+
+.pill-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem; border-radius: 9999px; padding: 0.75rem 1.4rem;
+  font-weight: 500; letter-spacing: -0.01em;
+  transition: background-color .25s, color .25s, border-color .25s, transform .25s;
+}
+
+.chip {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  padding: 0.35rem 0.7rem; border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  font-size: 0.75rem; color: #d4d4d8;
+  background: rgba(255,255,255,0.02);
+}
+
+.label-eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #a1a1aa;
+}
+
+.glass {
+  background: rgba(10,10,12,0.6);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.dashed-grid {
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@keyframes floaty { 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-8px)} }
+.floaty { animation: floaty 6s ease-in-out infinite; }
+
+@keyframes fadeUp { from{ opacity:0; transform: translateY(12px)} to{ opacity:1; transform: translateY(0)} }
+.fade-up { animation: fadeUp .7s cubic-bezier(.2,.7,.2,1) both; }
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }

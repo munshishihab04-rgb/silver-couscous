@@ -1,0 +1,137 @@
+{
+  "theme": "dark",
+  "brand_name": "LicenzPol",
+  "brand_mark_suggestion": "A minimalist, solid geometric monogram 'LP' constructed from overlapping transparent layers or a crisp, custom-kerned logotype in Cabinet Grotesk using a slashed 'O' (LicenzPøl) to evoke technical precision and code. Never use software box metaphors.",
+  "typography": {
+    "primary_heading": "Cabinet Grotesk",
+    "secondary_heading": "Outfit",
+    "body": "IBM Plex Sans",
+    "mono": "JetBrains Mono",
+    "type_scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-medium leading-[1.1]",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-medium leading-[1.2]",
+      "h3": "text-xl sm:text-2xl tracking-tight font-medium",
+      "h4": "text-lg tracking-normal font-semibold",
+      "body": "text-base leading-relaxed text-zinc-400",
+      "small": "text-sm text-zinc-500",
+      "label": "text-[11px] uppercase tracking-[0.2em] font-semibold text-zinc-500"
+    },
+    "rules": [
+      "No generic sans-serif for headings (no Inter, Roboto, Arial).",
+      "Headings must have tight letter spacing.",
+      "Labels must be uppercase with extreme tracking.",
+      "Body text should contrast well but remain slightly muted (zinc-400) to let data and products shine."
+    ]
+  },
+  "colors": {
+    "archetype": "Swiss & High-Contrast mixed with Luxury Tech",
+    "palette": {
+      "background": "#050505",
+      "surface": "#0F0F0F",
+      "surface_elevated": "#1A1A1A",
+      "text_primary": "#FFFFFF",
+      "text_secondary": "#A1A1AA",
+      "border": "#27272A",
+      "accent_primary": "#ECECEC",
+      "accent_secondary": "#007AFF",
+      "category_work": "#007AFF",
+      "category_protect": "#32D74B",
+      "category_design": "#FF3B30",
+      "category_create": "#FF9F0A",
+      "category_manage": "#BF5AF2"
+    },
+    "rules": [
+      "NO purple gradients on white. Avoid full-screen gradients.",
+      "Backgrounds must be deep black or near-black.",
+      "Use category colors purely as subtle accents (e.g., a 2px glowing line, a small dot, or a tag background at 10% opacity) rather than large blocks of color."
+    ]
+  },
+  "visual_enhancers": {
+    "surfaces": "Use the 'Crystal Glass' approach for floating elements like navigation and cart drawers: backdrop-blur-2xl with bg-black/60 and a delicate border-white/10.",
+    "textures": "Incorporate subtle grain/noise overlays over hero banners and dark sections to remove digital flatness.",
+    "borders": "1px solid borders everywhere for structural grid lines. Use border-white/5 or border-zinc-800.",
+    "radii": {
+      "small": "rounded-sm",
+      "medium": "rounded-md",
+      "large": "rounded-xl",
+      "pill": "rounded-full"
+    },
+    "shadows": {
+      "ambient": "shadow-[0_0_40px_rgba(255,255,255,0.03)]",
+      "elevated": "shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+    }
+  },
+  "components_guidance": {
+    "nav": "Sticky glassmorphism header (z-50) with logo on left, clear navigation links center, cart/language/search on right. Active states use a subtle white underline. NO transparent headers over content.",
+    "hero": "A massive, immersive dark section. Large Cabinet Grotesk typography. The background should feature a subtle, slow-moving abstract 3D element or a dark grain texture. CTA must be highly visible, pill-shaped.",
+    "product_card": "Abstract representation. Do not use software boxes. Instead, use a deep dark card with a geometric composition or a large typographic 'mark' representing the software, plus category color accents. Include explicit data points: Price, OS icon, License duration.",
+    "category_tile": "Bento-style layout. Large squares or tall rectangles featuring subtle gradient meshes mapping to the category tone (e.g., soft blue for Work, pink for Design).",
+    "variant_selector": "Interactive chips, not native <select> dropdowns. When selecting a variant (e.g., '1 PC', '5 PCs'), the chip outlines with a glowing 1px border. Fluid layout, clearly indicating the active selection.",
+    "comparison_table": "Strict Swiss-style grid. Horizontal borders only (border-b border-zinc-800). No vertical borders. Checked attributes use a crisp white icon. High contrast text for advantages.",
+    "cart_drawer": "Slide-out from right. Glassmorphic background. Clear cost breakdown. Sticky checkout button at the bottom.",
+    "checkout_stepper": "Linear flow. Minimalist. Step 1: Cart, Step 2: Info (Guest only), Step 3: Payment (Demo state), Step 4: Success. Use a horizontal progress bar or numbered pills. The Payment step must have a clear 'Demo Mode' transparent UI overlay or explicit notice.",
+    "faq_accordion": "Minimalist borders. Question in Outfit font. Plus/Minus icons that rotate on open. Border bottom only.",
+    "footer": "Massive bottom padding. Grid layout for links. Include a giant logotype 'LicenzPol' (text-[10vw]) at the very bottom."
+  },
+  "grids_and_layouts": {
+    "spacing": "Generous. Use p-8, p-12, p-24. Containers must have internal padding.",
+    "general": "Follow the 'Bento' grid protocol for discovery sections (grid-cols-1 md:grid-cols-12). Leave negative space. Asymmetrical layouts for editorial feel.",
+    "product_page": "Split layout. Left: Sticky abstract visual (sticky top-24). Right: Scrolling details, variants, activation steps, and cart actions."
+  },
+  "motion": {
+    "hover": "Translate Y slightly (-translate-y-1), border color brightens, subtle ambient shadow appears.",
+    "page_transitions": "Fade in and slide up slightly. Staggered list reveals for product catalog.",
+    "micro_interactions": "Variant switches trigger a fast snap animation. Add-to-cart changes button state to 'Added' with a checkmark before resetting.",
+    "scroll": "Smooth scrolling (Lenis style recommended for feel, if custom JS is used) and parallax on abstract background assets."
+  },
+  "accessibility": {
+    "contrast": "Text must meet APCA standards. Zinc-400 on Black is ~60 Lc (acceptable for body), White on Black is maximum.",
+    "focus": "Use explicit focus rings: focus:ring-2 focus:ring-white focus:outline-none.",
+    "testing": "All interactive elements MUST include data-testid attribute. E.g., data-testid='add-to-cart-button', data-testid='category-filter-work'."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1671519821564-ced7e41ee7ae?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwZ2xhc3N8ZW58MHx8fHwxNzg2MzkxNjc1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract 3D glass cubes reflecting neon light. Use as a highly dimmed background for the main hero."
+    },
+    "category_work_manage": {
+      "url": "https://images.unsplash.com/photo-1643228995868-bf698f67d053?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwZ2xhc3N8ZW58MHx8fHwxNzg2MzkxNjc1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Stacked cubes in cold, structural tones. Use as abstract visual for database, OS, or management software."
+    },
+    "category_protect": {
+      "url": "https://images.unsplash.com/photo-1709626011485-6fe000ea2dbc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMDNkJTIwZ2VvbWV0cmljJTIwc2hhcGVzJTIwZ2xhc3N8ZW58MHx8fHwxNzg2MzkxNjc1fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Black and blue abstract rectangles. Use for cybersecurity, antivirus, or infrastructure software categories."
+    },
+    "category_design_create": {
+      "url": "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzN8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGdyYWRpZW50JTIwbWVzaCUyMGFic3RyYWN0fGVufDB8fHx8MTc4NjM5MTY3NXww&ixlib=rb-4.1.0&q=85",
+      "description": "Abstract purple and pink gradient waves. Use for creative suites, design tools, and multimedia."
+    }
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Line icons, crisp (1.5px to 2px stroke width), no emojis."
+  },
+  "instructions_to_main_agent": [
+    "You are building a premium hybrid full-stack e-commerce experience.",
+    "Do not use Shadcn for the main marketing landing page layouts; use raw HTML/Tailwind for bento grids and hero sections.",
+    "Use Shadcn UI for interactive elements: dropdowns, modals, tabs, accordion, forms.",
+    "Do not build a real checkout. The payment step must show a 'Demo Mode' UI.",
+    "Create a realistic software catalog (e.g., Windows 11 Pro, Microsoft Office 2021, Adobe Creative Cloud, Kaspersky Total Security) with plausible prices.",
+    "Do NOT use real product box images. Use typographic/geometric CSS styling for product cards, blending category colors and abstract shapes.",
+    "Implement guest checkout only.",
+    "Implement IT / EN toggle (default to Italian strings for content).",
+    "Do not use generic 'Inter' or 'Roboto'. Inject the specified fonts (Cabinet Grotesk, Outfit, IBM Plex Sans, JetBrains Mono) via Google Fonts or standard imports."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not converge toward generic 'AI slop' aesthetics. Use bold typography and strict grids.",
+    "Do not make generic centered layouts. Left-align dense content.",
+    "Create depth with z-index hierarchy and glassmorphism (backdrop-blur-xl bg-black/40 border-white/10).",
+    "Never use `transition: all`. Target specific properties like `transition-colors`, `transition-transform`.",
+    "Never center-align the app container globally.",
+    "Always use modern button styles (pill-shaped or sharp) with interaction animations.",
+    "No AI emojis in UI. Use lucide-react icons.",
+    "Ensure every interactive and key element has a `data-testid` attribute.",
+    "Use Sonner for toast notifications.",
+    "Ensure hover states explicitly declare text colors to prevent inheritance issues."
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "slug": "privacy",
+    "content_en": "# Privacy\n\nThis page is a placeholder. Edit it from the admin panel.",
+    "content_it": "# Privacy\n\nQuesta pagina è un segnaposto. Inserisci l'informativa dal pannello admin.",
+    "title_en": "Privacy",
+    "title_it": "Privacy"
+  },
+  {
+    "slug": "terms",
+    "content_en": "# Terms of Service\n\nPlaceholder — edit from the admin panel.",
+    "content_it": "# Termini di servizio\n\nSegnaposto — modifica dal pannello admin.",
+    "title_en": "Terms",
+    "title_it": "Termini"
+  },
+  {
+    "slug": "cookies",
+    "content_en": "# Cookies policy\n\nPlaceholder — edit from the admin panel.",
+    "content_it": "# Cookie policy\n\nSegnaposto — modifica dal pannello admin.",
+    "title_en": "Cookies",
+    "title_it": "Cookie"
+  },
+  {
+    "slug": "transparency",
+    "content_en": "# Transparency\n\nEdit from the admin panel.",
+    "content_it": "# Trasparenza\n\nModifica dal pannello admin.",
+    "title_en": "Transparency",
+    "title_it": "Trasparenza"
+  }
+]
