@@ -4,6 +4,8 @@ from __future__ import annotations
 from copy import deepcopy
 from typing import Iterable
 
+from evidence import image_rights_evidence_verified, provenance_evidence_verified
+
 
 def valid_gtin(value: str | None) -> bool:
     if not value:
@@ -25,8 +27,12 @@ def offer_gate_failures(product: dict) -> list[str]:
         failures.append("merchant_not_approved")
     if product.get("image_rights_approved") is not True:
         failures.append("image_rights_not_approved")
+    elif not image_rights_evidence_verified(product.get("image_rights_evidence_private")):
+        failures.append("image_rights_evidence_missing")
     if product.get("provenance_status") != "verified":
         failures.append("provenance_not_verified")
+    elif not provenance_evidence_verified(product.get("provenance_evidence_private")):
+        failures.append("provenance_evidence_missing")
     if product.get("status") != "approved":
         failures.append("status_not_approved")
     if str(product.get("availability_status") or "").lower() not in {"instock", "in_stock"}:

@@ -45,12 +45,14 @@ function StatusBanner({ status }) {
     { k: "PSP (Nexi)", v: status.psp_configured ? "configurato" : "MANCA credenziali", ok: status.psp_configured },
     { k: "Email (Brevo)", v: status.email_configured ? "configurato" : "MANCA API key", ok: status.email_configured },
     { k: "Approvati", v: `${status.approved_products}`, ok: status.approved_products > 0 },
+    { k: "Provenienza verificata", v: `${status.provenance_evidence_verified}`, ok: status.provenance_evidence_verified > 0 },
+    { k: "Diritti immagini", v: `${status.image_rights_evidence_verified}`, ok: status.image_rights_evidence_verified > 0 },
     { k: "Feedable (per Google)", v: `${status.feedable_products}`, ok: status.feedable_products > 0 },
   ];
   return (
     <div className="rounded-xl border border-white/10 bg-[#0B0B0D] p-5">
       <p className="label-eyebrow mb-3">Stato go-live</p>
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-8 gap-3">
         {rows.map(r => (
           <div key={r.k} className="text-center">
             <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">{r.k}</p>
@@ -119,6 +121,11 @@ function ProductRow({ p, onPatch, onImport, m }) {
   const [gpc, setGpc] = useState(p.google_product_category || "");
   const [imgOk, setImgOk] = useState(!!p.image_rights_approved);
   const [prov, setProv] = useState(p.provenance_status || "unverified");
+  const [supplierName, setSupplierName] = useState(p.provenance_evidence_private?.supplier_name || "");
+  const [sourceType, setSourceType] = useState(p.provenance_evidence_private?.source_type || "");
+  const [provenanceRefs, setProvenanceRefs] = useState((p.provenance_evidence_private?.evidence_refs || []).join("\n"));
+  const [rightsBasis, setRightsBasis] = useState(p.image_rights_evidence_private?.rights_basis || "");
+  const [imageRefs, setImageRefs] = useState((p.image_rights_evidence_private?.evidence_refs || []).join("\n"));
 
   const save = async () => {
     try {
@@ -130,6 +137,16 @@ function ProductRow({ p, onPatch, onImport, m }) {
         google_product_category: gpc || null,
         image_rights_approved: imgOk,
         provenance_status: prov,
+        provenance_evidence_private: {
+          supplier_name: supplierName || null,
+          source_type: sourceType || null,
+          evidence_refs: provenanceRefs.split("\n").map(v => v.trim()).filter(Boolean),
+        },
+        image_rights_evidence_private: {
+          ...(p.image_rights_evidence_private || {}),
+          rights_basis: rightsBasis || null,
+          evidence_refs: imageRefs.split("\n").map(v => v.trim()).filter(Boolean),
+        },
       };
       const updated = await m.patch(p.slug, body);
       onPatch(updated);
@@ -146,7 +163,8 @@ function ProductRow({ p, onPatch, onImport, m }) {
   };
 
   const identifierVerified = (gtin && gtinStatus === "verified") || (mpn && mpnStatus === "verified");
-  const canApprove = sku && p.image_url && Number(sellingPrice) > 0 && imgOk && prov === "verified" && identifierVerified && p.stock > 0;
+  const evidenceComplete = supplierName && sourceType && provenanceRefs.trim() && rightsBasis && imageRefs.trim();
+  const canApprove = sku && p.image_url && Number(sellingPrice) > 0 && imgOk && prov === "verified" && identifierVerified && evidenceComplete && p.stock > 0;
 
   return (
     <div className="border-b border-white/5">
@@ -172,7 +190,7 @@ function ProductRow({ p, onPatch, onImport, m }) {
             className="text-xs font-mono text-zinc-400 hover:text-white">{expand ? "chiudi" : "modifica"}</button>
           <button onClick={toggleApprove}
             disabled={!p.merchant_approved && !canApprove}
-            title={!canApprove ? "Servono SKU + prezzo + immagine + diritti immagine" : ""}
+            title={!canApprove ? "Servono prezzo, stock, identificatore verificato, provenienza documentata e diritti immagine documentati" : ""}
             className={`text-xs font-mono px-3 py-1 rounded-full border ${p.merchant_approved ? "border-red-500/30 text-red-300 hover:bg-red-500/10" : "border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/10 disabled:opacity-40 disabled:hover:bg-transparent"}`}>
             {p.merchant_approved ? "revoca" : "approva"}
           </button>
@@ -226,6 +244,49 @@ function ProductRow({ p, onPatch, onImport, m }) {
               <option value="pending">pending</option>
               <option value="verified">verified</option>
             </select>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Fornitore documentato</label>
+            <input value={supplierName} onChange={e => setSupplierName(e.target.value)}
+              className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white"/>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Tipo provenienza</label>
+            <select value={sourceType} onChange={e => setSourceType(e.target.value)}
+              className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white">
+              <option value="">non verificato</option>
+              <option value="manufacturer">manufacturer</option>
+              <option value="authorized_distributor">authorized_distributor</option>
+              <option value="documented_reseller">documented_reseller</option>
+            </select>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Documenti provenienza</label>
+            <textarea rows={3} value={provenanceRefs} onChange={e => setProvenanceRefs(e.target.value)}
+              placeholder="private://documents/contratto-fornitore"
+              className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-xs text-white font-mono"/>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Base diritti immagine</label>
+            <select value={rightsBasis} onChange={e => setRightsBasis(e.target.value)}
+              className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white">
+              <option value="">non verificata</option>
+              <option value="owned">owned</option>
+              <option value="licensed">licensed</option>
+              <option value="manufacturer_authorized">manufacturer_authorized</option>
+              <option value="public_domain">public_domain</option>
+            </select>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Documenti immagine</label>
+            <textarea rows={3} value={imageRefs} onChange={e => setImageRefs(e.target.value)}
+              placeholder="private://documents/autorizzazione-immagine"
+              className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-xs text-white font-mono"/>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Fingerprint asset</label>
+            <p className="text-[11px] text-zinc-500 font-mono break-all">{p.image_rights_evidence_private?.sha256 || "asset non indicizzato"}</p>
+            <p className="text-[11px] text-zinc-500">{p.image_rights_evidence_private?.width || "—"} × {p.image_rights_evidence_private?.height || "—"}</p>
           </div>
           <div className="md:col-span-3 flex items-center justify-between mt-2 pt-3 border-t border-white/5">
             <label className="flex items-center gap-2 text-sm text-zinc-300">

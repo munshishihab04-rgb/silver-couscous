@@ -11,8 +11,12 @@ import json
 import re
 from pathlib import Path
 
+from evidence import image_rights_evidence_verified, provenance_evidence_verified
+
 CSV_PATH = Path(__file__).parent / "data" / "catalog.csv"
 IMAGES_OVERLAY_PATH = Path(__file__).parent / "data" / "product_images.json"
+PROVENANCE_MANIFEST_PATH = Path(__file__).parent / "data" / "provenance_manifest.json"
+IMAGE_RIGHTS_MANIFEST_PATH = Path(__file__).parent / "data" / "image_rights_manifest.json"
 
 CATEGORIES = [
     {"key": "os",       "color": "work",    "name_it": "Sistemi Operativi",       "name_en": "Operating Systems"},
@@ -406,10 +410,21 @@ def _load_image_overlay():
         return {}
 
 
+def _load_evidence_overlay(path):
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+            return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
 def _load_csv():
     products = []
     seen_slugs = set()
     overlay = _load_image_overlay()
+    provenance_manifest = _load_evidence_overlay(PROVENANCE_MANIFEST_PATH)
+    image_rights_manifest = _load_evidence_overlay(IMAGE_RIGHTS_MANIFEST_PATH)
     with open(CSV_PATH, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
             slug = (row.get("product_slug") or "").strip()
@@ -450,6 +465,8 @@ def _load_csv():
             mark = _mark(brand, raw_name)
             color_key = CATEGORY_COLOR.get(category, "work")
             image_url = (overlay.get(slug) or (row.get("image_url") or "").strip()) or None
+            provenance_evidence = provenance_manifest.get(slug) or {}
+            image_rights_evidence = image_rights_manifest.get(slug) or {}
             (tag_it, tag_en, desc_it, desc_en, features_it, features_en,
              compat_it, compat_en, what_it, what_en, act_it, act_en, faq) = _copy(
                 brand, name, category, edition, devices, license_type
@@ -505,8 +522,10 @@ def _load_csv():
                 "availability_status": availability_raw or "PendingReview",
                 "stock": 0,  # Real stock only after license keys are imported
                 "merchant_approved": False,  # ALWAYS default false; admin must approve manually
-                "image_rights_approved": False,
-                "provenance_status": "unverified",
+                "image_rights_approved": image_rights_evidence_verified(image_rights_evidence),
+                "image_rights_evidence_private": image_rights_evidence,
+                "provenance_status": "verified" if provenance_evidence_verified(provenance_evidence) else "unverified",
+                "provenance_evidence_private": provenance_evidence,
                 "status": "draft",
                 "google_product_category": None,
                 "risk_score": None,

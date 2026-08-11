@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-08-11",
+  "provenance": {
+    "products": 398,
+    "verified": 0,
+    "unverified": 398
+  },
+  "images": {
+    "products": 398,
+    "assets_found": 398,
+    "assets_missing": 0,
+    "orphan_assets": 0,
+    "below_500": 1,
+    "approved": 0
+  },
+  "policy": {
+    "provenance": "No product is verified without private documentary references, supplier identity and reviewer metadata.",
+    "images": "A file hash proves asset identity, not usage rights. Approval requires a documented rights basis and private evidence reference."
+  }
+}

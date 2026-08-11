@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from auth import current_admin
 from services import license_inventory
 from publication import offer_gate_failures
+from evidence import bind_image_fingerprint, image_rights_evidence_verified, provenance_evidence_verified
 
 
 merchant_admin_router = APIRouter(prefix="/api/admin/merchant")
@@ -78,6 +79,12 @@ def compute_risk_score(p: dict) -> dict:
     if not p.get("image_rights_approved"):
         score += 10
         reasons.append("image rights not yet documented")
+    elif not image_rights_evidence_verified(p.get("image_rights_evidence_private")):
+        score += 15
+        reasons.append("image rights flag has no valid evidence record")
+    if p.get("provenance_status") != "verified" or not provenance_evidence_verified(p.get("provenance_evidence_private")):
+        score += 15
+        reasons.append("commercial provenance not documented")
 
     # Brand reputation (basic heuristic)
     brand = (p.get("brand") or "").lower()
@@ -100,12 +107,28 @@ def approval_blockers(existing: dict, update: dict) -> list[str]:
     return offer_gate_failures(proposed)
 
 
+def evidence_update_blockers(existing: dict, update: dict) -> list[str]:
+    proposed = {**existing, **update}
+    blockers = []
+    if update.get("provenance_status") == "verified" and not provenance_evidence_verified(
+        proposed.get("provenance_evidence_private")
+    ):
+        blockers.append("provenance_evidence_invalid")
+    if update.get("image_rights_approved") is True and not image_rights_evidence_verified(
+        proposed.get("image_rights_evidence_private")
+    ):
+        blockers.append("image_rights_evidence_invalid")
+    return blockers
+
+
 # ---------- Merchant workflow endpoints ------------------------------------
 
 class ApprovalPatch(BaseModel):
     merchant_approved: Optional[bool] = None
     image_rights_approved: Optional[bool] = None
+    image_rights_evidence_private: Optional[dict] = None
     provenance_status: Optional[str] = None  # unverified | pending | verified
+    provenance_evidence_private: Optional[dict] = None
     selling_price_eur: Optional[float] = None
     stock: Optional[int] = None
     sku: Optional[str] = None
@@ -166,12 +189,33 @@ async def merchant_patch(
     update = {k: v for k, v in body.model_dump(exclude_unset=True).items() if v is not None}
     if not update:
         raise HTTPException(status_code=400, detail="Nessun campo da aggiornare.")
+    review_time = datetime.now(timezone.utc).isoformat()
+    actor = user.get("email", user["_id"])
+    if isinstance(update.get("image_rights_evidence_private"), dict):
+        update["image_rights_evidence_private"] = bind_image_fingerprint(
+            existing.get("image_rights_evidence_private"),
+            update["image_rights_evidence_private"],
+        )
+        if "image_rights_approved" in update:
+            update["image_rights_evidence_private"]["status"] = "approved" if update["image_rights_approved"] else "unverified"
+    if isinstance(update.get("provenance_evidence_private"), dict) and "provenance_status" in update:
+        update["provenance_evidence_private"]["status"] = update["provenance_status"]
+    for evidence_key in ("provenance_evidence_private", "image_rights_evidence_private"):
+        if isinstance(update.get(evidence_key), dict):
+            update[evidence_key] = {
+                **update[evidence_key],
+                "reviewed_by": actor,
+                "reviewed_at": review_time,
+            }
+    evidence_blockers = evidence_update_blockers(existing, update)
+    if evidence_blockers:
+        raise HTTPException(status_code=400, detail={"code": "evidence_invalid", "blockers": evidence_blockers})
     if update.get("merchant_approved") is True:
         blockers = approval_blockers(existing, update)
         if blockers:
             raise HTTPException(status_code=400, detail={"code": "publication_blocked", "blockers": blockers})
-    update["merchant_updated_at"] = datetime.now(timezone.utc).isoformat()
-    update["merchant_updated_by"] = user.get("email", user["_id"])
+    update["merchant_updated_at"] = review_time
+    update["merchant_updated_by"] = actor
     # Auto-status
     if update.get("merchant_approved"):
         update.setdefault("status", "approved")
@@ -273,11 +317,15 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
     db = _db(request)
     approved = await db.products.count_documents({"merchant_approved": True})
     feedable = 0
-    if is_production():
-        from publication import is_public_offer
-        async for product in db.products.find({"merchant_approved": True}):
-            if is_public_offer(product):
-                feedable += 1
+    provenance_verified = 0
+    image_rights_verified = 0
+    async for product in db.products.find({}):
+        if provenance_evidence_verified(product.get("provenance_evidence_private")):
+            provenance_verified += 1
+        if image_rights_evidence_verified(product.get("image_rights_evidence_private")):
+            image_rights_verified += 1
+        if is_production() and product.get("merchant_approved") and not offer_gate_failures(product):
+            feedable += 1
     return {
         "app_env": APP_ENV,
         "commerce_enabled": COMMERCE_ENABLED,
@@ -287,4 +335,6 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
         "email_configured": bool(BREVO_API_KEY),
         "approved_products": approved,
         "feedable_products": feedable,
+        "provenance_evidence_verified": provenance_verified,
+        "image_rights_evidence_verified": image_rights_verified,
     }

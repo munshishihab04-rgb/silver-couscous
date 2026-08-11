@@ -27,7 +27,9 @@ MERCHANT_FIELD_DEFAULTS = {
     "stock": 0,
     "merchant_approved": False,
     "image_rights_approved": False,
+    "image_rights_evidence_private": {},
     "provenance_status": "unverified",
+    "provenance_evidence_private": {},
     "status": "draft",
     "google_product_category": None,
     "risk_score": None,
@@ -51,10 +53,23 @@ async def migrate_products_if_empty(db, seed_products: List[dict]) -> int:
 
 
 def catalog_reconciliation_patch(existing: dict, seed: dict) -> dict:
-    """Return a clean seed patch without overwriting an approved human record."""
+    """Refresh generated fields while preserving every human-reviewed decision."""
     if existing.get("merchant_approved") is True:
         return {}
-    return {key: deepcopy(value) for key, value in seed.items() if key != "_id"}
+    patch = {key: deepcopy(value) for key, value in seed.items() if key != "_id"}
+    if existing.get("merchant_updated_at"):
+        reviewed_fields = {
+            "selling_price_eur", "stock", "availability_status", "merchant_approved",
+            "image_rights_approved", "image_rights_evidence_private",
+            "provenance_status", "provenance_evidence_private",
+            "gtin", "gtin_status", "mpn", "mpn_status",
+            "google_product_category", "status", "admin_notes",
+            "merchant_updated_at", "merchant_updated_by",
+        }
+        for key in reviewed_fields:
+            if key in existing:
+                patch[key] = deepcopy(existing[key])
+    return patch
 
 
 async def reconcile_catalog_products(db, seed_products: List[dict]) -> int:

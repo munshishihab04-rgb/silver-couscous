@@ -15,6 +15,16 @@ def test_clean_catalog_loader_keeps_all_rows_and_private_reference_data():
     assert sum(product["variants"][0]["reference_price_private"] is None for product in products) == 1
 
 
+def test_loader_attaches_asset_fingerprints_without_approving_rights_or_provenance():
+    catalog = importlib.import_module("catalog")
+    products = catalog._load_csv()
+    assert len(products) == 398
+    assert all(product.get("provenance_evidence_private") for product in products)
+    assert all(product.get("image_rights_evidence_private", {}).get("sha256") for product in products)
+    assert all(product.get("provenance_status") == "unverified" for product in products)
+    assert all(product.get("image_rights_approved") is False for product in products)
+
+
 def test_draft_catalog_copy_does_not_promise_unverified_fulfilment_or_originality():
     catalog = importlib.import_module("catalog")
     forbidden = ("chiave via email", "entro pochi minuti", "genuine activation", "genuine key", "email delivery", "licenza originale", "fattura elettronica ue", "no expiry")

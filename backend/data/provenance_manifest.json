@@ -1,0 +1,3584 @@
+{
+  "microsoft-office-2019-professional-plus": {
+    "sku": "LP-56F50FD2CB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2019-home-business-mac": {
+    "sku": "LP-B9D5FAE5EA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2019-home-and-student-windows": {
+    "sku": "LP-9AB80BACD1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2019-home-and-business-windows": {
+    "sku": "LP-601992328C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2019-home-and-student-mac": {
+    "sku": "LP-D160AE11A7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2019-standard-windows": {
+    "sku": "LP-2524163B1C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2016-professional-windows": {
+    "sku": "LP-AC2F21507A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2016-home-student-windows": {
+    "sku": "LP-8B5CB8D12B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2016-home-business-mac": {
+    "sku": "LP-97997ACF9C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2016-home-business-windows": {
+    "sku": "LP-59106BC299",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2013-home-and-business-windows": {
+    "sku": "LP-E9F0FA94F3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2013-home-and-student-windows": {
+    "sku": "LP-8ABDCFD506",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2013-professional-plus": {
+    "sku": "LP-CC0A1EC3F3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2013-professional": {
+    "sku": "LP-3C960A71C1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2013-standard-windows": {
+    "sku": "LP-20C80A9A28",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2011-home-and-business-per-mac": {
+    "sku": "LP-8618D7E84C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2010-home-and-business-windows": {
+    "sku": "LP-0002FB1CC9",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2010-home-and-student-windows": {
+    "sku": "LP-05A8E2F375",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2010-professional-plus-windows": {
+    "sku": "LP-78F27B13A8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2010-professional-windows": {
+    "sku": "LP-82A0EC038C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2007-professional-plus-windows": {
+    "sku": "LP-F0180012CE",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-365-pro-plus-windows-mac": {
+    "sku": "LP-3E2B87CDE9",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-365-business-essentials": {
+    "sku": "LP-AE53AB48BD",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-365-business-premium": {
+    "sku": "LP-4AF5226F4A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-365-enterprise-e3": {
+    "sku": "LP-2CD69620C6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-365-home-pc-e-mac": {
+    "sku": "LP-24409595D3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-365-personal-pc-o-mac": {
+    "sku": "LP-F191064109",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2019-windows": {
+    "sku": "LP-EFA29E1C78",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2016-windows": {
+    "sku": "LP-0EC884DA68",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-professional-2019-windows": {
+    "sku": "LP-FEF1456887",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-standard-2019-windows": {
+    "sku": "LP-3B95E21279",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-2016-professional-windows": {
+    "sku": "LP-B3AF53F41B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-standard-2016-windows": {
+    "sku": "LP-4FE95CAF01",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-professional-2013-windows": {
+    "sku": "LP-267D9FDAC4",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-standard-2013-windows": {
+    "sku": "LP-D8E28256BB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-professional-2010-windows": {
+    "sku": "LP-53AEDC2AE9",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-standard-2010-windows": {
+    "sku": "LP-2F1522DF90",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-professional-2019-windows": {
+    "sku": "LP-F58CF0EF8A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-standard-2019-windows": {
+    "sku": "LP-F8A1B99D2E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-professional-2016-windows": {
+    "sku": "LP-75D938A88D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-standard-2016-windows": {
+    "sku": "LP-5404B4AF83",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-professional-2013-windows": {
+    "sku": "LP-59F5D9B02A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-standard-2013-windows": {
+    "sku": "LP-96BEBA2CCF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-professional-2010-windows": {
+    "sku": "LP-EA22B9925A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-standard-2010-windows": {
+    "sku": "LP-941DE52DF8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-access-2019-windows": {
+    "sku": "LP-6B06F658CF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-access-2016-windows": {
+    "sku": "LP-E6B237F206",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-publisher-2019-windows": {
+    "sku": "LP-C49A4C54D8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-publisher-2016-windows": {
+    "sku": "LP-DFC74847E9",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visual-studio-enterprise-2017": {
+    "sku": "LP-3CF0AA6DA8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visual-studio-pro-2017": {
+    "sku": "LP-168642CEF8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-enterprise-ltsc-2019": {
+    "sku": "LP-262785F999",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-enterprise-n-ltsc-2019": {
+    "sku": "LP-08F0461E3A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-professional": {
+    "sku": "LP-C8B461F5FD",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-home": {
+    "sku": "LP-440A865EE2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-pro-n": {
+    "sku": "LP-780C3F357E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-home-n": {
+    "sku": "LP-8B8D4CD6F0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-enterprise": {
+    "sku": "LP-1587840C18",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-enterprise-ltsb": {
+    "sku": "LP-05809BE505",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-education": {
+    "sku": "LP-EB0AE50425",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-8-pro": {
+    "sku": "LP-8C866105F1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-81": {
+    "sku": "LP-3CB11D15A4",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-81-pro": {
+    "sku": "LP-FF1ED95207",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-81-enterprise": {
+    "sku": "LP-18DE22F77E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-7-home-premium": {
+    "sku": "LP-1D3BF9FE3A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-7-professional": {
+    "sku": "LP-D1EED2BDCB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-7-ultimate": {
+    "sku": "LP-8D793F9B8F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-7-enterprise": {
+    "sku": "LP-569118159C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-draw-graphics-suite-2018": {
+    "sku": "LP-386215FE87",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-draw-painter-2019": {
+    "sku": "LP-B04B1FC286",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad": {
+    "sku": "LP-ED0147F300",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit": {
+    "sku": "LP-7779F874D5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-lt": {
+    "sku": "LP-848E6361B6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "kaspersky-internet-security-2025": {
+    "sku": "LP-2271CCCF00",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-sql-server-2019-standard-cals-incluse": {
+    "sku": "LP-1CFFF29557",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-sql-server-2017-standard-cals-incluse": {
+    "sku": "LP-D56C81845F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sql-server-2016-standard": {
+    "sku": "LP-B005E894D1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sql-server-standard-2016-10-user-cal": {
+    "sku": "LP-15C0DC1118",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sql-server-2014-standard": {
+    "sku": "LP-0F9CC08FB0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sql-server-std-2014-10-user-cals": {
+    "sku": "LP-AA56840B22",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-exchange-server-2019-enterprise": {
+    "sku": "LP-EF40840573",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-exchange-server-2019-standard": {
+    "sku": "LP-2273F4E836",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2019-datacenter": {
+    "sku": "LP-E3FE0F0A41",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2019-essentials": {
+    "sku": "LP-631103548A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2019-standard": {
+    "sku": "LP-8C3800DF80",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2019-10-user-cals": {
+    "sku": "LP-C6FEAD7474",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2019-10-device-cals": {
+    "sku": "LP-5EA8D4131C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2019-10-rds-user-cals": {
+    "sku": "LP-6BBF633374",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-exchange-server-2016-standard": {
+    "sku": "LP-B76B50E61A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-exchange-server-2016-std-10-device-cals": {
+    "sku": "LP-411E0CC683",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-standard": {
+    "sku": "LP-C4043B3D94",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2016-datacenter": {
+    "sku": "LP-422F729D6C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2016-essentials": {
+    "sku": "LP-8725062B8E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-standard-10-user-cals": {
+    "sku": "LP-73C64A9CD8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-standard-10-device-cals": {
+    "sku": "LP-84764B4F83",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-standard-rds-10-user-cals": {
+    "sku": "LP-75E2C34ADE",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-standard-rds-10-device-cals": {
+    "sku": "LP-2BC18207BE",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-datacenter-10-user-cals": {
+    "sku": "LP-3DA0E4FE39",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-datacenter-rds-10-user-cals": {
+    "sku": "LP-128177AB4B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-datacenter-10-device-cals": {
+    "sku": "LP-0BA7561117",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2016-datacenter-rds-10-device-cals": {
+    "sku": "LP-8E9D95E0CF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-datacenter": {
+    "sku": "LP-C14B4CB658",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-r2-datacenter": {
+    "sku": "LP-7F1D625D63",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-essentials": {
+    "sku": "LP-F1D03296F2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-r2-essentials": {
+    "sku": "LP-513BA884BB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-standard": {
+    "sku": "LP-B320E50BE5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2012-r2-standard": {
+    "sku": "LP-A151A44896",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-server-2012-r2-foundation": {
+    "sku": "LP-A4964F37AC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-10-user-cals": {
+    "sku": "LP-A998F2FDF8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-rds-10-user-cals": {
+    "sku": "LP-0D92B68BCA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-rds-10-device-cals": {
+    "sku": "LP-3F60ACD5EA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-r2-10-user-cals": {
+    "sku": "LP-EA9A7D6A90",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-r2-10-device-cals": {
+    "sku": "LP-A35A87FCDB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-r2-rds-10-user-cals": {
+    "sku": "LP-8FFAE9516A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-r2-rds-10-device-cals": {
+    "sku": "LP-384E474AD0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2012-10-device-cals": {
+    "sku": "LP-0296C60517",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-datacenter": {
+    "sku": "LP-D2CE66A2C2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-r2-datacenter": {
+    "sku": "LP-F5FE8BC6E0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-enterprise": {
+    "sku": "LP-669D35F284",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-r2-enterprise": {
+    "sku": "LP-BF2B4F1429",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-standard": {
+    "sku": "LP-F818D729BA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-r2": {
+    "sku": "LP-39FD43641B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-r2-rds-10-user-cals": {
+    "sku": "LP-DE0162DD81",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-r2-rds-10-device-cals": {
+    "sku": "LP-4845EC741E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-rds-10-device-cals": {
+    "sku": "LP-2B32A0DAFF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2008-rds-10-user-cals": {
+    "sku": "LP-9D76377DE3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visual-studio-enterprise-2017-242": {
+    "sku": "LP-93377A988A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visual-studio-professional-2015": {
+    "sku": "LP-D315AAE221",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-exchange-server-2013-standard": {
+    "sku": "LP-8D1760ACD1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-exchange-server-std-2013-10-user-cals": {
+    "sku": "LP-60B0CDE3A2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2016-home-student-mac": {
+    "sku": "LP-A917FB9B6A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit-lt": {
+    "sku": "LP-F096E26629",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-sql-server-2019-enterprise-cals-incluse": {
+    "sku": "LP-3AB5F402F3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "visual-studio-2019-professional": {
+    "sku": "LP-BC9FD11087",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visual-studio-2019-enterprise": {
+    "sku": "LP-49E7A48B61",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-antivirus-plus-5-pc-1-anno": {
+    "sku": "LP-4658127DB8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-antivirus-plus-3-pc-1-anno": {
+    "sku": "LP-3DB860281B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-antivirus-plus-1-pc-1-anno": {
+    "sku": "LP-33681D89CA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-total-security-vpn-premium-licenza-10-dispositivi-1-anno": {
+    "sku": "LP-B52AA43ABE",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-total-security-vpn-premium-licenza-5-dispositivi-1-anno": {
+    "sku": "LP-FD5012A571",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-total-security-vpn-premium-licenza-3-dispositivi-1-anno": {
+    "sku": "LP-ABC8C34B50",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-total-security-licenza-10-dispositivi-1-anno": {
+    "sku": "LP-E36877D5E0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-total-security-licenza-5-dispositivi-1-anno": {
+    "sku": "LP-114547D492",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-total-security-licenza-3-dispositivi-1-anno": {
+    "sku": "LP-24E0D3403E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-internet-security-licenza-5-pc-1-anno": {
+    "sku": "LP-55C835ED67",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-internet-security-licenza-3-pc-1-anno": {
+    "sku": "LP-EED46A6500",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-internet-security-licenza-1-pc-1-anno": {
+    "sku": "LP-B3AAD2ECEC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-small-office-security-5-dispositivi-1-anno": {
+    "sku": "LP-11AC437C33",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-small-office-security-10-dispositivi-1-anno": {
+    "sku": "LP-D35F93F85E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-small-office-security-20-dispositivi-1-anno": {
+    "sku": "LP-A9D3C43152",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-antivirus-for-mac-1-mac-1-anno": {
+    "sku": "LP-EAE90C32C7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-antivirus-for-mac-3-mac-1-anno": {
+    "sku": "LP-E3B6C01A02",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-mobile-security-1-dispositivo-1-anno": {
+    "sku": "LP-A85FF3A889",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "sharepoint-server-2016-standard": {
+    "sku": "LP-0BDE7B196D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sharepoint-server-2019-standard": {
+    "sku": "LP-457FD3AC13",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sharepoint-server-2016-enterprise": {
+    "sku": "LP-C5FCFB5B4C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-sharepoint-server-2016-enterprise-312": {
+    "sku": "LP-B47302E8FA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corelcad-2020": {
+    "sku": "LP-CCBD3F0603",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-11-professional": {
+    "sku": "LP-E18A63310E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-11-home": {
+    "sku": "LP-EB0F2F2081",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-11-enterprise": {
+    "sku": "LP-2651C6AC17",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2021-professional-plus": {
+    "sku": "LP-7176FC4DE0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2021-home-business-mac": {
+    "sku": "LP-95E5553CD3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2021-home-and-business-windows": {
+    "sku": "LP-1DE0FF13A1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2021-home-and-student-mac": {
+    "sku": "LP-B4A6224DCC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2021-home-and-student-windows": {
+    "sku": "LP-3C765C1F49",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-word-2021-windows": {
+    "sku": "LP-4B6C700738",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-word-2021-mac": {
+    "sku": "LP-9470D2D71D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2021-windows": {
+    "sku": "LP-901AE9D70D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2021-mac": {
+    "sku": "LP-533FF228F1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-professional-2021-windows": {
+    "sku": "LP-A7D934F7A7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-project-standard-2021-windows": {
+    "sku": "LP-DEC15C99B8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-standard-2021windows": {
+    "sku": "LP-B78125A1B5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-professional-2021windows": {
+    "sku": "LP-26A4426530",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-server-2022-standard": {
+    "sku": "LP-5AAE147E0B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-server-2022-datacenter": {
+    "sku": "LP-C71C4F92BC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2022-10-user-cals": {
+    "sku": "LP-0471485EE7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2022-10-device-cals": {
+    "sku": "LP-A0CEC3CE07",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2022-10-rds-user-cals": {
+    "sku": "LP-297AF4D33E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2022-10-rds-device-cals": {
+    "sku": "LP-7AAC8693E5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2019-mac": {
+    "sku": "LP-D387605AF5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-word-2019-mac": {
+    "sku": "LP-CB03923EB6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2019-mac": {
+    "sku": "LP-0624F21A2A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2019-mac": {
+    "sku": "LP-50937922FA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-word-2019-windows": {
+    "sku": "LP-0E5C2ABAF2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2019-windows": {
+    "sku": "LP-229BD61B35",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2021-windows": {
+    "sku": "LP-CE75E048BA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2021-mac": {
+    "sku": "LP-DCA98FEC2D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-acrobat-pro-dc-2022": {
+    "sku": "LP-100C93DC6A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-2022": {
+    "sku": "LP-8CDDD0472E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-lightroom-classic-2022": {
+    "sku": "LP-7B609B9A3D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-premiere-2022": {
+    "sku": "LP-A7484774CB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-illustrator-2022": {
+    "sku": "LP-C6AF0D969D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-after-effects-2022": {
+    "sku": "LP-0466953156",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-indesign-2022": {
+    "sku": "LP-1CA169FA6E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-xd-2022": {
+    "sku": "LP-B7F0B039D7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-2022": {
+    "sku": "LP-92D232B0F0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-lt-2022": {
+    "sku": "LP-3694C9BFD8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-pack-2022": {
+    "sku": "LP-EDE4E6578A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visual-studio-2022-professional": {
+    "sku": "LP-5F0E1FA441",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-enterprise-ltsc-2021": {
+    "sku": "LP-66C37AFE8C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-graphics-suite-2023-mac": {
+    "sku": "LP-50AEA2C3BA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-2023": {
+    "sku": "LP-1582A9EB6B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-lt-2023": {
+    "sku": "LP-BC2A3A96A8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-2024": {
+    "sku": "LP-36B4506C24",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-lt-2024": {
+    "sku": "LP-AFE7C1A36A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit-lt-suite-2024": {
+    "sku": "LP-E4CB85CCB2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit-2023": {
+    "sku": "LP-55F5EC1C70",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-inventor-2023": {
+    "sku": "LP-CE34330C32",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-3ds-max-2023": {
+    "sku": "LP-F7EF4DA30B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-fusion-360-2023": {
+    "sku": "LP-A3E9823139",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-maya-2023": {
+    "sku": "LP-3C6A28199D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-fusion-360-2023-448": {
+    "sku": "LP-F8FB79557C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-advance-steel-2023": {
+    "sku": "LP-00AD9E4203",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-mechanical-2023": {
+    "sku": "LP-C01193FD1B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-2023": {
+    "sku": "LP-7A4D74F654",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-acrobat-pro-dc-2023": {
+    "sku": "LP-8915BFE15C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-lightroom-classic-2023": {
+    "sku": "LP-CD8EE6FA5D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-premiere-pro-2023": {
+    "sku": "LP-00AE62EF31",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-after-effects-2023": {
+    "sku": "LP-B49670CF98",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-indesign-2023": {
+    "sku": "LP-E2565EF2C0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-11-pro-n": {
+    "sku": "LP-7540680FA7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-11-education-n": {
+    "sku": "LP-9B815B882F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-11-pro-for-workstation": {
+    "sku": "LP-C0D11A5D3E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-11-education": {
+    "sku": "LP-6299E98696",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-11-enterprise-n": {
+    "sku": "LP-3B9ADBC5AB",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-11-pro-n-for-workstation": {
+    "sku": "LP-F9D2602E27",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-10-s": {
+    "sku": "LP-2762D5C81A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-10-pro-education": {
+    "sku": "LP-F1E446F068",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-pack-2023": {
+    "sku": "LP-2898C90EE8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-family-pack-2023-15-dispositivi-1-anno": {
+    "sku": "LP-A54127E999",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-premium-vpn-2023-10-dispositivi-1-anno": {
+    "sku": "LP-66CFCF9082",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-10-enterprise-n": {
+    "sku": "LP-AAC5B93BB8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-10-enterprise-n-ltsc-2021": {
+    "sku": "LP-8EFF795407",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-10-enterprise-vda": {
+    "sku": "LP-27D3329ACF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "sql-server-2022-standard-cals-incluse": {
+    "sku": "LP-E2E0800F12",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "sql-server-2022-enterprise": {
+    "sku": "LP-7072BB37E6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "visual-studio-2022-enterprise": {
+    "sku": "LP-6CD3412168",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-onenote-2021-windows": {
+    "sku": "LP-AE3095BB4A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-onenote-2021-mac": {
+    "sku": "LP-600DC3DD85",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2021-windows": {
+    "sku": "LP-8F4168532B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2021-mac": {
+    "sku": "LP-7BE4FB5BD6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-publisher-2021": {
+    "sku": "LP-3C5F10F55C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-access-2021": {
+    "sku": "LP-08266E0F4F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-2024-524": {
+    "sku": "LP-6C15C2CA48",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-lt-2024-mac": {
+    "sku": "LP-B82F4DA779",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "bitdefender-password-manager-2025": {
+    "sku": "LP-D773EB9891",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-suite-2024-windows": {
+    "sku": "LP-C925DE6C1B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-graphics-suite-2024-mac": {
+    "sku": "LP-7F321B4DED",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2024-professional-plus-windows": {
+    "sku": "LP-B50AE6E6D1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-illustrator-2024": {
+    "sku": "LP-25753FF1EA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-mechanical-2024": {
+    "sku": "LP-DA6B84EBF0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-civil-3d-2024": {
+    "sku": "LP-779635AC1B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-2024": {
+    "sku": "LP-B7F2AF7A6D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-inventor-2024": {
+    "sku": "LP-5B500BC422",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-lt-2025": {
+    "sku": "LP-E562C8E77A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-electrical-2024": {
+    "sku": "LP-1124F24F98",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-2025": {
+    "sku": "LP-A4B3BD0F5E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "project-pro-2024-windows": {
+    "sku": "LP-BBED1F435A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-visio-professional-2024-windows": {
+    "sku": "LP-06EB3B345D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2024-home-and-business-mac": {
+    "sku": "LP-6A2F0E2B49",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2024-home-and-business-windows": {
+    "sku": "LP-0D2EA57ECC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2025-standard": {
+    "sku": "LP-816F69E65B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2025-datacenter": {
+    "sku": "LP-628CE2730E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2025-essential": {
+    "sku": "LP-3CEA46F757",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2025-10-user-cals": {
+    "sku": "LP-0E35A0A1F8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2025-10-device-cals": {
+    "sku": "LP-361375A8A1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "windows-server-2025-10-rds-device-cals": {
+    "sku": "LP-2F679AF5AD",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-server-2022-essential": {
+    "sku": "LP-D4EC7C263F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-access-2024-windows": {
+    "sku": "LP-DF91779A5D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2024-windows": {
+    "sku": "LP-EC5B1D69F2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2024-mac": {
+    "sku": "LP-C366BDFFC8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2024-windows": {
+    "sku": "LP-CE279B72D3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2024-mac": {
+    "sku": "LP-F436253821",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "word-2024-windows": {
+    "sku": "LP-B12918BAE5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "word-2024-mac": {
+    "sku": "LP-DDDAE682A3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-onenote-2024-windows": {
+    "sku": "LP-3F100FAB5C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-onenote-2024-mac": {
+    "sku": "LP-FDFAF3256C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-word-2016-windows": {
+    "sku": "LP-68C6541D04",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-word-2016-mac": {
+    "sku": "LP-2764BAEB9E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2016-windows": {
+    "sku": "LP-C7914BAD65",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2016-mac": {
+    "sku": "LP-613D30CCD1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-powerpoint-2019-windows": {
+    "sku": "LP-B5B64C6815",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2016-windows": {
+    "sku": "LP-F20AC2A02F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-excel-2016-mac-6590": {
+    "sku": "LP-4A778FD8DF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-3ds-max-2025": {
+    "sku": "LP-71AB8DAE09",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit-2024": {
+    "sku": "LP-786C1F4CFA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-technical-suite-2024-windows": {
+    "sku": "LP-5043D9085F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit-2025": {
+    "sku": "LP-779E516D54",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autocad-revit-2022": {
+    "sku": "LP-DF2E27AD89",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "upgrade1": {
+    "sku": "LP-978C443595",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2021-professional-plus-promo-school": {
+    "sku": "LP-6E0BA86535",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "parallels-desktop-20-standard-mac": {
+    "sku": "LP-91280B147C",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2024-windows": {
+    "sku": "LP-84D622D9E3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-outlook-2024-mac": {
+    "sku": "LP-E7016C50A0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "wondershare-pdfelement-11-mac": {
+    "sku": "LP-7B99E6A773",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-acrobat-2024": {
+    "sku": "LP-1677CDA66A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-2025": {
+    "sku": "LP-ED5C9BC7EA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-contruction-cloud": {
+    "sku": "LP-55899868DD",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-tutte-le-apps": {
+    "sku": "LP-5FBB87ED64",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-3ds-max": {
+    "sku": "LP-BE7CB0FC82",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-advance-steel": {
+    "sku": "LP-BDB7F3F789",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-alias-autostudio": {
+    "sku": "LP-F177B3761E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-arnold": {
+    "sku": "LP-12610C5B47",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad": {
+    "sku": "LP-9A57EE8A7D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-web": {
+    "sku": "LP-FF7A5F00ED",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-lt": {
+    "sku": "LP-CCB31F3A28",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-cfd-ultimate": {
+    "sku": "LP-34AEC5AEC3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-inventor": {
+    "sku": "LP-E7101ECDCD",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-powershape-ultimate": {
+    "sku": "LP-2332FA123A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-civil-3d": {
+    "sku": "LP-FAAAEC3D0F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-fabrication": {
+    "sku": "LP-FBF3D89659",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-factory-design-utilities": {
+    "sku": "LP-DF81AB98D4",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-flame": {
+    "sku": "LP-B9127DFE41",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-forma": {
+    "sku": "LP-A95B03A082",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-fusion-360": {
+    "sku": "LP-42D140FFC1",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-hsmworks-ultimate": {
+    "sku": "LP-47234E9172",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-infraworks": {
+    "sku": "LP-3540A00AE3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-maya": {
+    "sku": "LP-9FE8618412",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-moldflow-insight": {
+    "sku": "LP-BBDABB7EC7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-motion-builder": {
+    "sku": "LP-8EE534457E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-mudbox": {
+    "sku": "LP-EAE64AEA9A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-navisworks-manage": {
+    "sku": "LP-83ED0FE945",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-netfabb-premium": {
+    "sku": "LP-796926949F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-point-layout": {
+    "sku": "LP-F05CA795D5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-powerinspect": {
+    "sku": "LP-FB2B913484",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-media-e-entertainment-collection": {
+    "sku": "LP-0714B5791A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-recap-pro": {
+    "sku": "LP-9C2CCFAC65",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-revit": {
+    "sku": "LP-121BD83762",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-robot-structural-analysis-professional": {
+    "sku": "LP-FCD59EEED0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-structural-bridge-design": {
+    "sku": "LP-EBEE2A66A7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-vred-professional": {
+    "sku": "LP-9E703338C4",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-vault-professional": {
+    "sku": "LP-3AD8ECC375",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-vehicle-tracking": {
+    "sku": "LP-FFA8370579",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-plant-3d": {
+    "sku": "LP-D4EA691A35",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-formit-pro": {
+    "sku": "LP-6AEE130ACC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-aec": {
+    "sku": "LP-282FF18CFA",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-mechanical": {
+    "sku": "LP-2020D72788",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-architecture": {
+    "sku": "LP-D39EE8500B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-electrical": {
+    "sku": "LP-76D7024D2E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-mep": {
+    "sku": "LP-C0997FBEF2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-map-3d": {
+    "sku": "LP-38B42B9D8D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodek-pdmc-collection": {
+    "sku": "LP-4AF5631F59",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "canva-pro": {
+    "sku": "LP-76205A98A5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-creative-cloud-2025": {
+    "sku": "LP-132333FAC6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-express-premium": {
+    "sku": "LP-B83214B2E6",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-2025-676": {
+    "sku": "LP-D19488385B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-premiere-pro-2025": {
+    "sku": "LP-A0E23879B8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-illustrator-2025": {
+    "sku": "LP-CBBF278EE0",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-acrobat-2025": {
+    "sku": "LP-1E19ABE168",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-indesign-2025": {
+    "sku": "LP-94415D8B59",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-lightroom-2025": {
+    "sku": "LP-45BDC7EA62",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-after-effect-2025": {
+    "sku": "LP-AC0B769A28",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-audition-2025": {
+    "sku": "LP-AEC3984F89",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-lightroom-classic-2025": {
+    "sku": "LP-40921524C8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-dreamweaver-2025": {
+    "sku": "LP-885CB687B4",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-animate-2025": {
+    "sku": "LP-5ED8388C64",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-incopy-2025": {
+    "sku": "LP-1CC5CD3C05",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-media-encoder-2025": {
+    "sku": "LP-D4FA12DF8E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-fresco-2025": {
+    "sku": "LP-9CB4929586",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-dimension-2025": {
+    "sku": "LP-AEEDC7CCDD",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-acrobat-standard": {
+    "sku": "LP-E7C8360E34",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-office-2024-professional-plus-ltsc": {
+    "sku": "LP-44A7807131",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-10-pro-promo-school": {
+    "sku": "LP-3A6C0CB635",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "microsoft-windows-11-pro-promo-school": {
+    "sku": "LP-2E9C41E1B8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-technical-suite-2025": {
+    "sku": "LP-F59361C21E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-graphics-suite-2025-windows-mac": {
+    "sku": "LP-7BAAEACC7B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-pdf-fusion": {
+    "sku": "LP-B9B699077F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-painter-essentials-8": {
+    "sku": "LP-B6FCA6C5CC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-photomirage": {
+    "sku": "LP-0C37038CA5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-aftershot-3": {
+    "sku": "LP-C7D422C928",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-videostudio-pro-x9": {
+    "sku": "LP-81490B36C2",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-paintshop-pro-x9": {
+    "sku": "LP-7A633AC90A",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "corel-painter-2023-windows-mac": {
+    "sku": "LP-181266FB29",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-after-effects-2026": {
+    "sku": "LP-8C499FE4F3",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-audition-2026": {
+    "sku": "LP-41D0F3FBEC",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-bridge-2026": {
+    "sku": "LP-0E1861F32B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-character-animator-2026": {
+    "sku": "LP-CFE86E8F84",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-fresco-2026": {
+    "sku": "LP-77A202FE46",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-illustrator-2026": {
+    "sku": "LP-29585C6495",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-incopy-2026": {
+    "sku": "LP-696B7E4825",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-indesign-2026": {
+    "sku": "LP-3AD1CA5DEE",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-media-encoder-2026": {
+    "sku": "LP-1DDB9AA3A4",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-2026": {
+    "sku": "LP-3DAA59B62F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-photoshop-elements-2026": {
+    "sku": "LP-0DE0E1648E",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-premiere-pro-2026": {
+    "sku": "LP-17704025A7",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-premiere-elements-2026": {
+    "sku": "LP-0167F5C578",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-acrobat-pro-2026": {
+    "sku": "LP-CE62D1E1AF",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-technical-suite-2026": {
+    "sku": "LP-7DDCF70278",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "coreldraw-graphics-suite-2026": {
+    "sku": "LP-9BA0DBF29D",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-2026": {
+    "sku": "LP-1182BAB97F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-lt-2026": {
+    "sku": "LP-53DDED6EA5",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-2027": {
+    "sku": "LP-F7FA7E9C1B",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-autocad-lt-2027": {
+    "sku": "LP-5AC4FB473F",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-revit-2026": {
+    "sku": "LP-D2530083A8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "autodesk-revit-2027": {
+    "sku": "LP-E879117D95",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-pack-2025": {
+    "sku": "LP-EABE2FE3A9",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "adobe-pack-2026": {
+    "sku": "LP-BA6CBE61F8",
+    "status": "unverified",
+    "supplier_name": null,
+    "source_type": null,
+    "evidence_refs": [],
+    "reviewed_by": null,
+    "reviewed_at": null
+  }
+}

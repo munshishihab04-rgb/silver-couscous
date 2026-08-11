@@ -43,6 +43,23 @@ def approved_product():
         stock=3,
         selling_price_eur=19.90,
         mpn_status="verified",
+        provenance_evidence_private={
+            "supplier_name": "Verified Supplier S.r.l.",
+            "source_type": "authorized_distributor",
+            "evidence_refs": ["private://documents/supplier-agreement-2026"],
+            "reviewed_by": "admin@licenzpol.it",
+            "reviewed_at": "2026-08-11T00:00:00+00:00",
+        },
+        image_rights_evidence_private={
+            "asset_path": "/products/office-test.webp",
+            "sha256": "a" * 64,
+            "width": 1000,
+            "height": 1000,
+            "rights_basis": "manufacturer_authorized",
+            "evidence_refs": ["private://documents/image-authorization-2026"],
+            "reviewed_by": "admin@licenzpol.it",
+            "reviewed_at": "2026-08-11T00:00:00+00:00",
+        },
     )
     return product
 
@@ -59,6 +76,15 @@ def test_draft_offer_fails_closed_with_explainable_reasons():
 def test_complete_offer_is_public():
     assert offer_gate_failures(approved_product()) == []
     assert is_public_offer(approved_product()) is True
+
+
+def test_flags_without_private_evidence_cannot_open_publication_gate():
+    product = approved_product()
+    product.pop("provenance_evidence_private")
+    product.pop("image_rights_evidence_private")
+    reasons = offer_gate_failures(product)
+    assert "provenance_evidence_missing" in reasons
+    assert "image_rights_evidence_missing" in reasons
 
 
 def test_production_storefront_contains_only_public_offers():

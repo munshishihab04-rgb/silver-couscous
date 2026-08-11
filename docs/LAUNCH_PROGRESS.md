@@ -34,7 +34,17 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Dettaglio, card, confronto e bundle mostrano “In verifica” e non consentono acquisti.
   - Approvazione singola e massiva bloccata lato server finché identificatori e tutti gli altri requisiti non sono verificati.
   - Verifica: 30 test backend mirati + 10 test frontend passati; build riuscita; QA API e browser pubblico completato.
-- [ ] **Fase 4 — Provenienza e diritti immagini**
+- [x] **Fase 4 — Provenienza e diritti immagini**
+  - Creati manifest persistenti per 398 record di provenienza e 398 asset immagine.
+  - Tutte le immagini hanno percorso, SHA-256 e dimensioni; 0 mancanti, 0 orfane, 1 sotto 500 px.
+  - Nessun fornitore o diritto è stato inventato: 398 provenienze non verificate e 0 immagini approvate.
+  - Il gate richiede evidenze private complete oltre ai flag di approvazione.
+  - Il server vincola la revisione dell'immagine al fingerprint reale e rifiuta hash sostituiti dal client.
+  - L'editor prodotto generico non può modificare campi Merchant o campi `_private`.
+  - Le revisioni manuali sopravvivono alla riconciliazione e ai riavvii.
+  - Pannello Merchant esteso con fornitore, tipo fonte, documenti, base diritti, hash e dimensioni.
+  - Workflow documentato in `docs/EVIDENCE_WORKFLOW.md`; documenti reali esclusi dal repository pubblico.
+  - Verifica: 42 test backend mirati + 10 test frontend passati; build e QA API completati.
 - [ ] **Fase 5 — Catalogo pilota approvato**
 - [ ] **Fase 6 — Inventario licenze ed email**
 - [ ] **Fase 7 — Sicurezza, test e infrastruttura**

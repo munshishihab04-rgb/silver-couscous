@@ -123,6 +123,22 @@ class Variant(BaseModel):
     list_price_eur: Optional[float] = None
 
 
+MERCHANT_CONTROLLED_FIELDS = {
+    "merchant_approved", "image_rights_approved", "image_rights_evidence_private",
+    "provenance_status", "provenance_evidence_private", "selling_price_eur",
+    "stock", "sku", "gtin", "gtin_status", "mpn", "mpn_status",
+    "availability_status", "condition", "google_product_category", "status",
+}
+
+
+def sanitize_product_editor_update(body: dict) -> dict:
+    forbidden = MERCHANT_CONTROLLED_FIELDS.intersection(body)
+    forbidden.update(key for key in body if key.endswith("_private"))
+    if forbidden:
+        raise ValueError("Campi Merchant riservati: " + ", ".join(sorted(forbidden)))
+    return dict(body)
+
+
 class ProductWrite(BaseModel):
     slug: str
     name: str
@@ -210,6 +226,10 @@ async def admin_update_product(slug: str, body: dict = Body(...), request: Reque
     db = _db(request)
     body.pop("_id", None)
     body.pop("slug", None)  # slug is immutable
+    try:
+        body = sanitize_product_editor_update(body)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     body["updated_at"] = datetime.now(timezone.utc).isoformat()
     res = await db.products.update_one({"slug": slug}, {"$set": body})
     if res.matched_count == 0:
