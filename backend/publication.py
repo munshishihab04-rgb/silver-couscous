@@ -99,7 +99,9 @@ def to_public_product(product: dict) -> dict:
     return public
 
 
-def filter_storefront_products(products: Iterable[dict], app_env: str) -> list[dict]:
+def filter_storefront_products(products: Iterable[dict], app_env: str, preview_scope: str = "all") -> list[dict]:
+    if preview_scope == "market":
+        return [to_public_product(product) for product in products if is_catalog_visible(product)]
     if app_env == "production":
         return [to_public_product(product) for product in products if is_public_offer(product) or is_catalog_visible(product)]
     return [to_public_product(product) for product in products]

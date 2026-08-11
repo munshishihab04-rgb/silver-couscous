@@ -129,6 +129,8 @@ def test_production_can_show_market_observed_preview_without_creating_an_offer()
     assert preview["selling_price_eur"] is None
     assert "declared_stock_private" not in preview
     assert filter_storefront_products([draft_product()], "production") == []
+    [scoped] = filter_storefront_products([product, draft_product()], "staging", preview_scope="market")
+    assert scoped["slug"] == product["slug"]
 
 
 def test_public_price_is_missing_for_draft_and_authoritative_for_approved_offer():

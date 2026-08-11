@@ -18,6 +18,10 @@ COMMERCE_ENABLED = (os.environ.get("COMMERCE_ENABLED", "false").lower() == "true
 
 PUBLIC_SITE_URL = (os.environ.get("PUBLIC_SITE_URL") or "").rstrip("/") or None
 
+CATALOG_PREVIEW_SCOPE = (os.environ.get("CATALOG_PREVIEW_SCOPE") or "all").lower().strip()
+if CATALOG_PREVIEW_SCOPE not in {"all", "market"}:
+    CATALOG_PREVIEW_SCOPE = "all"
+
 JWT_SECRET = os.environ.get("JWT_SECRET", "")
 
 # Brevo

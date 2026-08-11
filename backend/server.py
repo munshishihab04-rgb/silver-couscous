@@ -25,7 +25,7 @@ from merchant_feed import merchant_router
 from merchant_admin import merchant_admin_router
 from payments import payments_router
 from config import (
-    APP_ENV, COMMERCE_ENABLED, cors_origins,
+    APP_ENV, COMMERCE_ENABLED, CATALOG_PREVIEW_SCOPE, cors_origins,
     validate_production_startup, is_production,
 )
 from services import license_inventory
@@ -90,7 +90,7 @@ PRODUCTS: List[dict] = list(_CSV_PRODUCTS)
 
 
 def storefront_products() -> List[dict]:
-    return filter_storefront_products(PRODUCTS, APP_ENV)
+    return filter_storefront_products(PRODUCTS, APP_ENV, preview_scope=CATALOG_PREVIEW_SCOPE)
 
 
 def get_product_by_slug(slug: str):

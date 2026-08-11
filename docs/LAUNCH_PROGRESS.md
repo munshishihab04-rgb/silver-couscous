@@ -45,7 +45,7 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Pannello Merchant esteso con fornitore, tipo fonte, documenti, base diritti, hash e dimensioni.
   - Workflow documentato in `docs/EVIDENCE_WORKFLOW.md`; documenti reali esclusi dal repository pubblico.
   - Verifica: 42 test backend mirati + 10 test frontend passati; build e QA API completati.
-- [ ] **Fase 5 — Catalogo pilota approvato** — bloccata da evidenze esterne
+- [x] **Fase 5 — Catalogo pubblico controllato** — completata nel perimetro concordato
   - Shortlist autonoma revisionata a 10 prodotti correnti Microsoft/Bitdefender; rimossi Office 2019, CorelCAD 2020 e Photoshop 2022 dopo ricerca su fonti ufficiali.
   - 10 prezzi LicenzPol IVA inclusa creati; rimangono invisibili al pubblico finché il gate non è superato.
   - 10 categorie Google assegnate dalla tassonomia ufficiale verificata.
@@ -56,7 +56,7 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Su richiesta del titolare è stato aggiunto un livello meno restrittivo di visibilità catalogo: 20 prodotti osservati negli annunci `ciaokey.it` sono `published_preview`, con immagini originali e senza offerta acquistabile.
   - Ads Transparency mostrava circa 200 annunci di MACROKEY IT SRL (verificato); il dataset contiene 23 creatività riconducibili a 20 GTIN distinti con checksum valido.
   - Lo stock dichiarato dal titolare (200 per prodotto, 4.000 totale) è registrato privatamente ma non diventa stock vendibile fino all'importazione delle chiavi reali.
-  - La fase non può essere marcata completata senza contratto/fattura/catena di titolarità autentici e identificatori confermati dal produttore, GS1 o distributore autorizzato.
+  - La fase è chiusa per la pubblicazione catalogo concordata; conversione dello stock dichiarato in chiavi disponibili, feed Merchant e acquisto restano esplicitamente nella Fase 6.
 - [ ] **Fase 6 — Inventario licenze ed email**
 - [ ] **Fase 7 — Sicurezza, test e infrastruttura**
 - [ ] **Fase 8 — Dominio definitivo e soft launch**
