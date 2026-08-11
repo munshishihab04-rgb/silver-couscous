@@ -1,19 +1,24 @@
-from fastapi import FastAPI, APIRouter, HTTPException, Request, Body
+from fastapi import FastAPI, APIRouter, HTTPException, Request, Body, Header, Query
+from fastapi.responses import JSONResponse
 from dotenv import load_dotenv
 from pathlib import Path
+import asyncio
+import contextlib
+import json
 import os
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 from starlette.middleware.cors import CORSMiddleware
+from starlette.middleware.trustedhost import TrustedHostMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo.errors import DuplicateKeyError
 import logging
 from pydantic import BaseModel, Field
 from typing import List, Optional
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from urllib.parse import urlparse
 
 from catalog import PRODUCTS as _CSV_PRODUCTS, CATEGORIES, NEEDS
@@ -26,12 +31,19 @@ from merchant_feed import merchant_router
 from merchant_admin import merchant_admin_router
 from payments import payments_router
 from config import (
-    APP_ENV, COMMERCE_ENABLED, CATALOG_PREVIEW_SCOPE, cors_origins,
+    APP_ENV, COMMERCE_ENABLED, CATALOG_PREVIEW_SCOPE, JWT_SECRET, BACKUP_ENCRYPTION_KEY, allowed_hosts, cors_origins,
     validate_production_startup, is_production,
 )
 from services import license_inventory, email_outbox, transactional_dispatch
+from services.backup_scheduler import daily_backup_loop
 from privacy import prepare_analytics_event
 from publication import filter_storefront_products, public_price
+from security import build_security_headers, client_identifier, rate_limiter
+from order_access import hash_order_token, issue_order_token, verify_order_token
+from form_challenge import issue_form_challenge, verify_form_challenge
+from logging_config import configure_logging, request_id_var
+
+configure_logging()
 
 
 BUNDLE_TIERS = [
@@ -68,23 +80,79 @@ def compute_bundle_discount(n_items: int) -> float:
 
 
 class BundleSelection(BaseModel):
-    product_slug: str
-    variant_id: str
+    product_slug: str = Field(min_length=1, max_length=160)
+    variant_id: str = Field(min_length=1, max_length=160)
 
 
 class BundlePreviewRequest(BaseModel):
-    selections: List[BundleSelection]
+    selections: List[BundleSelection] = Field(default_factory=list, max_length=20)
 
 
 ROOT_DIR = Path(__file__).parent  # already imported
 
 mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
+client = AsyncIOMotorClient(mongo_url, serverSelectionTimeoutMS=3000)
 db = client[os.environ['DB_NAME']]
 
 app = FastAPI(title="LicenzPol API")
 app.state.db = db
 api_router = APIRouter(prefix="/api")
+
+app.add_middleware(TrustedHostMiddleware, allowed_hosts=allowed_hosts())
+
+
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    request_id = uuid.uuid4().hex
+    context_token = request_id_var.set(request_id)
+    response = None
+    try:
+        if request.method in {"POST", "PUT", "PATCH"}:
+            try:
+                content_length = int(request.headers.get("content-length", "0"))
+            except ValueError:
+                response = JSONResponse(status_code=400, content={"detail": "Invalid Content-Length"})
+            if response is None and content_length > 1_048_576:
+                response = JSONResponse(status_code=413, content={"detail": "Payload too large"})
+        if response is None:
+            response = await call_next(request)
+    except Exception as exc:
+        logging.error("Unhandled request error (%s)", type(exc).__name__)
+        response = JSONResponse(status_code=500, content={"detail": "Internal server error"})
+    is_https = request.url.scheme == "https" or request.headers.get("x-forwarded-proto", "").split(",", 1)[0].strip() == "https"
+    for name, value in build_security_headers(is_https=is_https, enable_hsts=is_https and is_production()).items():
+        response.headers[name] = value
+    if request.url.path.startswith(("/api/admin", "/api/orders", "/api/payments")):
+        response.headers["Cache-Control"] = "no-store"
+    response.headers["X-Request-ID"] = request_id
+    request_id_var.reset(context_token)
+    return response
+
+
+def enforce_rate_limit(request: Request, scope: str, *, limit: int, window_seconds: int) -> None:
+    key = f"{scope}:{client_identifier(request)}"
+    if not rate_limiter.allow(key, limit=limit, window_seconds=window_seconds):
+        raise HTTPException(
+            status_code=429,
+            detail="Troppe richieste. Riprova più tardi.",
+            headers={"Retry-After": str(window_seconds)},
+        )
+
+
+async def verify_public_form(purpose: str, token: str, website: str) -> None:
+    if website:
+        raise HTTPException(status_code=400, detail="Verifica form non valida.")
+    try:
+        nonce = verify_form_challenge(token, purpose, JWT_SECRET, min_age=1, max_age=1800)
+        await db.form_challenges_used.insert_one({
+            "_id": nonce,
+            "purpose": purpose,
+            "expires_at": datetime.now(timezone.utc) + timedelta(minutes=30),
+        })
+    except DuplicateKeyError:
+        raise HTTPException(status_code=400, detail="Verifica form già utilizzata.")
+    except (RuntimeError, ValueError):
+        raise HTTPException(status_code=400, detail="Verifica form scaduta o non valida.")
 
 # In-memory mirror of MongoDB products for fast filtering.
 PRODUCTS: List[dict] = list(_CSV_PRODUCTS)
@@ -123,6 +191,7 @@ async def _startup():
     await license_inventory.ensure_indexes(db)
     await email_outbox.ensure_indexes(db)
     await db.psp_events.create_index("event_id", unique=True)
+    await db.form_challenges_used.create_index("expires_at", expireAfterSeconds=0)
     await db.orders.create_index("reference", unique=True)
     await db.orders.create_index(
         "idempotency_key",
@@ -139,31 +208,39 @@ async def _startup():
     await ensure_default_settings(db)
     await _reload_products()
     logging.info(f"[startup] products in DB: {len(PRODUCTS)}")
+    if BACKUP_ENCRYPTION_KEY:
+        app.state.backup_task = asyncio.create_task(daily_backup_loop())
+        logging.info("[startup] encrypted daily backup scheduler enabled")
+    else:
+        app.state.backup_task = None
+        logging.warning("[startup] encrypted backup scheduler disabled: missing key")
 
 
 class OrderLineItem(BaseModel):
-    product_slug: str
-    variant_id: str
-    quantity: int = 1
+    product_slug: str = Field(min_length=1, max_length=160)
+    variant_id: str = Field(min_length=1, max_length=160)
+    quantity: int = Field(default=1, ge=1, le=10)
 
 
 class ConsentBlock(BaseModel):
     accept_terms: bool = False
     immediate_delivery_consent: bool = False  # loses right of withdrawal
-    consent_version: str = "2026-08-11"
+    consent_version: str = Field(default="2026-08-11", max_length=32)
 
 
 class OrderCreate(BaseModel):
-    email: str
-    first_name: str
-    last_name: str
-    country: str
-    company: Optional[str] = None
-    vat: Optional[str] = None
-    items: List[OrderLineItem]
-    language: str = "it"
+    email: str = Field(min_length=3, max_length=254)
+    first_name: str = Field(min_length=1, max_length=100)
+    last_name: str = Field(min_length=1, max_length=100)
+    country: str = Field(min_length=2, max_length=2)
+    company: Optional[str] = Field(default=None, max_length=160)
+    vat: Optional[str] = Field(default=None, max_length=32)
+    items: List[OrderLineItem] = Field(min_length=1, max_length=20)
+    language: str = Field(default="it", min_length=2, max_length=5)
     consent: ConsentBlock = Field(default_factory=ConsentBlock)
-    idempotency_key: Optional[str] = None
+    idempotency_key: Optional[str] = Field(default=None, max_length=128)
+    form_token: str = Field(min_length=20, max_length=500)
+    website: str = Field(default="", max_length=100)
 
 
 class OrderResponse(BaseModel):
@@ -173,18 +250,48 @@ class OrderResponse(BaseModel):
     status: str
     demo: bool
     total_eur: float
+    access_token: Optional[str] = None
 
 
 class SupportMessage(BaseModel):
-    email: str
-    subject: str
-    message: str
-    language: str = "it"
+    email: str = Field(min_length=3, max_length=254)
+    subject: str = Field(min_length=1, max_length=160)
+    message: str = Field(min_length=1, max_length=5000)
+    language: str = Field(default="it", min_length=2, max_length=5)
+    form_token: str = Field(min_length=20, max_length=500)
+    website: str = Field(default="", max_length=100)
 
 
 @api_router.get("/")
 async def root():
     return {"service": "LicenzPol", "status": "ok"}
+
+
+@api_router.get("/health/live", include_in_schema=False)
+async def liveness():
+    return {"status": "ok"}
+
+
+@api_router.get("/health", include_in_schema=False)
+async def health():
+    try:
+        await db.command("ping")
+    except Exception:
+        raise HTTPException(status_code=503, detail="Database unavailable")
+    return {
+        "status": "ok",
+        "database": "ok",
+        "environment": APP_ENV,
+        "commerce_enabled": COMMERCE_ENABLED,
+    }
+
+
+@api_router.get("/security/form-challenge/{purpose}", include_in_schema=False)
+async def form_challenge(purpose: str, request: Request):
+    if purpose not in {"support", "order"}:
+        raise HTTPException(status_code=404, detail="Challenge not found")
+    enforce_rate_limit(request, "form-challenge", limit=30, window_seconds=60)
+    return {"token": issue_form_challenge(purpose, JWT_SECRET), "expires_in": 1800}
 
 
 @api_router.get("/categories")
@@ -199,16 +306,16 @@ async def list_needs():
 
 @api_router.get("/products")
 async def list_products(
-    q: Optional[str] = None,
-    category: Optional[str] = None,
-    platform: Optional[str] = None,
-    brand: Optional[str] = None,
-    license_type: Optional[str] = None,
-    max_price: Optional[float] = None,
-    min_price: Optional[float] = None,
-    need: Optional[str] = None,
-    sort: Optional[str] = "featured",
-    limit: Optional[int] = 500,
+    q: Optional[str] = Query(default=None, max_length=160),
+    category: Optional[str] = Query(default=None, max_length=80),
+    platform: Optional[str] = Query(default=None, max_length=80),
+    brand: Optional[str] = Query(default=None, max_length=120),
+    license_type: Optional[str] = Query(default=None, max_length=80),
+    max_price: Optional[float] = Query(default=None, ge=0, le=1000000),
+    min_price: Optional[float] = Query(default=None, ge=0, le=1000000),
+    need: Optional[str] = Query(default=None, max_length=80),
+    sort: str = Query(default="featured", pattern="^(featured|price_asc|price_desc|name)$"),
+    limit: int = Query(default=100, ge=1, le=500),
 ):
     items = storefront_products()
     if q:
@@ -432,7 +539,8 @@ async def orders_quote(payload: dict = Body(...)):
 
 
 @api_router.post("/orders", response_model=OrderResponse)
-async def create_order(order: OrderCreate):
+async def create_order(order: OrderCreate, request: Request):
+    enforce_rate_limit(request, "orders", limit=10, window_seconds=600)
     # ---- Server-authoritative validation ----
     if not order.consent.accept_terms:
         raise HTTPException(status_code=400, detail="Devi accettare i Termini di vendita.")
@@ -476,10 +584,12 @@ async def create_order(order: OrderCreate):
 
     total = round(subtotal, 2)
     ref = "LP-" + uuid.uuid4().hex[:8].upper()
+    access_token = issue_order_token()
 
     demo = not COMMERCE_ENABLED
     initial_status = "demo_confirmed" if demo else "pending_payment"
 
+    await verify_public_form("order", order.form_token, order.website)
     doc = {
         "id": str(uuid.uuid4()),
         "reference": ref,
@@ -498,6 +608,7 @@ async def create_order(order: OrderCreate):
         "total_eur": total,
         "consent": order.consent.model_dump(),
         "idempotency_key": order.idempotency_key,
+        "access_token_hash": hash_order_token(access_token),
     }
     try:
         await db.orders.insert_one(doc)
@@ -532,14 +643,14 @@ async def create_order(order: OrderCreate):
         logging.exception("Transactional order-received email failed for %s", ref)
     return OrderResponse(
         id=doc["id"], reference=ref, created_at=doc["created_at"],
-        status=initial_status, demo=demo, total_eur=total,
+        status=initial_status, demo=demo, total_eur=total, access_token=access_token,
     )
 
 
 @api_router.get("/orders/{reference}", response_model=OrderResponse)
-async def get_order(reference: str):
+async def get_order(reference: str, x_order_token: Optional[str] = Header(default=None, alias="X-Order-Token")):
     doc = await db.orders.find_one({"reference": reference}, {"_id": 0})
-    if not doc:
+    if not doc or not verify_order_token(x_order_token, doc.get("access_token_hash")):
         raise HTTPException(status_code=404, detail="Order not found")
     return OrderResponse(
         id=doc["id"], reference=doc["reference"],
@@ -549,11 +660,13 @@ async def get_order(reference: str):
 
 
 @api_router.post("/support")
-async def create_support_message(msg: SupportMessage):
+async def create_support_message(msg: SupportMessage, request: Request):
+    enforce_rate_limit(request, "support", limit=5, window_seconds=600)
+    await verify_public_form("support", msg.form_token, msg.website)
     doc = {
         "id": str(uuid.uuid4()),
         "created_at": datetime.now(timezone.utc).isoformat(),
-        **msg.model_dump(),
+        **msg.model_dump(exclude={"form_token", "website"}),
     }
     await db.support_messages.insert_one(doc)
     return {"ok": True, "id": doc["id"]}
@@ -596,7 +709,8 @@ async def bundle_preset_nuovo_pc():
 
 
 @api_router.post("/bundle/preview")
-async def bundle_preview(req: BundlePreviewRequest):
+async def bundle_preview(req: BundlePreviewRequest, request: Request):
+    enforce_rate_limit(request, "bundle-preview", limit=60, window_seconds=60)
     lines = []
     subtotal = 0.0
     for sel in req.selections:
@@ -662,21 +776,27 @@ async def public_page(slug: str):
 
 
 class TrackEvent(BaseModel):
-    visitor_id: str
-    session_id: Optional[str] = None
-    event_type: str  # page_view | product_view | add_to_cart | checkout_start | order_confirmed | custom
-    path: Optional[str] = None
-    referrer: Optional[str] = None
-    product_slug: Optional[str] = None
-    device_type: Optional[str] = None  # mobile | tablet | desktop
-    language: Optional[str] = None
-    value_eur: Optional[float] = None
+    visitor_id: str = Field(min_length=1, max_length=128)
+    session_id: Optional[str] = Field(default=None, max_length=128)
+    event_type: str = Field(min_length=1, max_length=64)
+    path: Optional[str] = Field(default=None, max_length=500)
+    referrer: Optional[str] = Field(default=None, max_length=1000)
+    product_slug: Optional[str] = Field(default=None, max_length=160)
+    device_type: Optional[str] = Field(default=None, max_length=32)
+    language: Optional[str] = Field(default=None, max_length=5)
+    value_eur: Optional[float] = Field(default=None, ge=0, le=1000000)
     extra: Optional[dict] = None
     analytics_consent: bool = False
 
 
 @app.post("/api/analytics/track")
 async def analytics_track(evt: TrackEvent, request: Request):
+    enforce_rate_limit(request, "analytics", limit=120, window_seconds=60)
+    allowed_events = {"page_view", "product_view", "add_to_cart", "checkout_start", "order_confirmed", "custom"}
+    if evt.event_type not in allowed_events:
+        raise HTTPException(status_code=400, detail="Unsupported analytics event")
+    if evt.extra is not None and len(json.dumps(evt.extra, ensure_ascii=False)) > 4000:
+        raise HTTPException(status_code=413, detail="Analytics payload too large")
     doc = evt.model_dump()
     ref = doc.get("referrer") or ""
     try:
@@ -692,18 +812,23 @@ async def analytics_track(evt: TrackEvent, request: Request):
     return {"ok": True, "stored": True}
 
 
+_cors_origins = cors_origins()
 app.add_middleware(
     CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=cors_origins() or ["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_credentials="*" not in _cors_origins,
+    allow_origins=_cors_origins,
+    allow_methods=["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type", "X-Order-Token", "Idempotency-Key"],
 )
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 
 @app.on_event("shutdown")
 async def shutdown_db_client():
+    task = getattr(app.state, "backup_task", None)
+    if task:
+        task.cancel()
+        with contextlib.suppress(asyncio.CancelledError):
+            await task
     client.close()

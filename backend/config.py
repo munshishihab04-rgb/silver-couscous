@@ -7,7 +7,13 @@ Rules enforced here:
 """
 
 import os
+from pathlib import Path
 from typing import List
+from urllib.parse import urlparse
+
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
 
 APP_ENV = (os.environ.get("APP_ENV") or "development").lower().strip()
@@ -24,6 +30,7 @@ if CATALOG_PREVIEW_SCOPE not in {"all", "market"}:
 
 JWT_SECRET = os.environ.get("JWT_SECRET", "")
 LICENSE_KEY_ENCRYPTION_KEY = os.environ.get("LICENSE_KEY_ENCRYPTION_KEY", "")
+BACKUP_ENCRYPTION_KEY = os.environ.get("BACKUP_ENCRYPTION_KEY", "")
 
 # Brevo
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
@@ -43,6 +50,19 @@ NEXI_TERMINAL_ID = os.environ.get("NEXI_TERMINAL_ID", "")
 NEXI_PUBLIC_API_URL = (os.environ.get("NEXI_PUBLIC_API_URL") or PUBLIC_SITE_URL or "").rstrip("/")
 
 CORS_ORIGINS_RAW = os.environ.get("CORS_ORIGINS", "*")
+ALLOWED_HOSTS_RAW = os.environ.get("ALLOWED_HOSTS", "")
+
+
+def allowed_hosts() -> List[str]:
+    hosts = [host.strip() for host in ALLOWED_HOSTS_RAW.split(",") if host.strip()]
+    if PUBLIC_SITE_URL:
+        public_host = urlparse(PUBLIC_SITE_URL).hostname
+        if public_host and public_host not in hosts:
+            hosts.append(public_host)
+    for local in ("127.0.0.1", "localhost", "testserver"):
+        if local not in hosts:
+            hosts.append(local)
+    return hosts
 
 
 def cors_origins() -> List[str]:
@@ -64,6 +84,8 @@ def validate_production_startup() -> List[str]:
         missing.append("PUBLIC_SITE_URL")
     if not JWT_SECRET or len(JWT_SECRET) < 32:
         missing.append("JWT_SECRET (>=32 chars)")
+    if not BACKUP_ENCRYPTION_KEY:
+        missing.append("BACKUP_ENCRYPTION_KEY")
     if COMMERCE_ENABLED and not NEXI_API_KEY:
         missing.append("NEXI_API_KEY")
     if COMMERCE_ENABLED and not LICENSE_KEY_ENCRYPTION_KEY:
@@ -72,6 +94,8 @@ def validate_production_startup() -> List[str]:
         missing.append("BREVO_API_KEY")
     if cors_origins() == []:
         missing.append("CORS_ORIGINS (specific hosts)")
+    if not allowed_hosts() or "*" in allowed_hosts():
+        missing.append("ALLOWED_HOSTS (specific hosts)")
     return missing
 
 

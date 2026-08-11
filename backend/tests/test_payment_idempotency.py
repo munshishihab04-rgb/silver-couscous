@@ -9,8 +9,21 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import pytest
 
 import payments
-from payments import can_transition, claim_fulfillment, claim_payment_initialization, reset_payment_initialization, should_finalize_delivery, should_initialize_payment
+from payments import can_transition, claim_fulfillment, claim_payment_initialization, reset_payment_initialization, sanitize_psp_operation, should_finalize_delivery, should_initialize_payment
 from services import license_inventory
+from order_access import hash_order_token
+
+
+def test_psp_event_persistence_discards_sensitive_provider_fields():
+    sanitized = sanitize_psp_operation({
+        "orderId": "ORD-1",
+        "operationId": "OP-1",
+        "operationResult": "AUTHORIZED",
+        "cardNumber": "4111111111111111",
+        "securityToken": "secret",
+        "customerEmail": "customer@example.com",
+    })
+    assert sanitized == {"orderId": "ORD-1", "operationId": "OP-1", "operationResult": "AUTHORIZED"}
 
 
 def test_payment_initialization_is_idempotent_after_first_attempt():
@@ -100,12 +113,13 @@ def test_provider_failure_releases_inventory_and_resets_payment_claim(monkeypatc
             await db.orders.insert_one({
                 "reference": "ORD-FAIL",
                 "status": "draft",
+                "access_token_hash": hash_order_token("order-token"),
                 "items": [{"sku": "LP-PAY", "quantity": 1, "product_name": "Office"}],
                 "total_eur": 10.0,
             })
             request = SimpleNamespace(app=SimpleNamespace(state=SimpleNamespace(db=db)))
             with pytest.raises(HTTPException) as exc:
-                await payments.create_payment_for_order("ORD-FAIL", request)
+                await payments.create_payment_for_order("ORD-FAIL", request, "order-token")
             assert exc.value.status_code == 502
             assert (await db.orders.find_one({"reference": "ORD-FAIL"}))["status"] == "draft"
             assert (await db.license_keys.find_one({"sku": "LP-PAY"}))["status"] == "available"

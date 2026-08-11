@@ -1,6 +1,7 @@
 """JWT auth for LicenzPol admin panel — bcrypt hashing, Bearer tokens."""
 
 import os
+import uuid
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 
@@ -9,7 +10,7 @@ import jwt
 from fastapi import Header, HTTPException, Request
 
 JWT_ALG = "HS256"
-ACCESS_TTL_HOURS = 24
+ACCESS_TTL_MINUTES = int(os.environ.get("JWT_ACCESS_TTL_MINUTES", "240"))
 LOCKOUT_ATTEMPTS = 5
 LOCKOUT_MINUTES = 15
 
@@ -29,10 +30,11 @@ def verify_password(plain: str, hashed: str) -> bool:
         return False
 
 
-def create_access_token(user_id: str, email: str, role: str = "admin") -> str:
+def create_access_token(user_id: str, email: str, role: str = "admin", token_version: int = 0) -> str:
     payload = {
         "sub": user_id, "email": email, "role": role, "type": "access",
-        "exp": datetime.now(timezone.utc) + timedelta(hours=ACCESS_TTL_HOURS),
+        "ver": token_version, "jti": uuid.uuid4().hex,
+        "exp": datetime.now(timezone.utc) + timedelta(minutes=ACCESS_TTL_MINUTES),
         "iat": datetime.now(timezone.utc),
     }
     return jwt.encode(payload, _secret(), algorithm=JWT_ALG)
@@ -50,20 +52,18 @@ async def seed_admin(db):
     if existing is None:
         await db.admin_users.insert_one({
             "email": email, "password_hash": hash_password(pwd),
-            "name": "Admin", "role": "admin",
+            "name": "Admin", "role": "admin", "token_version": 0,
             "created_at": datetime.now(timezone.utc).isoformat(),
         })
-    elif not verify_password(pwd, existing.get("password_hash", "")):
-        await db.admin_users.update_one(
-            {"email": email},
-            {"$set": {"password_hash": hash_password(pwd)}},
-        )
 
 
 async def ensure_indexes(db):
     await db.admin_users.create_index("email", unique=True)
     await db.login_attempts.create_index("identifier")
-    await db.login_attempts.create_index("ts")
+    login_indexes = await db.login_attempts.index_information()
+    if "ts_1" in login_indexes and login_indexes["ts_1"].get("expireAfterSeconds") != 86400:
+        await db.login_attempts.drop_index("ts_1")
+    await db.login_attempts.create_index("ts", expireAfterSeconds=86400)
     await db.analytics_events.create_index([("ts", -1)])
     await db.analytics_events.create_index("event_type")
     await db.analytics_events.create_index("visitor_id")
@@ -72,12 +72,12 @@ async def ensure_indexes(db):
 async def bump_failed(db, identifier: str):
     await db.login_attempts.insert_one({
         "identifier": identifier,
-        "ts": datetime.now(timezone.utc).isoformat(),
+        "ts": datetime.now(timezone.utc),
     })
 
 
 async def is_locked(db, identifier: str) -> bool:
-    cutoff = (datetime.now(timezone.utc) - timedelta(minutes=LOCKOUT_MINUTES)).isoformat()
+    cutoff = datetime.now(timezone.utc) - timedelta(minutes=LOCKOUT_MINUTES)
     count = await db.login_attempts.count_documents(
         {"identifier": identifier, "ts": {"$gt": cutoff}}
     )
@@ -122,6 +122,8 @@ async def current_admin(request: Request, authorization: Optional[str] = Header(
     user = await db.admin_users.find_one({"_id": oid})
     if not user:
         raise HTTPException(status_code=401, detail="User not found")
+    if int(payload.get("ver", -1)) != int(user.get("token_version", 0)):
+        raise HTTPException(status_code=401, detail="Token revoked")
     user["_id"] = str(user["_id"])
     user.pop("password_hash", None)
     return user

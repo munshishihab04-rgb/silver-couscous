@@ -4,6 +4,7 @@ Products, customers, tickets, pages (CMS), settings, users, analytics.
 """
 
 from datetime import datetime, timedelta, timezone
+import re
 from typing import Optional, List
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Body, Query
@@ -13,6 +14,7 @@ from auth import (
     verify_password, hash_password, create_access_token,
     is_locked, bump_failed, clear_attempts, current_admin,
 )
+from security import client_identifier
 
 admin_router = APIRouter(prefix="/api/admin")
 
@@ -32,15 +34,15 @@ def _reload(req: Request):
 # ---------- Auth ------------------------------------------------------------
 
 class LoginBody(BaseModel):
-    email: str
-    password: str
+    email: str = Field(min_length=3, max_length=254)
+    password: str = Field(min_length=1, max_length=256)
 
 
 @admin_router.post("/auth/login")
 async def admin_login(body: LoginBody, request: Request):
     db = _db(request)
     email = body.email.strip().lower()
-    ip = request.client.host if request.client else "unknown"
+    ip = client_identifier(request)
     ident = f"{ip}:{email}"
     if await is_locked(db, ident):
         raise HTTPException(status_code=429, detail="Too many attempts, retry later.")
@@ -50,7 +52,7 @@ async def admin_login(body: LoginBody, request: Request):
         raise HTTPException(status_code=401, detail="Credenziali non valide.")
     await clear_attempts(db, ident)
     uid = str(user["_id"])
-    token = create_access_token(uid, email, user.get("role", "admin"))
+    token = create_access_token(uid, email, user.get("role", "admin"), int(user.get("token_version", 0)))
     return {
         "token": token,
         "user": {"id": uid, "email": email, "name": user.get("name", ""), "role": user.get("role", "admin")},
@@ -62,12 +64,33 @@ async def admin_me(user=Depends(current_admin)):
     return {"user": {"id": user["_id"], "email": user["email"], "name": user.get("name", ""), "role": user.get("role", "admin")}}
 
 
+class ChangePasswordBody(BaseModel):
+    current_password: str = Field(min_length=1, max_length=256)
+    new_password: str = Field(min_length=12, max_length=256)
+
+
+@admin_router.post("/auth/change-password")
+async def change_admin_password(body: ChangePasswordBody, request: Request, user=Depends(current_admin)):
+    from bson import ObjectId
+    db = _db(request)
+    saved = await db.admin_users.find_one({"_id": ObjectId(user["_id"])})
+    if not saved or not verify_password(body.current_password, saved.get("password_hash", "")):
+        raise HTTPException(status_code=401, detail="Password corrente non valida.")
+    if verify_password(body.new_password, saved.get("password_hash", "")):
+        raise HTTPException(status_code=400, detail="La nuova password deve essere diversa.")
+    await db.admin_users.update_one(
+        {"_id": saved["_id"]},
+        {"$set": {"password_hash": hash_password(body.new_password)}, "$inc": {"token_version": 1}},
+    )
+    return {"ok": True, "reauthenticate": True}
+
+
 # ---------- Admin users management -------------------------------------------
 
 class AdminUserCreate(BaseModel):
-    email: str
-    password: str
-    name: str = ""
+    email: str = Field(min_length=3, max_length=254)
+    password: str = Field(min_length=12, max_length=256)
+    name: str = Field(default="", max_length=100)
 
 
 @admin_router.get("/users")
@@ -91,7 +114,7 @@ async def create_admin(body: AdminUserCreate, request: Request, user=Depends(cur
         raise HTTPException(status_code=409, detail="Email già registrata.")
     doc = {
         "email": email, "password_hash": hash_password(body.password),
-        "name": body.name or "Admin", "role": "admin",
+        "name": body.name or "Admin", "role": "admin", "token_version": 0,
         "created_at": datetime.now(timezone.utc).isoformat(),
     }
     res = await db.admin_users.insert_one(doc)
@@ -170,20 +193,21 @@ class ProductWrite(BaseModel):
 @admin_router.get("/products")
 async def admin_products(
     request: Request,
-    q: Optional[str] = None,
-    category: Optional[str] = None,
-    brand: Optional[str] = None,
-    limit: int = 500,
-    skip: int = 0,
+    q: Optional[str] = Query(default=None, max_length=160),
+    category: Optional[str] = Query(default=None, max_length=80),
+    brand: Optional[str] = Query(default=None, max_length=120),
+    limit: int = Query(default=500, ge=1, le=1000),
+    skip: int = Query(default=0, ge=0, le=100000),
     user=Depends(current_admin),
 ):
     db = _db(request)
     query = {}
     if q:
+        safe_q = re.escape(q[:160])
         query["$or"] = [
-            {"name": {"$regex": q, "$options": "i"}},
-            {"brand": {"$regex": q, "$options": "i"}},
-            {"slug": {"$regex": q, "$options": "i"}},
+            {"name": {"$regex": safe_q, "$options": "i"}},
+            {"brand": {"$regex": safe_q, "$options": "i"}},
+            {"slug": {"$regex": safe_q, "$options": "i"}},
         ]
     if category:
         query["category"] = category

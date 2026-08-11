@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import logging
 from datetime import datetime, timezone
-from fastapi import APIRouter, HTTPException, Request, Body
+from fastapi import APIRouter, HTTPException, Request, Body, Header
 from pymongo import ReturnDocument
 from pymongo.errors import DuplicateKeyError
 
@@ -22,6 +22,7 @@ from services.email_brevo import (
     pdf_attachment,
 )
 from config import COMMERCE_ENABLED
+from order_access import verify_order_token
 
 log = logging.getLogger("licenzpol.payments")
 payments_router = APIRouter(prefix="/api/payments")
@@ -56,6 +57,15 @@ _ALLOWED_TRANSITIONS = {
 
 def can_transition(current: str | None, target: str | None) -> bool:
     return bool(current and target and target in _ALLOWED_TRANSITIONS.get(current, set()))
+
+
+def sanitize_psp_operation(operation: dict) -> dict:
+    allowed = ("orderId", "operationId", "operationResult", "operationType")
+    return {
+        key: str(operation[key])[:160]
+        for key in allowed
+        if operation.get(key) is not None
+    }
 
 
 async def claim_fulfillment(db, order_reference: str):
@@ -118,7 +128,11 @@ async def _queue_order_email(db, order: dict, *, template: str, suffix: str, sup
 # ---------- Create HPP -----------------------------------------------------
 
 @payments_router.post("/create/{order_reference}")
-async def create_payment_for_order(order_reference: str, request: Request):
+async def create_payment_for_order(
+    order_reference: str,
+    request: Request,
+    x_order_token: Optional[str] = Header(default=None, alias="X-Order-Token"),
+):
     """Given a previously-created order, initialize a Nexi HPP session and
     return the hostedPage URL for the client to redirect to."""
     if not COMMERCE_ENABLED:
@@ -128,7 +142,7 @@ async def create_payment_for_order(order_reference: str, request: Request):
 
     db = _db(request)
     order = await db.orders.find_one({"reference": order_reference})
-    if not order:
+    if not order or not verify_order_token(x_order_token, order.get("access_token_hash")):
         raise HTTPException(status_code=404, detail="Ordine non trovato.")
     if not should_initialize_payment(order):
         return {
@@ -205,6 +219,7 @@ async def create_payment_for_order(order_reference: str, request: Request):
     )
     if transition.modified_count != 1:
         await license_inventory.release_reservation(db, order_reference)
+        await reset_payment_initialization(db, order_reference, original_status)
         raise HTTPException(status_code=409, detail="Inizializzazione pagamento concorrente; operazione bloccata.")
     return {
         "hosted_page": session["hostedPage"],
@@ -228,6 +243,9 @@ async def nexi_webhook(request: Request, body: dict = Body(...)):
 
     if not order_id or not event_id or not supplied_token:
         raise HTTPException(status_code=400, detail="Malformed notification.")
+    if len(str(order_id)) > 160 or len(str(event_id)) > 160 or len(str(supplied_token)) > 512:
+        raise HTTPException(status_code=400, detail="Malformed notification.")
+    order_id, event_id, supplied_token = str(order_id), str(event_id), str(supplied_token)
 
     saved = await db.orders.find_one({"psp_order_id": order_id})
     if not saved:
@@ -249,7 +267,7 @@ async def nexi_webhook(request: Request, body: dict = Body(...)):
         await db.psp_events.insert_one({
             "event_id": event_id,
             "order_reference": saved["reference"],
-            "operation": operation,
+            "operation": sanitize_psp_operation(operation),
             "received_at": datetime.now(timezone.utc).isoformat(),
         })
     except DuplicateKeyError:
@@ -291,10 +309,14 @@ async def nexi_webhook(request: Request, body: dict = Body(...)):
 # ---------- Status query ---------------------------------------------------
 
 @payments_router.get("/status/{order_reference}")
-async def payment_status(order_reference: str, request: Request):
+async def payment_status(
+    order_reference: str,
+    request: Request,
+    x_order_token: Optional[str] = Header(default=None, alias="X-Order-Token"),
+):
     db = _db(request)
     order = await db.orders.find_one({"reference": order_reference})
-    if not order:
+    if not order or not verify_order_token(x_order_token, order.get("access_token_hash")):
         raise HTTPException(status_code=404, detail="Ordine non trovato.")
     # If we've got a PSP order id, re-query authoritatively.
     psp_status = None

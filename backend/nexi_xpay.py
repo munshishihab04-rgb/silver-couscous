@@ -121,12 +121,11 @@ async def create_hosted_payment(
             resp = await client.post(f"{base_url()}/orders/hpp",
                                      headers=_headers(), json=payload)
     except httpx.HTTPError as e:
-        log.error("nexi network error: %s", e)
-        raise NexiError(f"Network error contacting Nexi: {e}")
+        log.error("nexi network error (%s)", type(e).__name__)
+        raise NexiError("Nexi network error") from e
 
     if resp.is_error:
-        # Log full body server-side (safe, no key), redact from response
-        log.error("nexi hpp %s: %s", resp.status_code, resp.text[:800])
+        log.error("nexi hpp request failed with HTTP %s", resp.status_code)
         raise NexiError(f"Nexi HTTP {resp.status_code}")
 
     data = resp.json()
@@ -152,9 +151,10 @@ async def query_order(order_id: str) -> Dict[str, Any]:
             resp = await client.get(f"{base_url()}/orders/{order_id}",
                                     headers=_headers())
     except httpx.HTTPError as e:
-        raise NexiError(f"Network error querying Nexi: {e}")
+        log.warning("nexi query network error (%s)", type(e).__name__)
+        raise NexiError("Network error querying Nexi") from e
     if resp.is_error:
-        log.warning("nexi query %s: %s", resp.status_code, resp.text[:500])
+        log.warning("nexi query failed with HTTP %s", resp.status_code)
         raise NexiError(f"Nexi HTTP {resp.status_code}")
     return resp.json()
 

@@ -69,8 +69,8 @@ async def send_email(
         async with httpx.AsyncClient(timeout=timeout) as client:
             resp = await client.post(BREVO_URL, headers=headers, json=payload)
     except httpx.HTTPError as e:
-        log.error("Brevo network error: %s", e)
-        raise BrevoError(f"Network error contacting Brevo: {e}")
+        log.error("Brevo network error (%s)", type(e).__name__)
+        raise BrevoError("Brevo network error") from e
 
     if resp.status_code >= 400:
         # Never log API keys, recipients, payloads or provider response bodies.

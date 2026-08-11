@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLang } from "../lib/i18n";
 import { api } from "../lib/api";
 import { toast } from "sonner";
@@ -6,17 +6,27 @@ import { Mail, MessageSquare, Clock } from "lucide-react";
 
 export default function Support() {
   const { lang, t } = useLang();
-  const [form, setForm] = useState({ email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ email: "", subject: "", message: "", website: "" });
   const [sending, setSending] = useState(false);
+  const [formToken, setFormToken] = useState("");
+
+  useEffect(() => {
+    api.formChallenge("support").then(d => setFormToken(d.token)).catch(() => setFormToken(""));
+  }, []);
 
   const submit = async (e) => {
     e.preventDefault();
     setSending(true);
     try {
-      await api.support({ ...form, language: lang });
+      await api.support({ ...form, language: lang, form_token: formToken });
       toast.success(t.support.sent);
-      setForm({ email: "", subject: "", message: "" });
-    } catch { toast.error("Error"); }
+      setForm({ email: "", subject: "", message: "", website: "" });
+      const next = await api.formChallenge("support");
+      setFormToken(next.token);
+    } catch {
+      api.formChallenge("support").then(d => setFormToken(d.token)).catch(() => setFormToken(""));
+      toast.error("Error");
+    }
     finally { setSending(false); }
   };
 
@@ -57,7 +67,17 @@ export default function Support() {
             <textarea data-testid="support-message" required rows={6} value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
               className="w-full bg-black border border-white/10 rounded-md px-3 py-2.5 text-white focus:outline-none focus:border-white/30" />
           </label>
-          <button data-testid="support-send" disabled={sending} className="pill-btn bg-white text-black hover:bg-zinc-200 w-full disabled:opacity-50">
+          <input
+            type="text"
+            name="website"
+            value={form.website}
+            onChange={e => setForm({ ...form, website: e.target.value })}
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            className="hidden"
+          />
+          <button data-testid="support-send" disabled={sending || !formToken} className="pill-btn bg-white text-black hover:bg-zinc-200 w-full disabled:opacity-50">
             {sending ? "..." : t.support.send}
           </button>
         </form>

@@ -67,7 +67,17 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Stato esterno reale: 0 chiavi importate e Brevo non configurato; attivazione commerciale resta bloccata fino alla fornitura delle chiavi e delle credenziali.
   - Workflow operativo: `docs/INVENTORY_EMAIL_WORKFLOW.md`.
   - Verifica: 70 test backend locali passati, 10 test frontend passati, build completata e QA locale/pubblico superato.
-- [ ] **Fase 7 — Sicurezza, test e infrastruttura**
+- [x] **Fase 7 — Sicurezza, test e infrastruttura** — hardening completato in modalità fail-closed
+  - Header CSP/nosniff/frame/referrer/permissions/COOP; HSTS esclusivamente in produzione HTTPS persistente.
+  - Trusted Host, CORS ristretto, limiti payload/input/query e rate limiting sulle superfici pubbliche sensibili.
+  - Challenge HMAC time-bound e honeypot su supporto/checkout; token ordine customer-scoped conservato solo come hash.
+  - JWT amministrativi a durata ridotta, `jti`, `token_version`, revoca al cambio password e lockout con TTL.
+  - Webhook PSP idempotenti e sanitizzati; nessun payload completo provider persistito o loggato.
+  - Logging JSON con correlation ID ed errori pubblici controllati.
+  - Health/liveness con ping MongoDB.
+  - Backup MongoDB cifrato, retention 14 copie, scheduler giornaliero single-instance e restore isolato verificato su 10 collezioni/529 documenti.
+  - Documentazione: `docs/SECURITY_HARDENING.md` e `docs/BACKUP_RESTORE.md`.
+  - Verifica: 79 test backend, 10 test frontend, build, compilazione e QA locale/pubblico completati.
 - [ ] **Fase 8 — Dominio definitivo e soft launch**
 - [ ] **Fase 9 — Pagamento Nexi con l'utente**
 - [ ] **Fase 10 — Google Merchant Center**

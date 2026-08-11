@@ -56,7 +56,10 @@ export function CheckoutResult() {
   useEffect(() => {
     let cancelled = false;
     const load = () => {
-      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/status/${orderId}`)
+      const token = sessionStorage.getItem(`licenzpol_order_token_${orderId}`) || "";
+      fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/status/${orderId}`, {
+        headers: { "X-Order-Token": token },
+      })
         .then(r => r.json())
         .then(d => { if (!cancelled) setState({ ...d, loading: false }); })
         .catch(() => { if (!cancelled) setState({ status: "pending_payment", loading: false }); });

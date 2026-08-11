@@ -17,6 +17,8 @@ export default function Checkout() {
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(false);
   const [payConfig, setPayConfig] = useState({ commerce_enabled: false, psp: null });
+  const [formToken, setFormToken] = useState("");
+  const [website, setWebsite] = useState("");
 
   useEffect(() => {
     if (items.length > 0 && !order) {
@@ -25,6 +27,7 @@ export default function Checkout() {
     // Fetch server payments config
     fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/config`)
       .then(r => r.json()).then(setPayConfig).catch(() => {});
+    api.formChallenge("order").then(d => setFormToken(d.token)).catch(() => setFormToken(""));
     // eslint-disable-next-line
   }, []);
 
@@ -47,8 +50,13 @@ export default function Checkout() {
     }
     setLoading(true);
     try {
-      // Idempotency key: same cart+customer → same key across retries within 30 minutes
-      const idKey = `${form.email}-${Math.floor(Date.now() / (30 * 60 * 1000))}-${items.map(it => it.slug + it.variantId + it.qty).join("_")}`;
+      // Opaque idempotency key persisted for safe retries of this checkout attempt.
+      const idStorageKey = "licenzpol_checkout_idempotency";
+      let idKey = sessionStorage.getItem(idStorageKey);
+      if (!idKey) {
+        idKey = window.crypto?.randomUUID?.() || `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+        sessionStorage.setItem(idStorageKey, idKey);
+      }
       const payload = {
         email: form.email, first_name: form.first_name, last_name: form.last_name,
         country: form.country, company: form.company || null, vat: form.vat || null,
@@ -64,14 +72,22 @@ export default function Checkout() {
           consent_version: "2026-08-11",
         },
         idempotency_key: idKey,
+        form_token: formToken,
+        website,
       };
       const res = await api.createOrder(payload);
       setOrder(res);
+      if (res.access_token) {
+        sessionStorage.setItem(`licenzpol_order_token_${res.reference}`, res.access_token);
+      }
       trackEvent({ event_type: "order_confirmed", value_eur: res.total_eur, extra: { reference: res.reference } });
 
       // If commerce is enabled, redirect to Nexi HPP
       if (payConfig.commerce_enabled && payConfig.psp === "nexi") {
-        const payResp = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/create/${res.reference}`, { method: "POST" });
+        const payResp = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/create/${res.reference}`, {
+          method: "POST",
+          headers: { "X-Order-Token": res.access_token || "" },
+        });
         const payData = await payResp.json();
         if (!payResp.ok) {
           toast.error(payData.detail || "Errore avvio pagamento");
@@ -80,6 +96,7 @@ export default function Checkout() {
         }
         if (payData.hosted_page) {
           clear();
+          sessionStorage.removeItem("licenzpol_checkout_idempotency");
           window.location.href = payData.hosted_page;
           return;
         }
@@ -88,7 +105,9 @@ export default function Checkout() {
       // Otherwise (demo mode) go to confirmation step
       setStep(3);
       clear();
+      sessionStorage.removeItem("licenzpol_checkout_idempotency");
     } catch (e) {
+      api.formChallenge("order").then(d => setFormToken(d.token)).catch(() => setFormToken(""));
       toast.error(lang === "it" ? "Errore, riprova" : "Something went wrong, try again");
     } finally {
       setLoading(false);
@@ -196,9 +215,19 @@ export default function Checkout() {
                 </label>
               </div>
 
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={e => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <button onClick={() => setStep(1)} className="pill-btn border border-white/20 text-white hover:bg-white/5">Back</button>
-                <button data-testid="checkout-confirm-order" onClick={confirm} disabled={loading || !canPay}
+                <button data-testid="checkout-confirm-order" onClick={confirm} disabled={loading || !canPay || !formToken}
                   className="pill-btn bg-white text-black hover:bg-zinc-200 disabled:opacity-40">
                   {loading ? "..." : (payConfig.commerce_enabled ? (lang === "it" ? "Vai al pagamento" : "Go to payment") : t.checkout.pay)}
                 </button>
