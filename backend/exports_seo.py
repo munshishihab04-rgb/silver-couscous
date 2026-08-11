@@ -11,6 +11,8 @@ from xml.sax.saxutils import escape as xml_escape
 from fastapi import APIRouter, Depends, Request, Response, Query, HTTPException
 
 from auth import current_admin
+from config import APP_ENV
+from publication import is_public_offer
 
 
 exports_router = APIRouter(prefix="/api/admin/exports")
@@ -208,6 +210,23 @@ def _site_base_url(request: Request) -> str:
     return str(request.base_url).rstrip("/")
 
 
+def sitemap_product_query(app_env: str) -> dict:
+    return {"merchant_approved": True} if app_env == "production" else {"_id": {"$exists": False}}
+
+
+def robots_body(app_env: str, sitemap_url: str) -> str:
+    if app_env != "production":
+        return "User-agent: *\nDisallow: /\n"
+    return (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /admin\n"
+        "Disallow: /api/\n"
+        "Disallow: /checkout\n\n"
+        f"Sitemap: {sitemap_url}\n"
+    )
+
+
 @seo_router.get("/api/sitemap.xml", include_in_schema=False)
 @seo_router.get("/sitemap.xml", include_in_schema=False)
 async def sitemap_xml(request: Request):
@@ -247,8 +266,11 @@ async def sitemap_xml(request: Request):
     except Exception:
         pass
 
-    # Products from DB
-    async for p in db.products.find({}, {"slug": 1, "updated_at": 1}):
+    # Products from DB — candidates are narrowed in Mongo and verified through
+    # the same fail-closed gate used by storefront and Merchant feed.
+    async for p in db.products.find(sitemap_product_query(APP_ENV)):
+        if not is_public_offer(p):
+            continue
         slug = p.get("slug")
         if not slug:
             continue
@@ -264,6 +286,9 @@ async def sitemap_xml(request: Request):
         if not slug or slug in ("privacy", "terms", "cookies", "transparency"):
             continue
         add(f"/page/{slug}", "monthly", "0.4")
+
+    if APP_ENV != "production":
+        urls = []
 
     xml_parts = ['<?xml version="1.0" encoding="UTF-8"?>',
                  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
@@ -284,15 +309,8 @@ async def sitemap_xml(request: Request):
 
 
 @seo_router.get("/api/robots.txt", include_in_schema=False)
+@seo_router.get("/robots.txt", include_in_schema=False)
 async def robots_txt(request: Request):
     base = _site_base_url(request)
-    body = (
-        "User-agent: *\n"
-        "Allow: /\n"
-        "Disallow: /admin\n"
-        "Disallow: /api/\n"
-        "Disallow: /checkout\n"
-        "\n"
-        f"Sitemap: {base}/api/sitemap.xml\n"
-    )
+    body = robots_body(APP_ENV, f"{base}/sitemap.xml")
     return Response(content=body, media_type="text/plain; charset=utf-8")

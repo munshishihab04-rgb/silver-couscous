@@ -30,6 +30,7 @@ from config import (
 )
 from services import license_inventory
 from privacy import prepare_analytics_event
+from publication import filter_storefront_products
 
 
 BUNDLE_TIERS = [
@@ -88,8 +89,12 @@ api_router = APIRouter(prefix="/api")
 PRODUCTS: List[dict] = list(_CSV_PRODUCTS)
 
 
+def storefront_products() -> List[dict]:
+    return filter_storefront_products(PRODUCTS, APP_ENV)
+
+
 def get_product_by_slug(slug: str):
-    for p in PRODUCTS:
+    for p in storefront_products():
         if p["slug"] == slug:
             return p
     return None
@@ -194,7 +199,7 @@ async def list_products(
     sort: Optional[str] = "featured",
     limit: Optional[int] = 500,
 ):
-    items = list(PRODUCTS)
+    items = storefront_products()
     if q:
         needle = q.lower().strip()
         items = [p for p in items if needle in p["name"].lower()
@@ -245,14 +250,14 @@ async def related_products(slug: str, limit: int = 4):
     p = get_product_by_slug(slug)
     if not p:
         raise HTTPException(status_code=404, detail="Product not found")
-    same_cat = [x for x in PRODUCTS if x["category"] == p["category"] and x["slug"] != slug]
+    same_cat = [x for x in storefront_products() if x["category"] == p["category"] and x["slug"] != slug]
     same_cat.sort(key=lambda x: min(v["price_eur"] for v in x["variants"]))
     return same_cat[:limit]
 
 
 def _match_family_products(family):
     m = family.get("match", {})
-    items = list(PRODUCTS)
+    items = storefront_products()
     if family.get("brand"):
         items = [p for p in items if p["brand"].lower() == family["brand"].lower()]
     if m.get("category"):
@@ -522,7 +527,7 @@ async def bundle_config():
 @api_router.get("/bundle/preset/nuovo-pc")
 async def bundle_preset_nuovo_pc():
     """A curated 'Nuovo PC' preset: cheapest recent OS + Office + Security."""
-    from catalog import PRODUCTS as _P
+    _P = storefront_products()
 
     def pick_by(pred):
         candidates = [p for p in _P if pred(p)]

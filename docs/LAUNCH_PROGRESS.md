@@ -15,7 +15,14 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Staging `noindex,nofollow` e comunicazione pubblica pre-lancio.
   - Verifica: 6 test backend + 8 test frontend passati; build riuscita.
 
-- [ ] **Fase 2 — Gate produzione per catalogo, sitemap e feed Merchant**
+- [x] **Fase 2 — Gate produzione per catalogo, sitemap e feed Merchant**
+  - Un'unica regola fail-closed governa storefront, pagine prodotto, famiglie, correlati, sitemap e feed.
+  - In produzione sono pubblicabili solo offerte approvate con provenienza verificata, diritti immagine, prezzo di vendita, stock, SKU, disponibilità e identificatore valido.
+  - In staging i prodotti restano visibili per revisione ma sono marcati `purchasable=false`.
+  - Feed Merchant sempre vuoto fuori produzione.
+  - Sitemap staging vuota e `robots.txt` con `Disallow: /`.
+  - Prezzo pubblico delle offerte approvate deriva da `selling_price_eur`, non dal prezzo sorgente.
+  - Verifica: 18 test backend passati; build riuscita; QA locale e pubblico completato.
 - [ ] **Fase 3 — Bonifica dati prodotto e identificatori**
 - [ ] **Fase 4 — Provenienza e diritti immagini**
 - [ ] **Fase 5 — Catalogo pilota approvato**

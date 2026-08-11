@@ -13,6 +13,7 @@ from xml.sax.saxutils import escape as xml_escape
 from fastapi import APIRouter, Request, Response
 
 from config import PUBLIC_SITE_URL, is_production
+from publication import is_public_offer
 
 merchant_router = APIRouter()
 
@@ -26,17 +27,7 @@ def _site_base(request: Request) -> str:
 
 
 def _product_passes_gates(p: dict) -> bool:
-    if not p.get("merchant_approved"):
-        return False
-    if not p.get("image_rights_approved"):
-        return False
-    if (p.get("stock") or 0) <= 0:
-        return False
-    if not p.get("selling_price_eur"):
-        return False
-    if not p.get("sku"):
-        return False
-    return True
+    return is_public_offer(p)
 
 
 @merchant_router.get("/api/merchant/feed.xml", include_in_schema=False)
@@ -45,7 +36,8 @@ async def merchant_feed_xml(request: Request):
     db = request.app.state.db
 
     items_xml = []
-    async for p in db.products.find({"merchant_approved": True}):
+    query = {"merchant_approved": True} if is_production() else {"_id": {"$exists": False}}
+    async for p in db.products.find(query):
         if not _product_passes_gates(p):
             continue
         sku = p["sku"]
@@ -111,9 +103,10 @@ async def merchant_health(request: Request):
     db = request.app.state.db
     approved = await db.products.count_documents({"merchant_approved": True})
     feedable = 0
-    async for p in db.products.find({"merchant_approved": True}):
-        if p.get("stock", 0) > 0 and p.get("selling_price_eur") and p.get("sku") and p.get("image_rights_approved"):
-            feedable += 1
+    if is_production():
+        async for p in db.products.find({"merchant_approved": True}):
+            if is_public_offer(p):
+                feedable += 1
     return {
         "approved": approved,
         "feedable": feedable,

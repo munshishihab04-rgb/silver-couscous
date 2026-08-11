@@ -241,10 +241,12 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
     from config import BREVO_API_KEY
     db = _db(request)
     approved = await db.products.count_documents({"merchant_approved": True})
-    feedable = await db.products.count_documents({
-        "merchant_approved": True, "image_rights_approved": True,
-        "selling_price_eur": {"$ne": None}, "stock": {"$gt": 0},
-    })
+    feedable = 0
+    if is_production():
+        from publication import is_public_offer
+        async for product in db.products.find({"merchant_approved": True}):
+            if is_public_offer(product):
+                feedable += 1
     return {
         "app_env": APP_ENV,
         "commerce_enabled": COMMERCE_ENABLED,
