@@ -1622,38 +1622,44 @@
   "bitdefender-antivirus-plus-5-pc-1-anno": {
     "sku": "LP-4658127DB8",
     "asset_path": "/products/bitdefender-antivirus-plus-5-pc-1-anno.webp",
-    "sha256": "1378e18011599ee212744b79c7ceebd87f5192c34e96fe804f17b9eed20901cb",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "5f0bb79b759cfd3385503c0409f49412a709b1a0060caccf92268dba9f6b81c1",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "bitdefender-antivirus-plus-3-pc-1-anno": {
     "sku": "LP-3DB860281B",
     "asset_path": "/products/bitdefender-antivirus-plus-3-pc-1-anno.webp",
-    "sha256": "1378e18011599ee212744b79c7ceebd87f5192c34e96fe804f17b9eed20901cb",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "1bc230f8787e6100aeb703a8c80352b054537cf1210b55e110a76d12ea81296c",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "bitdefender-antivirus-plus-1-pc-1-anno": {
     "sku": "LP-33681D89CA",
     "asset_path": "/products/bitdefender-antivirus-plus-1-pc-1-anno.webp",
-    "sha256": "1378e18011599ee212744b79c7ceebd87f5192c34e96fe804f17b9eed20901cb",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "995ef4e9f511af41ebabae1f822bff32a077f4bb2a27993b06c054e4ad053717",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "bitdefender-total-security-vpn-premium-licenza-10-dispositivi-1-anno": {
     "sku": "LP-B52AA43ABE",
@@ -1694,38 +1700,44 @@
   "bitdefender-total-security-licenza-10-dispositivi-1-anno": {
     "sku": "LP-E36877D5E0",
     "asset_path": "/products/bitdefender-total-security-licenza-10-dispositivi-1-anno.webp",
-    "sha256": "02f9360cc041b3f09d40005cebf20f942fb7174a46930bca890620f8e9f375c8",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "71997a181daac73fd48d32432aaa411eaeb8e9fcb459250dec843dfb8f8188fa",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "bitdefender-total-security-licenza-5-dispositivi-1-anno": {
     "sku": "LP-114547D492",
     "asset_path": "/products/bitdefender-total-security-licenza-5-dispositivi-1-anno.webp",
-    "sha256": "02f9360cc041b3f09d40005cebf20f942fb7174a46930bca890620f8e9f375c8",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "14d0ab7c96426d375ee8db69edac4c0b4a3dcbf778f3657fe92450cdada284e5",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "bitdefender-total-security-licenza-3-dispositivi-1-anno": {
     "sku": "LP-24E0D3403E",
     "asset_path": "/products/bitdefender-total-security-licenza-3-dispositivi-1-anno.webp",
-    "sha256": "02f9360cc041b3f09d40005cebf20f942fb7174a46930bca890620f8e9f375c8",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "68c3d0c9058d39a236a1fad98aea1dd4c551928153cf7e7ac7d8be9100ea5fa4",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "bitdefender-internet-security-licenza-5-pc-1-anno": {
     "sku": "LP-55C835ED67",
@@ -1898,26 +1910,30 @@
   "microsoft-windows-11-professional": {
     "sku": "LP-E18A63310E",
     "asset_path": "/products/microsoft-windows-11-professional.webp",
-    "sha256": "928462c7d63adbe16fc1b32b64aaedf5faa2e98dd7cda18274fd027efe4e4fb9",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "231acc8ef1f8e6677b8f00e4f288df852d8cc3a9a802f492c1266f0a4d5db777",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "microsoft-windows-11-home": {
     "sku": "LP-EB0F2F2081",
     "asset_path": "/products/microsoft-windows-11-home.webp",
-    "sha256": "296cada500272c245b7dbaa9a9104b73f695531a14c0b859ed2d915930c204ae",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "a89c9cada41c40c65b7619bbd4ef92e223f3f9f4ff19fd969940b017c214e357",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "microsoft-windows-11-enterprise": {
     "sku": "LP-2651C6AC17",
@@ -3122,26 +3138,30 @@
   "microsoft-office-2024-home-and-business-mac": {
     "sku": "LP-6A2F0E2B49",
     "asset_path": "/products/microsoft-office-2024-home-and-business-mac.webp",
-    "sha256": "0318f6cb17f6cc14a338e1b448258ab43ca07a33d509e2469df99f1a39dd9247",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "7f445fdc9c1d00ddfeff72086a284d083d01035b35eb88e94ba239e736b0cd68",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "microsoft-office-2024-home-and-business-windows": {
     "sku": "LP-0D2EA57ECC",
     "asset_path": "/products/microsoft-office-2024-home-and-business-windows.webp",
-    "sha256": "c42fc4fa5491bfd987a5ea960dbd67f2ab0fb6b4a5b23631f1d0235da5fdd93d",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "5b13aa03cce6a6579e4090608b1eadabd4ba1353fd4c20789df84b74050289f1",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/pilot-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
   },
   "microsoft-windows-server-2025-standard": {
     "sku": "LP-816F69E65B",

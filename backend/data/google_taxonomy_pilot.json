@@ -1,0 +1,28 @@
+{
+  "source": {
+    "publisher": "Google",
+    "url": "https://www.google.com/basepages/producttype/taxonomy-with-ids.en-US.txt",
+    "retrieved_at": "2026-08-11",
+    "sha256": "30039729880ec5ac4851de088ad228a6898aa253f0de5d5ebea5bb1437478fce"
+  },
+  "categories": {
+    "321": "Software > Computer Software > Operating Systems",
+    "5299": "Software > Computer Software > Antivirus & Security Software",
+    "5303": "Software > Computer Software > Office Application Software",
+    "4951": "Software > Computer Software > Multimedia & Design Software > Graphic Design & Illustration Software",
+    "6027": "Software > Computer Software > Multimedia & Design Software > 3D Modeling Software"
+  },
+  "mapping": {
+    "microsoft-office-2024-home-and-business-mac": "5303",
+    "microsoft-office-2024-home-and-business-windows": "5303",
+    "microsoft-windows-11-professional": "321",
+    "microsoft-windows-11-home": "321",
+    "bitdefender-antivirus-plus-1-pc-1-anno": "5299",
+    "bitdefender-antivirus-plus-3-pc-1-anno": "5299",
+    "bitdefender-antivirus-plus-5-pc-1-anno": "5299",
+    "bitdefender-total-security-licenza-3-dispositivi-1-anno": "5299",
+    "bitdefender-total-security-licenza-5-dispositivi-1-anno": "5299",
+    "bitdefender-total-security-licenza-10-dispositivi-1-anno": "5299"
+  },
+  "note": "The taxonomy source is authoritative; product-to-category mapping is a LicenzPol editorial classification and must be rechecked if product scope changes."
+}

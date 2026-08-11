@@ -1,0 +1,47 @@
+{
+  "checked_at": "2026-08-11",
+  "status": "blocked_external_onboarding_required",
+  "sources": [
+    {
+      "vendor": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/partner-center/enroll/csp-overview",
+      "official": true,
+      "facts": [
+        "CSP partners must pass business verification and annual vetting.",
+        "The indirect model requires active Microsoft AI Cloud Partner Program membership, authority to sign legal agreements, and a relationship with an authorized distributor.",
+        "The CSP page concerns the Microsoft cloud sales channel and is not proof of rights for the perpetual Office/Windows items in this pilot."
+      ]
+    },
+    {
+      "vendor": "Bitdefender",
+      "url": "https://www.bitdefender.com/en-us/partners/",
+      "official": true,
+      "facts": [
+        "Bitdefender publishes a Partner Advantage Network reselling partner program.",
+        "The official process states sign-up, company profile creation, product discovery and use of the distribution system.",
+        "The existence of the program is not proof that DIGITALSOFT/LicenzPol is enrolled or authorized."
+      ]
+    },
+    {
+      "authority": "Court of Justice of the European Union",
+      "url": "https://curia.europa.eu/juris/document/document.jsf?docid=124564&doclang=EN",
+      "official": true,
+      "case": "C-128/11 UsedSoft v Oracle",
+      "fact": "The judgment is relevant to exhaustion of certain software distribution rights, but it does not substitute for a product-specific chain of title, original license terms, proof of first sale in the EEA, or proof that the prior acquirer's copy was made unusable."
+    }
+  ],
+  "required_private_evidence": {
+    "microsoft": [
+      "Executed reseller/distributor agreement or product-specific EEA chain-of-title documents",
+      "Supplier invoice identifying the exact edition and license type",
+      "License terms and transfer eligibility for each unit",
+      "Proof that the supplied identifiers are assigned to the exact offer"
+    ],
+    "bitdefender": [
+      "Partner Advantage Network acceptance or authorized distributor agreement",
+      "Supplier invoice/order identifying product, seats/devices and term",
+      "Proof that activation codes originate from the authorized channel"
+    ]
+  },
+  "decision": "Public web research identifies legitimate onboarding routes but cannot create or prove LicenzPol's contractual authorization. Provenance remains unverified for all pilot products."
+}

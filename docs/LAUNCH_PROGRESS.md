@@ -45,7 +45,15 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Pannello Merchant esteso con fornitore, tipo fonte, documenti, base diritti, hash e dimensioni.
   - Workflow documentato in `docs/EVIDENCE_WORKFLOW.md`; documenti reali esclusi dal repository pubblico.
   - Verifica: 42 test backend mirati + 10 test frontend passati; build e QA API completati.
-- [ ] **Fase 5 — Catalogo pilota approvato**
+- [ ] **Fase 5 — Catalogo pilota approvato** — bloccata da evidenze esterne
+  - Shortlist autonoma revisionata a 10 prodotti correnti Microsoft/Bitdefender; rimossi Office 2019, CorelCAD 2020 e Photoshop 2022 dopo ricerca su fonti ufficiali.
+  - 10 prezzi LicenzPol IVA inclusa creati; rimangono invisibili al pubblico finché il gate non è superato.
+  - 10 categorie Google assegnate dalla tassonomia ufficiale verificata.
+  - 10 immagini originali LicenzPol 1200×1200 generate senza asset esterni, fingerprintate e approvate con base `owned`.
+  - GTIN candidati verificati formalmente ma 0 associazioni ufficiali trovate; nessun GTIN/MPN promosso a verificato.
+  - Microsoft CSP e Bitdefender Partner Advantage individuati come canali ufficiali, ma non costituiscono prova di iscrizione o diritto specifico di LicenzPol.
+  - Restano soltanto `identifier_assignment_unverified` e `provenance_evidence_missing` per tutti i 10 prodotti.
+  - La fase non può essere marcata completata senza contratto/fattura/catena di titolarità autentici e identificatori confermati dal produttore, GS1 o distributore autorizzato.
 - [ ] **Fase 6 — Inventario licenze ed email**
 - [ ] **Fase 7 — Sicurezza, test e infrastruttura**
 - [ ] **Fase 8 — Dominio definitivo e soft launch**

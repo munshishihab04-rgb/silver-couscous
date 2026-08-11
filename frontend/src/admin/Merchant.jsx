@@ -45,6 +45,8 @@ function StatusBanner({ status }) {
     { k: "PSP (Nexi)", v: status.psp_configured ? "configurato" : "MANCA credenziali", ok: status.psp_configured },
     { k: "Email (Brevo)", v: status.email_configured ? "configurato" : "MANCA API key", ok: status.email_configured },
     { k: "Approvati", v: `${status.approved_products}`, ok: status.approved_products > 0 },
+    { k: "Candidati pilota", v: `${status.pilot_candidates}`, ok: status.pilot_candidates > 0 },
+    { k: "Schede pilota approvate", v: `${status.catalog_review_approved}`, ok: status.catalog_review_approved > 0 },
     { k: "Provenienza verificata", v: `${status.provenance_evidence_verified}`, ok: status.provenance_evidence_verified > 0 },
     { k: "Diritti immagini", v: `${status.image_rights_evidence_verified}`, ok: status.image_rights_evidence_verified > 0 },
     { k: "Feedable (per Google)", v: `${status.feedable_products}`, ok: status.feedable_products > 0 },
@@ -52,7 +54,7 @@ function StatusBanner({ status }) {
   return (
     <div className="rounded-xl border border-white/10 bg-[#0B0B0D] p-5">
       <p className="label-eyebrow mb-3">Stato go-live</p>
-      <div className="grid grid-cols-2 md:grid-cols-8 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-5 xl:grid-cols-10 gap-3">
         {rows.map(r => (
           <div key={r.k} className="text-center">
             <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">{r.k}</p>
@@ -121,6 +123,7 @@ function ProductRow({ p, onPatch, onImport, m }) {
   const [gpc, setGpc] = useState(p.google_product_category || "");
   const [imgOk, setImgOk] = useState(!!p.image_rights_approved);
   const [prov, setProv] = useState(p.provenance_status || "unverified");
+  const [catalogReview, setCatalogReview] = useState(p.catalog_review_status || "pending");
   const [supplierName, setSupplierName] = useState(p.provenance_evidence_private?.supplier_name || "");
   const [sourceType, setSourceType] = useState(p.provenance_evidence_private?.source_type || "");
   const [provenanceRefs, setProvenanceRefs] = useState((p.provenance_evidence_private?.evidence_refs || []).join("\n"));
@@ -135,6 +138,7 @@ function ProductRow({ p, onPatch, onImport, m }) {
         mpn_status: mpn ? mpnStatus : null,
         gtin_status: gtin ? gtinStatus : null,
         google_product_category: gpc || null,
+        catalog_review_status: catalogReview,
         image_rights_approved: imgOk,
         provenance_status: prov,
         provenance_evidence_private: {
@@ -164,14 +168,17 @@ function ProductRow({ p, onPatch, onImport, m }) {
 
   const identifierVerified = (gtin && gtinStatus === "verified") || (mpn && mpnStatus === "verified");
   const evidenceComplete = supplierName && sourceType && provenanceRefs.trim() && rightsBasis && imageRefs.trim();
-  const canApprove = sku && p.image_url && Number(sellingPrice) > 0 && imgOk && prov === "verified" && identifierVerified && evidenceComplete && p.stock > 0;
+  const canApprove = sku && p.image_url && Number(sellingPrice) > 0 && imgOk && prov === "verified" && identifierVerified && evidenceComplete && catalogReview === "approved" && p.stock > 0;
 
   return (
     <div className="border-b border-white/5">
       <div className="grid grid-cols-12 gap-3 items-center px-4 py-3 hover:bg-white/[0.03]">
         <div className="col-span-4 min-w-0">
           <p className="text-white truncate">{p.name}</p>
-          <p className="text-xs text-zinc-500 font-mono truncate">{p.slug}</p>
+          <p className="text-xs text-zinc-500 font-mono truncate">
+            {p.pilot_candidate_private && <span className="text-cyan-300 mr-2">PILOT #{p.pilot_rank_private}</span>}
+            {p.slug}
+          </p>
         </div>
         <div className="col-span-1"><RiskBadge risk={p._risk}/></div>
         <div className="col-span-1 text-xs font-mono text-zinc-400">{p.sku || "—"}</div>
@@ -235,6 +242,17 @@ function ProductRow({ p, onPatch, onImport, m }) {
             <input value={gpc} onChange={e => setGpc(e.target.value)}
               placeholder="es. 5299 · Software > Antivirus"
               className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white"/>
+          </div>
+          <div>
+            <label className="label-eyebrow block mb-1">Revisione catalogo pilota</label>
+            <select value={catalogReview} onChange={e => setCatalogReview(e.target.value)}
+              disabled={!p.pilot_candidate_private}
+              className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white disabled:opacity-50">
+              <option value="not_selected">not_selected</option>
+              <option value="pending">pending</option>
+              <option value="rejected">rejected</option>
+              <option value="approved">approved</option>
+            </select>
           </div>
           <div>
             <label className="label-eyebrow block mb-1">Provenance</label>
@@ -320,18 +338,20 @@ export default function AdminMerchant() {
   const [data, setData] = useState(null);
   const [q, setQ] = useState("");
   const [onlyPending, setOnlyPending] = useState(true);
-  const [maxRisk, setMaxRisk] = useState(50);
+  const [pilotOnly, setPilotOnly] = useState(true);
+  const [maxRisk, setMaxRisk] = useState(100);
   const [importSku, setImportSku] = useState(null);
 
   const load = () => {
     const params = { limit: 500 };
     if (onlyPending) params.only_pending = true;
+    if (pilotOnly) params.pilot_only = true;
     if (maxRisk) params.max_risk = maxRisk;
     m.queue(params).then(setData);
     m.status().then(setStatus);
   };
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [onlyPending, maxRisk]);
+  useEffect(() => { load(); /* eslint-disable-next-line */ }, [onlyPending, pilotOnly, maxRisk]);
 
   const filtered = useMemo(() => {
     if (!data) return [];
@@ -345,7 +365,7 @@ export default function AdminMerchant() {
   }, [data, q]);
 
   const bulkApproveLowRisk = async () => {
-    const candidates = filtered.filter(p => !p.merchant_approved && p._risk.score <= 20 && p.selling_price_eur && p.sku && p.image_url && p.image_rights_approved);
+    const candidates = filtered.filter(p => !p.merchant_approved && p.catalog_review_status === "approved" && p._risk.score <= 20 && p.selling_price_eur && p.sku && p.image_url && p.image_rights_approved);
     if (!candidates.length) {
       toast.info("Nessun prodotto passa i criteri (risk ≤ 20 + campi completi + diritti immagine).");
       return;
@@ -362,7 +382,7 @@ export default function AdminMerchant() {
         <div>
           <p className="label-eyebrow mb-2">Merchant workflow</p>
           <h1 className="font-display text-3xl md:text-4xl tracking-tight">Approvazione prodotti</h1>
-          <p className="text-sm text-zinc-500 mt-1">Solo prodotti approvati (merchant_approved + immagine documentata + stock &gt; 0) sono pubblicati.</p>
+          <p className="text-sm text-zinc-500 mt-1">Il catalogo pilota richiede revisione documentale; la pubblicazione richiede anche approvazione Merchant e stock reale.</p>
         </div>
       </div>
 
@@ -378,6 +398,10 @@ export default function AdminMerchant() {
         <label className="flex items-center gap-2 text-sm text-zinc-300">
           <input type="checkbox" checked={onlyPending} onChange={e => setOnlyPending(e.target.checked)}/>
           Solo da approvare
+        </label>
+        <label className="flex items-center gap-2 text-sm text-cyan-300">
+          <input type="checkbox" checked={pilotOnly} onChange={e => setPilotOnly(e.target.checked)}/>
+          Solo catalogo pilota
         </label>
         <label className="flex items-center gap-2 text-sm text-zinc-300">
           <Filter size={14} className="text-zinc-500"/>

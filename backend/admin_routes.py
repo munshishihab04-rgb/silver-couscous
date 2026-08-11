@@ -128,6 +128,7 @@ MERCHANT_CONTROLLED_FIELDS = {
     "provenance_status", "provenance_evidence_private", "selling_price_eur",
     "stock", "sku", "gtin", "gtin_status", "mpn", "mpn_status",
     "availability_status", "condition", "google_product_category", "status",
+    "catalog_review_status", "catalog_reviewed_at", "catalog_reviewed_by",
 }
 
 

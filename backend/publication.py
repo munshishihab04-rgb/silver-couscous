@@ -23,6 +23,8 @@ def valid_gtin(value: str | None) -> bool:
 
 def offer_gate_failures(product: dict) -> list[str]:
     failures: list[str] = []
+    if product.get("catalog_review_status") != "approved":
+        failures.append("catalog_review_not_approved")
     if product.get("merchant_approved") is not True:
         failures.append("merchant_not_approved")
     if product.get("image_rights_approved") is not True:
@@ -83,10 +85,12 @@ def to_public_product(product: dict) -> dict:
         for key in [key for key in variant if key.endswith("_private")]:
             variant.pop(key, None)
     ready = is_public_offer(product)
-    if ready:
-        variants = public.get("variants") or []
-        if len(variants) == 1:
-            variants[0]["price_eur"] = float(product["selling_price_eur"])
+    variants = public.get("variants") or []
+    public["selling_price_eur"] = public_price(product)
+    for variant in variants:
+        variant["price_eur"] = None
+    if ready and len(variants) == 1:
+        variants[0]["price_eur"] = float(product["selling_price_eur"])
     public["merchant_ready"] = ready
     public["purchasable"] = ready
     if not ready:

@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "generator": "backend/pilot_images.py",
+  "method": "Deterministic Pillow rendering using only text, geometric primitives and DejaVu fonts.",
+  "source_assets": [],
+  "vendor_logos_used": false,
+  "imported_package_art_used": false,
+  "rights_basis": "owned",
+  "items": [
+    {
+      "slug": "microsoft-office-2024-home-and-business-mac",
+      "asset_path": "/products/microsoft-office-2024-home-and-business-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7f445fdc9c1d00ddfeff72086a284d083d01035b35eb88e94ba239e736b0cd68",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-2024-home-and-business-windows",
+      "asset_path": "/products/microsoft-office-2024-home-and-business-windows.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "5b13aa03cce6a6579e4090608b1eadabd4ba1353fd4c20789df84b74050289f1",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-windows-11-professional",
+      "asset_path": "/products/microsoft-windows-11-professional.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "231acc8ef1f8e6677b8f00e4f288df852d8cc3a9a802f492c1266f0a4d5db777",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-windows-11-home",
+      "asset_path": "/products/microsoft-windows-11-home.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "a89c9cada41c40c65b7619bbd4ef92e223f3f9f4ff19fd969940b017c214e357",
+      "source_assets": []
+    },
+    {
+      "slug": "bitdefender-antivirus-plus-1-pc-1-anno",
+      "asset_path": "/products/bitdefender-antivirus-plus-1-pc-1-anno.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "995ef4e9f511af41ebabae1f822bff32a077f4bb2a27993b06c054e4ad053717",
+      "source_assets": []
+    },
+    {
+      "slug": "bitdefender-antivirus-plus-3-pc-1-anno",
+      "asset_path": "/products/bitdefender-antivirus-plus-3-pc-1-anno.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "1bc230f8787e6100aeb703a8c80352b054537cf1210b55e110a76d12ea81296c",
+      "source_assets": []
+    },
+    {
+      "slug": "bitdefender-antivirus-plus-5-pc-1-anno",
+      "asset_path": "/products/bitdefender-antivirus-plus-5-pc-1-anno.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "5f0bb79b759cfd3385503c0409f49412a709b1a0060caccf92268dba9f6b81c1",
+      "source_assets": []
+    },
+    {
+      "slug": "bitdefender-total-security-licenza-3-dispositivi-1-anno",
+      "asset_path": "/products/bitdefender-total-security-licenza-3-dispositivi-1-anno.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "68c3d0c9058d39a236a1fad98aea1dd4c551928153cf7e7ac7d8be9100ea5fa4",
+      "source_assets": []
+    },
+    {
+      "slug": "bitdefender-total-security-licenza-5-dispositivi-1-anno",
+      "asset_path": "/products/bitdefender-total-security-licenza-5-dispositivi-1-anno.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "14d0ab7c96426d375ee8db69edac4c0b4a3dcbf778f3657fe92450cdada284e5",
+      "source_assets": []
+    },
+    {
+      "slug": "bitdefender-total-security-licenza-10-dispositivi-1-anno",
+      "asset_path": "/products/bitdefender-total-security-licenza-10-dispositivi-1-anno.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "71997a181daac73fd48d32432aaa411eaeb8e9fcb459250dec843dfb8f8188fa",
+      "source_assets": []
+    }
+  ]
+}

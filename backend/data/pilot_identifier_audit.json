@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-08-11",
+  "method": {
+    "checksum": "GS1 modulo-10 validation",
+    "verified_by_gs1": "Attempted official Verified by GS1 web lookup; request was blocked/unavailable from this environment.",
+    "digital_link": "Queried id.gs1.org using 14-digit normalized GTIN. HTTP 404 means no Digital Link destination was published; it does not prove that a GTIN is unassigned.",
+    "manufacturer_search": "Exact quoted identifier search restricted to microsoft.com or bitdefender.com returned no official-domain matches.",
+    "decision": "No candidate is marked verified because no authoritative product-assignment record was obtained."
+  },
+  "items": [
+    {"slug":"microsoft-office-2024-home-and-business-mac","candidate_gtin":"0889842095920","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"microsoft-office-2024-home-and-business-windows","candidate_gtin":"0885370455045","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"microsoft-windows-11-professional","candidate_gtin":"0889842905892","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"microsoft-windows-11-home","candidate_gtin":"0889842905267","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"bitdefender-antivirus-plus-1-pc-1-anno","candidate_gtin":"7446950783748","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"bitdefender-antivirus-plus-3-pc-1-anno","candidate_gtin":"7446935432463","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"bitdefender-antivirus-plus-5-pc-1-anno","candidate_gtin":"7446941441442","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"bitdefender-total-security-licenza-3-dispositivi-1-anno","candidate_gtin":"7446935173175","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"bitdefender-total-security-licenza-5-dispositivi-1-anno","candidate_gtin":"7446947034020","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false},
+    {"slug":"bitdefender-total-security-licenza-10-dispositivi-1-anno","candidate_gtin":"7446939051035","checksum_valid":true,"manufacturer_official_match":false,"digital_link_http":404,"assignment_verified":false}
+  ]
+}

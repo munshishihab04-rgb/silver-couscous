@@ -17,6 +17,10 @@ CSV_PATH = Path(__file__).parent / "data" / "catalog.csv"
 IMAGES_OVERLAY_PATH = Path(__file__).parent / "data" / "product_images.json"
 PROVENANCE_MANIFEST_PATH = Path(__file__).parent / "data" / "provenance_manifest.json"
 IMAGE_RIGHTS_MANIFEST_PATH = Path(__file__).parent / "data" / "image_rights_manifest.json"
+PILOT_CATALOG_PATH = Path(__file__).parent / "data" / "pilot_catalog.json"
+GOOGLE_TAXONOMY_PILOT_PATH = Path(__file__).parent / "data" / "google_taxonomy_pilot.json"
+PILOT_PRICING_PATH = Path(__file__).parent / "data" / "pilot_pricing.json"
+PILOT_CONTENT_PATH = Path(__file__).parent / "data" / "pilot_content.json"
 
 CATEGORIES = [
     {"key": "os",       "color": "work",    "name_it": "Sistemi Operativi",       "name_en": "Operating Systems"},
@@ -419,12 +423,25 @@ def _load_evidence_overlay(path):
         return {}
 
 
+def _load_pilot_overlay():
+    try:
+        with open(PILOT_CATALOG_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+        return {item["slug"]: item for item in data.get("items", [])}
+    except Exception:
+        return {}
+
+
 def _load_csv():
     products = []
     seen_slugs = set()
     overlay = _load_image_overlay()
     provenance_manifest = _load_evidence_overlay(PROVENANCE_MANIFEST_PATH)
     image_rights_manifest = _load_evidence_overlay(IMAGE_RIGHTS_MANIFEST_PATH)
+    pilot_manifest = _load_pilot_overlay()
+    google_category_mapping = _load_evidence_overlay(GOOGLE_TAXONOMY_PILOT_PATH).get("mapping", {})
+    pilot_prices = _load_evidence_overlay(PILOT_PRICING_PATH).get("prices", {})
+    pilot_content = _load_evidence_overlay(PILOT_CONTENT_PATH)
     with open(CSV_PATH, encoding="utf-8-sig") as f:
         for row in csv.DictReader(f):
             slug = (row.get("product_slug") or "").strip()
@@ -441,6 +458,8 @@ def _load_csv():
                 selling_price = float(selling_price_raw) if selling_price_raw else None
             except (TypeError, ValueError):
                 selling_price = None
+            if slug in pilot_prices:
+                selling_price = float(pilot_prices[slug])
             gtin_status = (row.get("gtin_status") or "").strip().lower()
             gtin_val = (row.get("gtin") or "").strip()
             # A checksum-valid source value is still private until assignment
@@ -456,6 +475,8 @@ def _load_csv():
             seen_slugs.add(slug)
             raw_name = html.unescape(row.get("product_name") or "")
             name = _title_case(raw_name)
+            if slug in pilot_content:
+                name = pilot_content[slug].get("name", name)
             brand = BRAND_MAP.get((row.get("brand") or "").strip(), (row.get("brand") or "").strip() or "Varie")
             category = _detect_category(row.get("category", ""), raw_name, brand)
             platforms = _detect_platforms(raw_name)
@@ -467,6 +488,7 @@ def _load_csv():
             image_url = (overlay.get(slug) or (row.get("image_url") or "").strip()) or None
             provenance_evidence = provenance_manifest.get(slug) or {}
             image_rights_evidence = image_rights_manifest.get(slug) or {}
+            pilot_record = pilot_manifest.get(slug)
             (tag_it, tag_en, desc_it, desc_en, features_it, features_en,
              compat_it, compat_en, what_it, what_en, act_it, act_en, faq) = _copy(
                 brand, name, category, edition, devices, license_type
@@ -522,12 +544,15 @@ def _load_csv():
                 "availability_status": availability_raw or "PendingReview",
                 "stock": 0,  # Real stock only after license keys are imported
                 "merchant_approved": False,  # ALWAYS default false; admin must approve manually
+                "pilot_candidate_private": bool(pilot_record),
+                "pilot_rank_private": pilot_record.get("rank") if pilot_record else None,
+                "catalog_review_status": pilot_record.get("catalog_review_status", "pending") if pilot_record else "not_selected",
                 "image_rights_approved": image_rights_evidence_verified(image_rights_evidence),
                 "image_rights_evidence_private": image_rights_evidence,
                 "provenance_status": "verified" if provenance_evidence_verified(provenance_evidence) else "unverified",
                 "provenance_evidence_private": provenance_evidence,
                 "status": "draft",
-                "google_product_category": None,
+                "google_product_category": google_category_mapping.get(slug),
                 "risk_score": None,
             })
     return products

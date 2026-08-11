@@ -38,6 +38,7 @@ def approved_product():
         merchant_approved=True,
         image_rights_approved=True,
         provenance_status="verified",
+        catalog_review_status="approved",
         status="approved",
         availability_status="InStock",
         stock=3,
@@ -78,6 +79,12 @@ def test_complete_offer_is_public():
     assert is_public_offer(approved_product()) is True
 
 
+def test_inventory_cannot_publish_before_explicit_catalog_review():
+    product = approved_product()
+    product["catalog_review_status"] = "pending"
+    assert "catalog_review_not_approved" in offer_gate_failures(product)
+
+
 def test_flags_without_private_evidence_cannot_open_publication_gate():
     product = approved_product()
     product.pop("provenance_evidence_private")
@@ -102,8 +109,12 @@ def test_staging_keeps_drafts_for_review_but_never_marks_them_purchasable():
 
 def test_public_price_is_missing_for_draft_and_authoritative_for_approved_offer():
     draft = draft_product()
-    draft["variants"][0]["price_eur"] = None
+    draft["selling_price_eur"] = 39.90
+    draft["variants"][0]["price_eur"] = 39.90
     assert public_price(draft) is None
+    public_draft = to_public_product(draft)
+    assert public_draft["selling_price_eur"] is None
+    assert public_draft["variants"][0]["price_eur"] is None
     assert public_price(approved_product()) == 19.90
 
 

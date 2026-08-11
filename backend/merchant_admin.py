@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from auth import current_admin
 from services import license_inventory
 from publication import offer_gate_failures
+from pilot_catalog import catalog_review_blockers
 from evidence import bind_image_fingerprint, image_rights_evidence_verified, provenance_evidence_verified
 
 
@@ -85,6 +86,9 @@ def compute_risk_score(p: dict) -> dict:
     if p.get("provenance_status") != "verified" or not provenance_evidence_verified(p.get("provenance_evidence_private")):
         score += 15
         reasons.append("commercial provenance not documented")
+    if p.get("catalog_review_status") != "approved":
+        score += 10
+        reasons.append("pilot catalog review not approved")
 
     # Brand reputation (basic heuristic)
     brand = (p.get("brand") or "").lower()
@@ -121,10 +125,19 @@ def evidence_update_blockers(existing: dict, update: dict) -> list[str]:
     return blockers
 
 
+def catalog_review_update_blockers(existing: dict, update: dict) -> list[str]:
+    if update.get("catalog_review_status") != "approved":
+        return []
+    if existing.get("pilot_candidate_private") is not True:
+        return ["pilot_not_selected"]
+    return catalog_review_blockers({**existing, **update})
+
+
 # ---------- Merchant workflow endpoints ------------------------------------
 
 class ApprovalPatch(BaseModel):
     merchant_approved: Optional[bool] = None
+    catalog_review_status: Optional[str] = None  # pending | approved | rejected
     image_rights_approved: Optional[bool] = None
     image_rights_evidence_private: Optional[dict] = None
     provenance_status: Optional[str] = None  # unverified | pending | verified
@@ -148,6 +161,7 @@ async def merchant_queue(
     request: Request,
     only_approved: bool = False,
     only_pending: bool = False,
+    pilot_only: bool = False,
     max_risk: Optional[int] = None,
     limit: int = 500,
     user=Depends(current_admin),
@@ -158,6 +172,8 @@ async def merchant_queue(
         q["merchant_approved"] = True
     if only_pending:
         q["merchant_approved"] = False
+    if pilot_only:
+        q["pilot_candidate_private"] = True
     items = []
     approved_count = 0
     async for p in db.products.find(q).limit(limit):
@@ -171,7 +187,12 @@ async def merchant_queue(
         if p.get("merchant_approved"):
             approved_count += 1
         items.append(p)
-    items.sort(key=lambda x: (x.get("merchant_approved", False), x["_risk"]["score"]))
+    items.sort(key=lambda x: (
+        not x.get("pilot_candidate_private", False),
+        x.get("pilot_rank_private") or 9999,
+        x.get("merchant_approved", False),
+        x["_risk"]["score"],
+    ))
     return {"total": len(items), "approved_count": approved_count, "items": items}
 
 
@@ -210,6 +231,12 @@ async def merchant_patch(
     evidence_blockers = evidence_update_blockers(existing, update)
     if evidence_blockers:
         raise HTTPException(status_code=400, detail={"code": "evidence_invalid", "blockers": evidence_blockers})
+    review_blockers = catalog_review_update_blockers(existing, update)
+    if review_blockers:
+        raise HTTPException(status_code=400, detail={"code": "catalog_review_blocked", "blockers": review_blockers})
+    if update.get("catalog_review_status") == "approved":
+        update["catalog_reviewed_at"] = review_time
+        update["catalog_reviewed_by"] = actor
     if update.get("merchant_approved") is True:
         blockers = approval_blockers(existing, update)
         if blockers:
@@ -319,7 +346,13 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
     feedable = 0
     provenance_verified = 0
     image_rights_verified = 0
+    pilot_candidates = 0
+    catalog_review_approved = 0
     async for product in db.products.find({}):
+        if product.get("pilot_candidate_private") is True:
+            pilot_candidates += 1
+        if product.get("catalog_review_status") == "approved":
+            catalog_review_approved += 1
         if provenance_evidence_verified(product.get("provenance_evidence_private")):
             provenance_verified += 1
         if image_rights_evidence_verified(product.get("image_rights_evidence_private")):
@@ -335,6 +368,8 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
         "email_configured": bool(BREVO_API_KEY),
         "approved_products": approved,
         "feedable_products": feedable,
+        "pilot_candidates": pilot_candidates,
+        "catalog_review_approved": catalog_review_approved,
         "provenance_evidence_verified": provenance_verified,
         "image_rights_evidence_verified": image_rights_verified,
     }

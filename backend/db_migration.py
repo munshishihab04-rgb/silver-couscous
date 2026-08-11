@@ -26,6 +26,9 @@ MERCHANT_FIELD_DEFAULTS = {
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": False,
+    "pilot_candidate_private": False,
+    "pilot_rank_private": None,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": False,
     "image_rights_evidence_private": {},
     "provenance_status": "unverified",
@@ -64,6 +67,7 @@ def catalog_reconciliation_patch(existing: dict, seed: dict) -> dict:
             "provenance_status", "provenance_evidence_private",
             "gtin", "gtin_status", "mpn", "mpn_status",
             "google_product_category", "status", "admin_notes",
+            "catalog_review_status", "catalog_reviewed_at", "catalog_reviewed_by",
             "merchant_updated_at", "merchant_updated_by",
         }
         for key in reviewed_fields:

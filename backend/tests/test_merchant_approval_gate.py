@@ -4,6 +4,7 @@ from merchant_admin import approval_blockers
 def test_admin_cannot_approve_product_with_unverified_identifier():
     product = {
         "merchant_approved": False,
+        "catalog_review_status": "approved",
         "image_rights_approved": True,
         "provenance_status": "verified",
         "status": "draft",
@@ -25,6 +26,7 @@ def test_admin_cannot_approve_product_with_unverified_identifier():
 def test_admin_can_approve_only_after_identifier_verification():
     product = {
         "merchant_approved": False,
+        "catalog_review_status": "approved",
         "image_rights_approved": True,
         "provenance_status": "verified",
         "status": "draft",

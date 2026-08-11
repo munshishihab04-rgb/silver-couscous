@@ -1,0 +1,130 @@
+{
+  "status": "blocked",
+  "expected_rows": 10,
+  "ready_rows": 0,
+  "blocked_rows": 10,
+  "unexpected_slugs": [],
+  "items": [
+    {
+      "slug": "microsoft-office-2024-home-and-business-mac",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "microsoft-office-2024-home-and-business-windows",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "microsoft-windows-11-professional",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "microsoft-windows-11-home",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "bitdefender-antivirus-plus-1-pc-1-anno",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "bitdefender-antivirus-plus-3-pc-1-anno",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "bitdefender-antivirus-plus-5-pc-1-anno",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "bitdefender-total-security-licenza-3-dispositivi-1-anno",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "bitdefender-total-security-licenza-5-dispositivi-1-anno",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    },
+    {
+      "slug": "bitdefender-total-security-licenza-10-dispositivi-1-anno",
+      "ready": false,
+      "blockers": [
+        "verified_identifier_missing",
+        "identifier_evidence_ref_invalid",
+        "supplier_name_missing",
+        "provenance_source_type_invalid",
+        "provenance_evidence_ref_invalid",
+        "decision_not_approved"
+      ]
+    }
+  ],
+  "warning": "Schema validation does not prove that referenced documents are authentic. A human reviewer must inspect every private document before applying approval."
+}

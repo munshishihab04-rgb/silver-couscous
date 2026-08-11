@@ -1,0 +1,155 @@
+{
+  "version": 1,
+  "phase": 5,
+  "status": "prepared_not_approved",
+  "selection_policy": {
+    "count": 10,
+    "formal_gtin_checksum_required": true,
+    "duplicate_or_invalid_identifiers_excluded": true,
+    "minimum_image_side_px": 500,
+    "commercial_approval_inferred": false,
+    "source_price_used_as_selling_price": false
+  },
+  "items": [
+    {
+      "rank": 1,
+      "slug": "microsoft-office-2024-home-and-business-mac",
+      "sku": "LP-6A2F0E2B49",
+      "name": "Microsoft Office Home & Business 2024 (Mac)",
+      "brand": "Microsoft",
+      "category": "office",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 2,
+      "slug": "microsoft-office-2024-home-and-business-windows",
+      "sku": "LP-0D2EA57ECC",
+      "name": "Microsoft Office Home & Business 2024 (Windows)",
+      "brand": "Microsoft",
+      "category": "office",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 3,
+      "slug": "microsoft-windows-11-professional",
+      "sku": "LP-E18A63310E",
+      "name": "Microsoft Windows 11 Pro",
+      "brand": "Microsoft",
+      "category": "os",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 4,
+      "slug": "microsoft-windows-11-home",
+      "sku": "LP-EB0F2F2081",
+      "name": "Microsoft Windows 11 Home",
+      "brand": "Microsoft",
+      "category": "os",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 5,
+      "slug": "bitdefender-antivirus-plus-1-pc-1-anno",
+      "sku": "LP-33681D89CA",
+      "name": "Bitdefender Antivirus Plus — 1 dispositivo / 12 mesi",
+      "brand": "Bitdefender",
+      "category": "security",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 6,
+      "slug": "bitdefender-antivirus-plus-3-pc-1-anno",
+      "sku": "LP-3DB860281B",
+      "name": "Bitdefender Antivirus Plus — 3 dispositivi / 12 mesi",
+      "brand": "Bitdefender",
+      "category": "security",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 7,
+      "slug": "bitdefender-antivirus-plus-5-pc-1-anno",
+      "sku": "LP-4658127DB8",
+      "name": "Bitdefender Antivirus Plus — 5 dispositivi / 12 mesi",
+      "brand": "Bitdefender",
+      "category": "security",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 8,
+      "slug": "bitdefender-total-security-licenza-3-dispositivi-1-anno",
+      "sku": "LP-24E0D3403E",
+      "name": "Bitdefender Total Security — 3 dispositivi / 12 mesi",
+      "brand": "Bitdefender",
+      "category": "security",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 9,
+      "slug": "bitdefender-total-security-licenza-5-dispositivi-1-anno",
+      "sku": "LP-114547D492",
+      "name": "Bitdefender Total Security — 5 dispositivi / 12 mesi",
+      "brand": "Bitdefender",
+      "category": "security",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    },
+    {
+      "rank": 10,
+      "slug": "bitdefender-total-security-licenza-10-dispositivi-1-anno",
+      "sku": "LP-E36877D5E0",
+      "name": "Bitdefender Total Security — 10 dispositivi / 12 mesi",
+      "brand": "Bitdefender",
+      "category": "security",
+      "shortlist_status": "candidate",
+      "catalog_review_status": "pending",
+      "review_blockers": [
+        "identifier_assignment_unverified",
+        "provenance_evidence_missing"
+      ]
+    }
+  ]
+}

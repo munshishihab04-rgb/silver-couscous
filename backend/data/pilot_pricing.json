@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "currency": "EUR",
+  "vat_included": true,
+  "status": "prelaunch_seller_decision",
+  "decided_at": "2026-08-11",
+  "decision_basis": "LicenzPol pre-launch list-price positioning. Source-site reference prices are not used as public selling prices or asserted costs.",
+  "review_required_before_launch": true,
+  "prices": {
+    "microsoft-office-2024-home-and-business-mac": 299.00,
+    "microsoft-office-2024-home-and-business-windows": 299.00,
+    "microsoft-windows-11-professional": 259.00,
+    "microsoft-windows-11-home": 145.00,
+    "bitdefender-antivirus-plus-1-pc-1-anno": 44.99,
+    "bitdefender-antivirus-plus-3-pc-1-anno": 59.99,
+    "bitdefender-antivirus-plus-5-pc-1-anno": 74.99,
+    "bitdefender-total-security-licenza-3-dispositivi-1-anno": 89.99,
+    "bitdefender-total-security-licenza-5-dispositivi-1-anno": 99.99,
+    "bitdefender-total-security-licenza-10-dispositivi-1-anno": 119.99
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "checked_at": "2026-08-11",
+  "status": "pilot_shortlist_revised",
+  "official_sources": [
+    {
+      "vendor": "Microsoft",
+      "url": "https://learn.microsoft.com/en-us/lifecycle/products/microsoft-office-2019",
+      "http_verified": 200,
+      "decision": "Office 2019 candidates removed from the pilot because the official lifecycle is ended and no public Microsoft GTIN/MPN assignment was available."
+    },
+    {
+      "vendor": "Corel/Alludo",
+      "url_requested": "https://www.coreldraw.com/en/product/corelcad/",
+      "url_resolved": "https://www.coreldraw.com/en/product/technical-suite/",
+      "http_verified": 200,
+      "decision": "CorelCAD 2020 removed: the historical URL resolves to the current Technical Suite rather than a current standalone CorelCAD offer."
+    },
+    {
+      "vendor": "Adobe",
+      "url": "https://www.adobe.com/products/photoshop.html",
+      "http_verified": 200,
+      "eol_url": "https://helpx.adobe.com/support/programs/eol-matrix.html",
+      "eol_http_verified": 200,
+      "decision": "Photoshop 2022 removed: the current official offer is Creative Cloud/subscription and no official public identifier or new standalone 2022 offer was established."
+    },
+    {
+      "vendor": "Bitdefender",
+      "antivirus_url": "https://www.bitdefender.com/en-us/consumer/antivirus",
+      "total_security_url": "https://www.bitdefender.com/en-us/consumer/total-security",
+      "http_verified": 200,
+      "decision": "Current product families retained, but device-count GTIN/MPN and LicenzPol channel authorization remain unverified."
+    },
+    {
+      "vendor": "Bitdefender",
+      "partner_url": "https://www.bitdefender.com/en-us/partners/",
+      "http_verified": 200,
+      "decision": "Official reseller onboarding exists; public access to the program does not prove LicenzPol enrollment."
+    },
+    {
+      "vendor": "Microsoft",
+      "partner_url": "https://learn.microsoft.com/en-us/partner-center/enroll/csp-overview",
+      "http_verified": 200,
+      "decision": "Official partner onboarding and business verification exist; CSP authorization is not evidence for these specific perpetual-license offers."
+    }
+  ],
+  "result": {
+    "previous_candidates": 12,
+    "current_candidates": 10,
+    "removed": [
+      "microsoft-office-2019-professional-plus",
+      "microsoft-office-2019-home-business-mac",
+      "microsoft-office-2019-home-and-student-windows",
+      "microsoft-office-2019-home-and-business-windows",
+      "corelcad-2020",
+      "adobe-photoshop-2022"
+    ],
+    "added": [
+      "microsoft-office-2024-home-and-business-mac",
+      "microsoft-office-2024-home-and-business-windows",
+      "bitdefender-total-security-licenza-5-dispositivi-1-anno",
+      "bitdefender-total-security-licenza-10-dispositivi-1-anno"
+    ]
+  }
+}

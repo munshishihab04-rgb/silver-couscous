@@ -1,0 +1,11 @@
+slug,sku,name,selling_price_eur_vat_included,google_product_category,identifier_type,verified_identifier,identifier_evidence_ref,supplier_name,provenance_source_type,provenance_evidence_ref,image_rights_basis,image_evidence_ref,decision,review_notes
+microsoft-office-2024-home-and-business-mac,LP-6A2F0E2B49,Microsoft Office Home & Business 2024 (Mac),299.0,5303,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+microsoft-office-2024-home-and-business-windows,LP-0D2EA57ECC,Microsoft Office Home & Business 2024 (Windows),299.0,5303,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+microsoft-windows-11-professional,LP-E18A63310E,Microsoft Windows 11 Pro,259.0,321,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+microsoft-windows-11-home,LP-EB0F2F2081,Microsoft Windows 11 Home,145.0,321,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+bitdefender-antivirus-plus-1-pc-1-anno,LP-33681D89CA,Bitdefender Antivirus Plus — 1 dispositivo / 12 mesi,44.99,5299,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+bitdefender-antivirus-plus-3-pc-1-anno,LP-3DB860281B,Bitdefender Antivirus Plus — 3 dispositivi / 12 mesi,59.99,5299,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+bitdefender-antivirus-plus-5-pc-1-anno,LP-4658127DB8,Bitdefender Antivirus Plus — 5 dispositivi / 12 mesi,74.99,5299,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+bitdefender-total-security-licenza-3-dispositivi-1-anno,LP-24E0D3403E,Bitdefender Total Security — 3 dispositivi / 12 mesi,89.99,5299,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+bitdefender-total-security-licenza-5-dispositivi-1-anno,LP-114547D492,Bitdefender Total Security — 5 dispositivi / 12 mesi,99.99,5299,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,
+bitdefender-total-security-licenza-10-dispositivi-1-anno,LP-E36877D5E0,Bitdefender Total Security — 10 dispositivi / 12 mesi,119.99,5299,,,,,,,owned,private://documents/pilot-image-generation-2026-08-11,pending,

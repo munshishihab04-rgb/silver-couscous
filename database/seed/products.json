@@ -56,6 +56,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-56F50FD2CB",
@@ -140,6 +143,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B9D5FAE5EA",
@@ -224,6 +230,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9AB80BACD1",
@@ -308,6 +317,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-601992328C",
@@ -392,6 +404,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D160AE11A7",
@@ -476,6 +491,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2524163B1C",
@@ -560,6 +578,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AC2F21507A",
@@ -644,6 +665,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8B5CB8D12B",
@@ -728,6 +752,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-97997ACF9C",
@@ -812,6 +839,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-59106BC299",
@@ -896,6 +926,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E9F0FA94F3",
@@ -980,6 +1013,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8ABDCFD506",
@@ -1064,6 +1100,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CC0A1EC3F3",
@@ -1148,6 +1187,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3C960A71C1",
@@ -1232,6 +1274,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-20C80A9A28",
@@ -1316,6 +1361,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8618D7E84C",
@@ -1400,6 +1448,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0002FB1CC9",
@@ -1484,6 +1535,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-05A8E2F375",
@@ -1568,6 +1622,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-78F27B13A8",
@@ -1652,6 +1709,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-82A0EC038C",
@@ -1736,6 +1796,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F0180012CE",
@@ -1821,6 +1884,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3E2B87CDE9",
@@ -1905,6 +1971,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AE53AB48BD",
@@ -1989,6 +2058,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-4AF5226F4A",
@@ -2073,6 +2145,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2CD69620C6",
@@ -2157,6 +2232,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-24409595D3",
@@ -2241,6 +2319,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F191064109",
@@ -2325,6 +2406,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EFA29E1C78",
@@ -2409,6 +2493,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0EC884DA68",
@@ -2493,6 +2580,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FEF1456887",
@@ -2577,6 +2667,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3B95E21279",
@@ -2661,6 +2754,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B3AF53F41B",
@@ -2745,6 +2841,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-4FE95CAF01",
@@ -2829,6 +2928,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-267D9FDAC4",
@@ -2913,6 +3015,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D8E28256BB",
@@ -2997,6 +3102,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-53AEDC2AE9",
@@ -3081,6 +3189,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2F1522DF90",
@@ -3165,6 +3276,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F58CF0EF8A",
@@ -3249,6 +3363,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F8A1B99D2E",
@@ -3333,6 +3450,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-75D938A88D",
@@ -3417,6 +3537,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5404B4AF83",
@@ -3501,6 +3624,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-59F5D9B02A",
@@ -3585,6 +3711,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-96BEBA2CCF",
@@ -3669,6 +3798,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EA22B9925A",
@@ -3753,6 +3885,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-941DE52DF8",
@@ -3837,6 +3972,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6B06F658CF",
@@ -3921,6 +4059,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E6B237F206",
@@ -4005,6 +4146,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C49A4C54D8",
@@ -4089,6 +4233,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DFC74847E9",
@@ -4173,6 +4320,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3CF0AA6DA8",
@@ -4257,6 +4407,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-168642CEF8",
@@ -4341,6 +4494,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-262785F999",
@@ -4425,6 +4581,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-08F0461E3A",
@@ -4509,6 +4668,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C8B461F5FD",
@@ -4593,6 +4755,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-440A865EE2",
@@ -4677,6 +4842,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-780C3F357E",
@@ -4761,6 +4929,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8B8D4CD6F0",
@@ -4845,6 +5016,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1587840C18",
@@ -4929,6 +5103,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-05809BE505",
@@ -5013,6 +5190,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EB0AE50425",
@@ -5097,6 +5277,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8C866105F1",
@@ -5181,6 +5364,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3CB11D15A4",
@@ -5265,6 +5451,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FF1ED95207",
@@ -5349,6 +5538,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-18DE22F77E",
@@ -5433,6 +5625,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1D3BF9FE3A",
@@ -5517,6 +5712,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D1EED2BDCB",
@@ -5601,6 +5799,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8D793F9B8F",
@@ -5685,6 +5886,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-569118159C",
@@ -5769,6 +5973,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-386215FE87",
@@ -5853,6 +6060,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B04B1FC286",
@@ -5937,6 +6147,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-ED0147F300",
@@ -6021,6 +6234,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7779F874D5",
@@ -6105,6 +6321,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-848E6361B6",
@@ -6189,6 +6408,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2271CCCF00",
@@ -6273,6 +6495,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1CFFF29557",
@@ -6357,6 +6582,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D56C81845F",
@@ -6441,6 +6669,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B005E894D1",
@@ -6525,6 +6756,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-15C0DC1118",
@@ -6609,6 +6843,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0F9CC08FB0",
@@ -6693,6 +6930,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AA56840B22",
@@ -6777,6 +7017,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EF40840573",
@@ -6861,6 +7104,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2273F4E836",
@@ -6945,6 +7191,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E3FE0F0A41",
@@ -7029,6 +7278,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-631103548A",
@@ -7113,6 +7365,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8C3800DF80",
@@ -7197,6 +7452,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C6FEAD7474",
@@ -7281,6 +7539,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5EA8D4131C",
@@ -7365,6 +7626,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6BBF633374",
@@ -7449,6 +7713,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B76B50E61A",
@@ -7533,6 +7800,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-411E0CC683",
@@ -7617,6 +7887,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C4043B3D94",
@@ -7701,6 +7974,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-422F729D6C",
@@ -7785,6 +8061,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8725062B8E",
@@ -7869,6 +8148,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-73C64A9CD8",
@@ -7953,6 +8235,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-84764B4F83",
@@ -8037,6 +8322,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-75E2C34ADE",
@@ -8121,6 +8409,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2BC18207BE",
@@ -8205,6 +8496,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3DA0E4FE39",
@@ -8289,6 +8583,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-128177AB4B",
@@ -8373,6 +8670,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0BA7561117",
@@ -8457,6 +8757,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8E9D95E0CF",
@@ -8541,6 +8844,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C14B4CB658",
@@ -8625,6 +8931,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7F1D625D63",
@@ -8709,6 +9018,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F1D03296F2",
@@ -8793,6 +9105,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-513BA884BB",
@@ -8877,6 +9192,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B320E50BE5",
@@ -8961,6 +9279,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A151A44896",
@@ -9045,6 +9366,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A4964F37AC",
@@ -9129,6 +9453,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A998F2FDF8",
@@ -9213,6 +9540,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0D92B68BCA",
@@ -9297,6 +9627,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3F60ACD5EA",
@@ -9381,6 +9714,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EA9A7D6A90",
@@ -9465,6 +9801,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A35A87FCDB",
@@ -9549,6 +9888,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8FFAE9516A",
@@ -9633,6 +9975,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-384E474AD0",
@@ -9717,6 +10062,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0296C60517",
@@ -9801,6 +10149,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D2CE66A2C2",
@@ -9885,6 +10236,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F5FE8BC6E0",
@@ -9969,6 +10323,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-669D35F284",
@@ -10053,6 +10410,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BF2B4F1429",
@@ -10137,6 +10497,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F818D729BA",
@@ -10221,6 +10584,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-39FD43641B",
@@ -10305,6 +10671,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DE0162DD81",
@@ -10389,6 +10758,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-4845EC741E",
@@ -10473,6 +10845,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2B32A0DAFF",
@@ -10557,6 +10932,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9D76377DE3",
@@ -10641,6 +11019,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-93377A988A",
@@ -10725,6 +11106,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D315AAE221",
@@ -10809,6 +11193,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8D1760ACD1",
@@ -10893,6 +11280,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-60B0CDE3A2",
@@ -10977,6 +11367,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A917FB9B6A",
@@ -11061,6 +11454,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F096E26629",
@@ -11145,6 +11541,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3AB5F402F3",
@@ -11229,6 +11628,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BC9FD11087",
@@ -11313,6 +11715,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-49E7A48B61",
@@ -11343,7 +11748,7 @@
   {
     "id": "bitdefender-antivirus-plus-5-pc-1-anno",
     "slug": "bitdefender-antivirus-plus-5-pc-1-anno",
-    "name": "Bitdefender Antivirus Plus - 5 PC 2025 - 1 Anno",
+    "name": "Bitdefender Antivirus Plus — 5 dispositivi / 12 mesi",
     "category": "security",
     "brand": "Bitdefender",
     "mark": "B",
@@ -11355,8 +11760,8 @@
     "licenseType": "Abbonamento",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Bitdefender Antivirus Plus - 5 PC 2025 - 1 Anno, edizione Anno, configurazione indicativa per 5 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Bitdefender Antivirus Plus - 5 PC 2025 - 1 Anno, Anno edition, indicative configuration for 5 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Bitdefender Antivirus Plus — 5 dispositivi / 12 mesi, edizione Anno, configurazione indicativa per 5 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Bitdefender Antivirus Plus — 5 dispositivi / 12 mesi, Anno edition, indicative configuration for 5 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -11365,7 +11770,7 @@
         "edition": "Anno",
         "duration_months": 12,
         "devices": 5,
-        "price_eur": null,
+        "price_eur": 74.99,
         "reference_price_private": 69.99,
         "list_price_eur": null
       }
@@ -11393,22 +11798,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "MK034E",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 74.99,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 7,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-4658127DB8",
       "asset_path": "/products/bitdefender-antivirus-plus-5-pc-1-anno.webp",
-      "sha256": "1378e18011599ee212744b79c7ceebd87f5192c34e96fe804f17b9eed20901cb",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "5f0bb79b759cfd3385503c0409f49412a709b1a0060caccf92268dba9f6b81c1",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -11421,13 +11831,13 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5299",
     "risk_score": null
   },
   {
     "id": "bitdefender-antivirus-plus-3-pc-1-anno",
     "slug": "bitdefender-antivirus-plus-3-pc-1-anno",
-    "name": "Bitdefender Antivirus Plus 2025 - 3 PC - 1 Anno",
+    "name": "Bitdefender Antivirus Plus — 3 dispositivi / 12 mesi",
     "category": "security",
     "brand": "Bitdefender",
     "mark": "B",
@@ -11439,8 +11849,8 @@
     "licenseType": "Abbonamento",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Bitdefender Antivirus Plus 2025 - 3 PC - 1 Anno, edizione Anno, configurazione indicativa per 3 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Bitdefender Antivirus Plus 2025 - 3 PC - 1 Anno, Anno edition, indicative configuration for 3 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Bitdefender Antivirus Plus — 3 dispositivi / 12 mesi, edizione Anno, configurazione indicativa per 3 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Bitdefender Antivirus Plus — 3 dispositivi / 12 mesi, Anno edition, indicative configuration for 3 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -11449,7 +11859,7 @@
         "edition": "Anno",
         "duration_months": 12,
         "devices": 3,
-        "price_eur": null,
+        "price_eur": 59.99,
         "reference_price_private": 54.99,
         "list_price_eur": null
       }
@@ -11477,22 +11887,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "XL028C",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 59.99,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 6,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-3DB860281B",
       "asset_path": "/products/bitdefender-antivirus-plus-3-pc-1-anno.webp",
-      "sha256": "1378e18011599ee212744b79c7ceebd87f5192c34e96fe804f17b9eed20901cb",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "1bc230f8787e6100aeb703a8c80352b054537cf1210b55e110a76d12ea81296c",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -11505,13 +11920,13 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5299",
     "risk_score": null
   },
   {
     "id": "bitdefender-antivirus-plus-1-pc-1-anno",
     "slug": "bitdefender-antivirus-plus-1-pc-1-anno",
-    "name": "Bitdefender Antivirus Plus 2025 - 1 PC - 1 Anno",
+    "name": "Bitdefender Antivirus Plus — 1 dispositivo / 12 mesi",
     "category": "security",
     "brand": "Bitdefender",
     "mark": "B",
@@ -11523,8 +11938,8 @@
     "licenseType": "Abbonamento",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Bitdefender Antivirus Plus 2025 - 1 PC - 1 Anno, edizione Anno, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Bitdefender Antivirus Plus 2025 - 1 PC - 1 Anno, Anno edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Bitdefender Antivirus Plus — 1 dispositivo / 12 mesi, edizione Anno, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Bitdefender Antivirus Plus — 1 dispositivo / 12 mesi, Anno edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -11533,7 +11948,7 @@
         "edition": "Anno",
         "duration_months": 12,
         "devices": 1,
-        "price_eur": null,
+        "price_eur": 44.99,
         "reference_price_private": 44.99,
         "list_price_eur": null
       }
@@ -11561,22 +11976,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "V934AZ",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 44.99,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 5,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-33681D89CA",
       "asset_path": "/products/bitdefender-antivirus-plus-1-pc-1-anno.webp",
-      "sha256": "1378e18011599ee212744b79c7ceebd87f5192c34e96fe804f17b9eed20901cb",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "995ef4e9f511af41ebabae1f822bff32a077f4bb2a27993b06c054e4ad053717",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -11589,7 +12009,7 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5299",
     "risk_score": null
   },
   {
@@ -11649,6 +12069,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B52AA43ABE",
@@ -11733,6 +12156,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FD5012A571",
@@ -11817,6 +12243,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-ABC8C34B50",
@@ -11847,7 +12276,7 @@
   {
     "id": "bitdefender-total-security-licenza-10-dispositivi-1-anno",
     "slug": "bitdefender-total-security-licenza-10-dispositivi-1-anno",
-    "name": "Bitdefender Total Security 2025 10 Dispositivi - 1 Anno",
+    "name": "Bitdefender Total Security — 10 dispositivi / 12 mesi",
     "category": "security",
     "brand": "Bitdefender",
     "mark": "B",
@@ -11859,8 +12288,8 @@
     "licenseType": "Abbonamento",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Bitdefender Total Security 2025 10 Dispositivi - 1 Anno, edizione Total Security, configurazione indicativa per 10 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Bitdefender Total Security 2025 10 Dispositivi - 1 Anno, Total Security edition, indicative configuration for 10 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Bitdefender Total Security — 10 dispositivi / 12 mesi, edizione Total Security, configurazione indicativa per 10 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Bitdefender Total Security — 10 dispositivi / 12 mesi, Total Security edition, indicative configuration for 10 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -11869,7 +12298,7 @@
         "edition": "Total Security",
         "duration_months": 12,
         "devices": 10,
-        "price_eur": null,
+        "price_eur": 119.99,
         "reference_price_private": 84.99,
         "list_price_eur": null
       }
@@ -11897,22 +12326,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "894GBK",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 119.99,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 10,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-E36877D5E0",
       "asset_path": "/products/bitdefender-total-security-licenza-10-dispositivi-1-anno.webp",
-      "sha256": "02f9360cc041b3f09d40005cebf20f942fb7174a46930bca890620f8e9f375c8",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "71997a181daac73fd48d32432aaa411eaeb8e9fcb459250dec843dfb8f8188fa",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -11925,13 +12359,13 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5299",
     "risk_score": null
   },
   {
     "id": "bitdefender-total-security-licenza-5-dispositivi-1-anno",
     "slug": "bitdefender-total-security-licenza-5-dispositivi-1-anno",
-    "name": "Bitdefender Total Security 2025 5 Dispositivi - 1 Anno",
+    "name": "Bitdefender Total Security — 5 dispositivi / 12 mesi",
     "category": "security",
     "brand": "Bitdefender",
     "mark": "B",
@@ -11943,8 +12377,8 @@
     "licenseType": "Abbonamento",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Bitdefender Total Security 2025 5 Dispositivi - 1 Anno, edizione Total Security, configurazione indicativa per 5 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Bitdefender Total Security 2025 5 Dispositivi - 1 Anno, Total Security edition, indicative configuration for 5 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Bitdefender Total Security — 5 dispositivi / 12 mesi, edizione Total Security, configurazione indicativa per 5 dispositivi. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Bitdefender Total Security — 5 dispositivi / 12 mesi, Total Security edition, indicative configuration for 5 devices. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -11953,7 +12387,7 @@
         "edition": "Total Security",
         "duration_months": 12,
         "devices": 5,
-        "price_eur": null,
+        "price_eur": 99.99,
         "reference_price_private": 94.99,
         "list_price_eur": null
       }
@@ -11981,22 +12415,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "04GKW7",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 99.99,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 9,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-114547D492",
       "asset_path": "/products/bitdefender-total-security-licenza-5-dispositivi-1-anno.webp",
-      "sha256": "02f9360cc041b3f09d40005cebf20f942fb7174a46930bca890620f8e9f375c8",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "14d0ab7c96426d375ee8db69edac4c0b4a3dcbf778f3657fe92450cdada284e5",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -12009,13 +12448,13 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5299",
     "risk_score": null
   },
   {
     "id": "bitdefender-total-security-licenza-3-dispositivi-1-anno",
     "slug": "bitdefender-total-security-licenza-3-dispositivi-1-anno",
-    "name": "Bitdefender Total Security 2025 - Licenza - 3 Disp. - 1 Anno",
+    "name": "Bitdefender Total Security — 3 dispositivi / 12 mesi",
     "category": "security",
     "brand": "Bitdefender",
     "mark": "B",
@@ -12027,8 +12466,8 @@
     "licenseType": "Abbonamento",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Bitdefender Total Security 2025 - Licenza - 3 Disp. - 1 Anno, edizione Total Security, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Bitdefender Total Security 2025 - Licenza - 3 Disp. - 1 Anno, Total Security edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Bitdefender Total Security — 3 dispositivi / 12 mesi, edizione Total Security, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Bitdefender Total Security — 3 dispositivi / 12 mesi, Total Security edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -12037,7 +12476,7 @@
         "edition": "Total Security",
         "duration_months": 12,
         "devices": 1,
-        "price_eur": null,
+        "price_eur": 89.99,
         "reference_price_private": 84.99,
         "list_price_eur": null
       }
@@ -12065,22 +12504,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "VD840X",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 89.99,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 8,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-24E0D3403E",
       "asset_path": "/products/bitdefender-total-security-licenza-3-dispositivi-1-anno.webp",
-      "sha256": "02f9360cc041b3f09d40005cebf20f942fb7174a46930bca890620f8e9f375c8",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "68c3d0c9058d39a236a1fad98aea1dd4c551928153cf7e7ac7d8be9100ea5fa4",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -12093,7 +12537,7 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5299",
     "risk_score": null
   },
   {
@@ -12153,6 +12597,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-55C835ED67",
@@ -12237,6 +12684,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EED46A6500",
@@ -12321,6 +12771,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B3AAD2ECEC",
@@ -12405,6 +12858,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-11AC437C33",
@@ -12489,6 +12945,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D35F93F85E",
@@ -12573,6 +13032,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A9D3C43152",
@@ -12657,6 +13119,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EAE90C32C7",
@@ -12741,6 +13206,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E3B6C01A02",
@@ -12825,6 +13293,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A85FF3A889",
@@ -12909,6 +13380,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0BDE7B196D",
@@ -12993,6 +13467,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-457FD3AC13",
@@ -13077,6 +13554,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C5FCFB5B4C",
@@ -13161,6 +13641,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B47302E8FA",
@@ -13245,6 +13728,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CCBD3F0603",
@@ -13275,7 +13761,7 @@
   {
     "id": "microsoft-windows-11-professional",
     "slug": "microsoft-windows-11-professional",
-    "name": "Microsoft Windows 11 Professional",
+    "name": "Microsoft Windows 11 Pro",
     "category": "os",
     "brand": "Microsoft",
     "mark": "W11",
@@ -13287,8 +13773,8 @@
     "licenseType": "Perpetua",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Microsoft Windows 11 Professional, edizione Professional, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Microsoft Windows 11 Professional, Professional edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Microsoft Windows 11 Pro, edizione Professional, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Microsoft Windows 11 Pro, Professional edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -13297,7 +13783,7 @@
         "edition": "Professional",
         "duration_months": 0,
         "devices": 1,
-        "price_eur": null,
+        "price_eur": 259.0,
         "reference_price_private": 9.9,
         "list_price_eur": null
       }
@@ -13325,22 +13811,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "W11PR11",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 259.0,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 3,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-E18A63310E",
       "asset_path": "/products/microsoft-windows-11-professional.webp",
-      "sha256": "928462c7d63adbe16fc1b32b64aaedf5faa2e98dd7cda18274fd027efe4e4fb9",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "231acc8ef1f8e6677b8f00e4f288df852d8cc3a9a802f492c1266f0a4d5db777",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -13353,7 +13844,7 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "321",
     "risk_score": null
   },
   {
@@ -13381,7 +13872,7 @@
         "edition": "Home",
         "duration_months": 0,
         "devices": 1,
-        "price_eur": null,
+        "price_eur": 145.0,
         "reference_price_private": 9.9,
         "list_price_eur": null
       }
@@ -13409,22 +13900,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "WIN111",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 145.0,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 4,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-EB0F2F2081",
       "asset_path": "/products/microsoft-windows-11-home.webp",
-      "sha256": "296cada500272c245b7dbaa9a9104b73f695531a14c0b859ed2d915930c204ae",
-      "width": 600,
-      "height": 600,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "a89c9cada41c40c65b7619bbd4ef92e223f3f9f4ff19fd969940b017c214e357",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -13437,7 +13933,7 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "321",
     "risk_score": null
   },
   {
@@ -13497,6 +13993,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2651C6AC17",
@@ -13581,6 +14080,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7176FC4DE0",
@@ -13665,6 +14167,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-95E5553CD3",
@@ -13749,6 +14254,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1DE0FF13A1",
@@ -13833,6 +14341,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B4A6224DCC",
@@ -13917,6 +14428,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3C765C1F49",
@@ -14001,6 +14515,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-4B6C700738",
@@ -14085,6 +14602,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9470D2D71D",
@@ -14169,6 +14689,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-901AE9D70D",
@@ -14253,6 +14776,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-533FF228F1",
@@ -14337,6 +14863,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A7D934F7A7",
@@ -14421,6 +14950,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DEC15C99B8",
@@ -14505,6 +15037,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B78125A1B5",
@@ -14589,6 +15124,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-26A4426530",
@@ -14673,6 +15211,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5AAE147E0B",
@@ -14757,6 +15298,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C71C4F92BC",
@@ -14841,6 +15385,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0471485EE7",
@@ -14925,6 +15472,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A0CEC3CE07",
@@ -15009,6 +15559,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-297AF4D33E",
@@ -15093,6 +15646,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7AAC8693E5",
@@ -15177,6 +15733,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D387605AF5",
@@ -15261,6 +15820,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CB03923EB6",
@@ -15345,6 +15907,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0624F21A2A",
@@ -15429,6 +15994,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-50937922FA",
@@ -15513,6 +16081,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0E5C2ABAF2",
@@ -15597,6 +16168,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-229BD61B35",
@@ -15681,6 +16255,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CE75E048BA",
@@ -15765,6 +16342,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DCA98FEC2D",
@@ -15849,6 +16429,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-100C93DC6A",
@@ -15933,6 +16516,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8CDDD0472E",
@@ -16017,6 +16603,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7B609B9A3D",
@@ -16101,6 +16690,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A7484774CB",
@@ -16185,6 +16777,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C6AF0D969D",
@@ -16269,6 +16864,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0466953156",
@@ -16353,6 +16951,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1CA169FA6E",
@@ -16437,6 +17038,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B7F0B039D7",
@@ -16521,6 +17125,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-92D232B0F0",
@@ -16605,6 +17212,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3694C9BFD8",
@@ -16689,6 +17299,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EDE4E6578A",
@@ -16773,6 +17386,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5F0E1FA441",
@@ -16857,6 +17473,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-66C37AFE8C",
@@ -16941,6 +17560,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-50AEA2C3BA",
@@ -17025,6 +17647,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1582A9EB6B",
@@ -17109,6 +17734,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BC2A3A96A8",
@@ -17193,6 +17821,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-36B4506C24",
@@ -17277,6 +17908,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AFE7C1A36A",
@@ -17361,6 +17995,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E4CB85CCB2",
@@ -17445,6 +18082,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-55F5EC1C70",
@@ -17529,6 +18169,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CE34330C32",
@@ -17613,6 +18256,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F7EF4DA30B",
@@ -17697,6 +18343,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A3E9823139",
@@ -17781,6 +18430,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3C6A28199D",
@@ -17865,6 +18517,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F8FB79557C",
@@ -17949,6 +18604,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-00AD9E4203",
@@ -18033,6 +18691,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C01193FD1B",
@@ -18117,6 +18778,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7A4D74F654",
@@ -18201,6 +18865,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8915BFE15C",
@@ -18285,6 +18952,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CD8EE6FA5D",
@@ -18369,6 +19039,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-00AE62EF31",
@@ -18453,6 +19126,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B49670CF98",
@@ -18537,6 +19213,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E2565EF2C0",
@@ -18621,6 +19300,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7540680FA7",
@@ -18705,6 +19387,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9B815B882F",
@@ -18789,6 +19474,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C0D11A5D3E",
@@ -18873,6 +19561,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6299E98696",
@@ -18957,6 +19648,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3B9ADBC5AB",
@@ -19041,6 +19735,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F9D2602E27",
@@ -19125,6 +19822,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2762D5C81A",
@@ -19209,6 +19909,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F1E446F068",
@@ -19293,6 +19996,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2898C90EE8",
@@ -19377,6 +20083,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A54127E999",
@@ -19461,6 +20170,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-66CFCF9082",
@@ -19545,6 +20257,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AAC5B93BB8",
@@ -19629,6 +20344,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8EFF795407",
@@ -19713,6 +20431,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-27D3329ACF",
@@ -19797,6 +20518,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E2E0800F12",
@@ -19881,6 +20605,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7072BB37E6",
@@ -19965,6 +20692,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6CD3412168",
@@ -20049,6 +20779,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AE3095BB4A",
@@ -20133,6 +20866,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-600DC3DD85",
@@ -20217,6 +20953,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8F4168532B",
@@ -20301,6 +21040,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7BE4FB5BD6",
@@ -20385,6 +21127,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3C5F10F55C",
@@ -20469,6 +21214,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-08266E0F4F",
@@ -20553,6 +21301,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6C15C2CA48",
@@ -20637,6 +21388,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B82F4DA779",
@@ -20721,6 +21475,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D773EB9891",
@@ -20805,6 +21562,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C925DE6C1B",
@@ -20889,6 +21649,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7F321B4DED",
@@ -20973,6 +21736,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B50AE6E6D1",
@@ -21057,6 +21823,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-25753FF1EA",
@@ -21141,6 +21910,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DA6B84EBF0",
@@ -21225,6 +21997,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-779635AC1B",
@@ -21309,6 +22084,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B7F2AF7A6D",
@@ -21393,6 +22171,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5B500BC422",
@@ -21477,6 +22258,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E562C8E77A",
@@ -21561,6 +22345,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1124F24F98",
@@ -21645,6 +22432,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A4B3BD0F5E",
@@ -21729,6 +22519,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BBED1F435A",
@@ -21813,6 +22606,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-06EB3B345D",
@@ -21843,7 +22639,7 @@
   {
     "id": "microsoft-office-2024-home-and-business-mac",
     "slug": "microsoft-office-2024-home-and-business-mac",
-    "name": "Microsoft Office 2024 Home And Business (Mac)",
+    "name": "Microsoft Office Home & Business 2024 (Mac)",
     "category": "office",
     "brand": "Microsoft",
     "mark": "O24",
@@ -21855,8 +22651,8 @@
     "licenseType": "Perpetua",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Microsoft Office 2024 Home And Business (Mac), edizione Home And Business, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Microsoft Office 2024 Home And Business (Mac), Home And Business edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Microsoft Office Home & Business 2024 (Mac), edizione Home And Business, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Microsoft Office Home & Business 2024 (Mac), Home And Business edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -21865,7 +22661,7 @@
         "edition": "Home And Business",
         "duration_months": 0,
         "devices": 1,
-        "price_eur": null,
+        "price_eur": 299.0,
         "reference_price_private": 28.9,
         "list_price_eur": null
       }
@@ -21893,22 +22689,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "MC22B0",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 299.0,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 1,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-6A2F0E2B49",
       "asset_path": "/products/microsoft-office-2024-home-and-business-mac.webp",
-      "sha256": "0318f6cb17f6cc14a338e1b448258ab43ca07a33d509e2469df99f1a39dd9247",
-      "width": 973,
-      "height": 1000,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "7f445fdc9c1d00ddfeff72086a284d083d01035b35eb88e94ba239e736b0cd68",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -21921,13 +22722,13 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5303",
     "risk_score": null
   },
   {
     "id": "microsoft-office-2024-home-and-business-windows",
     "slug": "microsoft-office-2024-home-and-business-windows",
-    "name": "Microsoft Office 2024 Home And Business (Windows)",
+    "name": "Microsoft Office Home & Business 2024 (Windows)",
     "category": "office",
     "brand": "Microsoft",
     "mark": "O24",
@@ -21939,8 +22740,8 @@
     "licenseType": "Perpetua",
     "tagline_it": "Scheda prodotto in revisione.",
     "tagline_en": "Product record under review.",
-    "description_it": "Microsoft Office 2024 Home And Business (Windows), edizione Home And Business, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
-    "description_en": "Microsoft Office 2024 Home And Business (Windows), Home And Business edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
+    "description_it": "Microsoft Office Home & Business 2024 (Windows), edizione Home And Business, configurazione indicativa per 1 dispositivo. Scheda preliminare: prezzo, disponibilità, provenienza e condizioni commerciali sono in verifica; il prodotto non è acquistabile.",
+    "description_en": "Microsoft Office Home & Business 2024 (Windows), Home And Business edition, indicative configuration for 1 device. Preliminary record: price, availability, provenance and commercial terms are under review; the product cannot be purchased.",
     "features_it": [],
     "features_en": [],
     "variants": [
@@ -21949,7 +22750,7 @@
         "edition": "Home And Business",
         "duration_months": 0,
         "devices": 1,
-        "price_eur": null,
+        "price_eur": 299.0,
         "reference_price_private": 39.9,
         "list_price_eur": null
       }
@@ -21977,22 +22778,27 @@
     "mpn_status": "assignment_unverified",
     "mpn_candidate_private": "HB20W4",
     "condition": "new",
-    "selling_price_eur": null,
+    "selling_price_eur": 299.0,
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
-    "image_rights_approved": false,
+    "pilot_candidate_private": true,
+    "pilot_rank_private": 2,
+    "catalog_review_status": "pending",
+    "image_rights_approved": true,
     "image_rights_evidence_private": {
       "sku": "LP-0D2EA57ECC",
       "asset_path": "/products/microsoft-office-2024-home-and-business-windows.webp",
-      "sha256": "c42fc4fa5491bfd987a5ea960dbd67f2ab0fb6b4a5b23631f1d0235da5fdd93d",
-      "width": 973,
-      "height": 1000,
-      "status": "unverified",
-      "rights_basis": null,
-      "evidence_refs": [],
-      "reviewed_by": null,
-      "reviewed_at": null
+      "sha256": "5b13aa03cce6a6579e4090608b1eadabd4ba1353fd4c20789df84b74050289f1",
+      "width": 1200,
+      "height": 1200,
+      "status": "approved",
+      "rights_basis": "owned",
+      "evidence_refs": [
+        "private://documents/pilot-image-generation-2026-08-11"
+      ],
+      "reviewed_by": "automation:hermes-agent",
+      "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
     },
     "provenance_status": "unverified",
     "provenance_evidence_private": {
@@ -22005,7 +22811,7 @@
       "reviewed_at": null
     },
     "status": "draft",
-    "google_product_category": null,
+    "google_product_category": "5303",
     "risk_score": null
   },
   {
@@ -22065,6 +22871,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-816F69E65B",
@@ -22149,6 +22958,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-628CE2730E",
@@ -22233,6 +23045,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3CEA46F757",
@@ -22317,6 +23132,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0E35A0A1F8",
@@ -22401,6 +23219,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-361375A8A1",
@@ -22485,6 +23306,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2F679AF5AD",
@@ -22569,6 +23393,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D4EC7C263F",
@@ -22653,6 +23480,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DF91779A5D",
@@ -22737,6 +23567,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EC5B1D69F2",
@@ -22821,6 +23654,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C366BDFFC8",
@@ -22905,6 +23741,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CE279B72D3",
@@ -22989,6 +23828,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F436253821",
@@ -23073,6 +23915,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B12918BAE5",
@@ -23157,6 +24002,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DDDAE682A3",
@@ -23241,6 +24089,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3F100FAB5C",
@@ -23325,6 +24176,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FDFAF3256C",
@@ -23409,6 +24263,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-68C6541D04",
@@ -23493,6 +24350,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2764BAEB9E",
@@ -23577,6 +24437,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C7914BAD65",
@@ -23661,6 +24524,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-613D30CCD1",
@@ -23745,6 +24611,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B5B64C6815",
@@ -23829,6 +24698,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F20AC2A02F",
@@ -23913,6 +24785,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-4A778FD8DF",
@@ -23997,6 +24872,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-71AB8DAE09",
@@ -24081,6 +24959,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-786C1F4CFA",
@@ -24165,6 +25046,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5043D9085F",
@@ -24249,6 +25133,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-779E516D54",
@@ -24333,6 +25220,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DF2E27AD89",
@@ -24417,6 +25307,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-978C443595",
@@ -24501,6 +25394,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6E0BA86535",
@@ -24585,6 +25481,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-91280B147C",
@@ -24669,6 +25568,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-84D622D9E3",
@@ -24753,6 +25655,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E7016C50A0",
@@ -24837,6 +25742,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7B99E6A773",
@@ -24921,6 +25829,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1677CDA66A",
@@ -25005,6 +25916,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-ED5C9BC7EA",
@@ -25089,6 +26003,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-55899868DD",
@@ -25173,6 +26090,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5FBB87ED64",
@@ -25257,6 +26177,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BE7CB0FC82",
@@ -25341,6 +26264,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BDB7F3F789",
@@ -25425,6 +26351,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F177B3761E",
@@ -25509,6 +26438,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-12610C5B47",
@@ -25593,6 +26525,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9A57EE8A7D",
@@ -25677,6 +26612,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FF7A5F00ED",
@@ -25761,6 +26699,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CCB31F3A28",
@@ -25845,6 +26786,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-34AEC5AEC3",
@@ -25929,6 +26873,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E7101ECDCD",
@@ -26013,6 +26960,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2332FA123A",
@@ -26097,6 +27047,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FAAAEC3D0F",
@@ -26181,6 +27134,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FBF3D89659",
@@ -26265,6 +27221,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-DF81AB98D4",
@@ -26349,6 +27308,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B9127DFE41",
@@ -26433,6 +27395,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A95B03A082",
@@ -26517,6 +27482,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-42D140FFC1",
@@ -26601,6 +27569,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-47234E9172",
@@ -26685,6 +27656,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3540A00AE3",
@@ -26769,6 +27743,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9FE8618412",
@@ -26853,6 +27830,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BBDABB7EC7",
@@ -26937,6 +27917,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8EE534457E",
@@ -27021,6 +28004,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EAE64AEA9A",
@@ -27105,6 +28091,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-83ED0FE945",
@@ -27189,6 +28178,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-796926949F",
@@ -27273,6 +28265,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F05CA795D5",
@@ -27357,6 +28352,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FB2B913484",
@@ -27441,6 +28439,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0714B5791A",
@@ -27525,6 +28526,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9C2CCFAC65",
@@ -27609,6 +28613,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-121BD83762",
@@ -27693,6 +28700,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FCD59EEED0",
@@ -27777,6 +28787,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EBEE2A66A7",
@@ -27861,6 +28874,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9E703338C4",
@@ -27945,6 +28961,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3AD8ECC375",
@@ -28029,6 +29048,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-FFA8370579",
@@ -28113,6 +29135,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D4EA691A35",
@@ -28197,6 +29222,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-6AEE130ACC",
@@ -28281,6 +29309,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-282FF18CFA",
@@ -28365,6 +29396,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2020D72788",
@@ -28449,6 +29483,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D39EE8500B",
@@ -28533,6 +29570,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-76D7024D2E",
@@ -28617,6 +29657,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C0997FBEF2",
@@ -28701,6 +29744,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-38B42B9D8D",
@@ -28785,6 +29831,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-4AF5631F59",
@@ -28869,6 +29918,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-76205A98A5",
@@ -28953,6 +30005,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-132333FAC6",
@@ -29037,6 +30092,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B83214B2E6",
@@ -29121,6 +30179,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D19488385B",
@@ -29205,6 +30266,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-A0E23879B8",
@@ -29289,6 +30353,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CBBF278EE0",
@@ -29373,6 +30440,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1E19ABE168",
@@ -29457,6 +30527,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-94415D8B59",
@@ -29541,6 +30614,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-45BDC7EA62",
@@ -29625,6 +30701,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AC0B769A28",
@@ -29709,6 +30788,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AEC3984F89",
@@ -29793,6 +30875,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-40921524C8",
@@ -29877,6 +30962,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-885CB687B4",
@@ -29961,6 +31049,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5ED8388C64",
@@ -30045,6 +31136,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1CC5CD3C05",
@@ -30129,6 +31223,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D4FA12DF8E",
@@ -30213,6 +31310,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9CB4929586",
@@ -30297,6 +31397,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-AEEDC7CCDD",
@@ -30381,6 +31484,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E7C8360E34",
@@ -30465,6 +31571,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-44A7807131",
@@ -30549,6 +31658,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3A6C0CB635",
@@ -30633,6 +31745,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-2E9C41E1B8",
@@ -30717,6 +31832,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F59361C21E",
@@ -30802,6 +31920,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7BAAEACC7B",
@@ -30886,6 +32007,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B9B699077F",
@@ -30970,6 +32094,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-B6FCA6C5CC",
@@ -31054,6 +32181,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0C37038CA5",
@@ -31139,6 +32269,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-C7D422C928",
@@ -31223,6 +32356,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-81490B36C2",
@@ -31307,6 +32443,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7A633AC90A",
@@ -31392,6 +32531,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-181266FB29",
@@ -31476,6 +32618,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-8C499FE4F3",
@@ -31560,6 +32705,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-41D0F3FBEC",
@@ -31644,6 +32792,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0E1861F32B",
@@ -31728,6 +32879,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CFE86E8F84",
@@ -31812,6 +32966,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-77A202FE46",
@@ -31896,6 +33053,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-29585C6495",
@@ -31980,6 +33140,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-696B7E4825",
@@ -32064,6 +33227,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3AD1CA5DEE",
@@ -32148,6 +33314,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1DDB9AA3A4",
@@ -32232,6 +33401,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-3DAA59B62F",
@@ -32316,6 +33488,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0DE0E1648E",
@@ -32400,6 +33575,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-17704025A7",
@@ -32484,6 +33662,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-0167F5C578",
@@ -32568,6 +33749,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-CE62D1E1AF",
@@ -32652,6 +33836,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-7DDCF70278",
@@ -32736,6 +33923,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-9BA0DBF29D",
@@ -32820,6 +34010,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-1182BAB97F",
@@ -32904,6 +34097,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-53DDED6EA5",
@@ -32988,6 +34184,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-F7FA7E9C1B",
@@ -33072,6 +34271,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-5AC4FB473F",
@@ -33156,6 +34358,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-D2530083A8",
@@ -33240,6 +34445,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-E879117D95",
@@ -33324,6 +34532,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-EABE2FE3A9",
@@ -33408,6 +34619,9 @@
     "availability_status": "PendingReview",
     "stock": 0,
     "merchant_approved": false,
+    "pilot_candidate_private": false,
+    "pilot_rank_private": null,
+    "catalog_review_status": "not_selected",
     "image_rights_approved": false,
     "image_rights_evidence_private": {
       "sku": "LP-BA6CBE61F8",
