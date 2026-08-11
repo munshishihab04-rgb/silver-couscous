@@ -1,5 +1,5 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Request, Body, Header, Query
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from dotenv import load_dotenv
 from pathlib import Path
 import asyncio
@@ -107,7 +107,12 @@ async def add_security_headers(request: Request, call_next):
     context_token = request_id_var.set(request_id)
     response = None
     try:
-        if request.method in {"POST", "PUT", "PATCH"}:
+        if is_production() and request.url.hostname == "www.licenzpol.it":
+            target = f"https://licenzpol.it{request.url.path}"
+            if request.url.query:
+                target += f"?{request.url.query}"
+            response = RedirectResponse(target, status_code=308)
+        if response is None and request.method in {"POST", "PUT", "PATCH"}:
             try:
                 content_length = int(request.headers.get("content-length", "0"))
             except ValueError:

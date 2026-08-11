@@ -1,0 +1,22 @@
+[Unit]
+Description=LicenzPol named Cloudflare Tunnel
+After=network-online.target licenzpol.service
+Wants=network-online.target
+Requires=licenzpol.service
+
+[Service]
+Type=simple
+User=hermesguest
+Group=hermesguest
+ExecStart=/home/hermesguest/workspace/Licenzpol-definitivamente/.runtime/bin/cloudflared tunnel --config /home/hermesguest/workspace/Licenzpol-definitivamente/.runtime/cloudflared/config.yml run
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=read-only
+ProtectSystem=strict
+ReadOnlyPaths=/home/hermesguest/workspace/Licenzpol-definitivamente/.runtime/cloudflared
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

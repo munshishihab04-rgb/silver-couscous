@@ -21,6 +21,7 @@ if APP_ENV not in {"development", "staging", "production"}:
     APP_ENV = "development"
 
 COMMERCE_ENABLED = (os.environ.get("COMMERCE_ENABLED", "false").lower() == "true")
+SEARCH_INDEXING_ENABLED = (os.environ.get("SEARCH_INDEXING_ENABLED", "false").lower() == "true")
 
 PUBLIC_SITE_URL = (os.environ.get("PUBLIC_SITE_URL") or "").rstrip("/") or None
 

@@ -11,7 +11,7 @@ from xml.sax.saxutils import escape as xml_escape
 from fastapi import APIRouter, Depends, Request, Response, Query, HTTPException
 
 from auth import current_admin
-from config import APP_ENV
+from config import APP_ENV, SEARCH_INDEXING_ENABLED
 from publication import is_public_offer
 
 
@@ -214,8 +214,8 @@ def sitemap_product_query(app_env: str) -> dict:
     return {"merchant_approved": True} if app_env == "production" else {"_id": {"$exists": False}}
 
 
-def robots_body(app_env: str, sitemap_url: str) -> str:
-    if app_env != "production":
+def robots_body(app_env: str, sitemap_url: str, indexing_enabled: bool = True) -> str:
+    if app_env != "production" or not indexing_enabled:
         return "User-agent: *\nDisallow: /\n"
     return (
         "User-agent: *\n"
@@ -287,7 +287,7 @@ async def sitemap_xml(request: Request):
             continue
         add(f"/page/{slug}", "monthly", "0.4")
 
-    if APP_ENV != "production":
+    if APP_ENV != "production" or not SEARCH_INDEXING_ENABLED:
         urls = []
 
     xml_parts = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -312,5 +312,5 @@ async def sitemap_xml(request: Request):
 @seo_router.get("/robots.txt", include_in_schema=False)
 async def robots_txt(request: Request):
     base = _site_base_url(request)
-    body = robots_body(APP_ENV, f"{base}/sitemap.xml")
+    body = robots_body(APP_ENV, f"{base}/sitemap.xml", SEARCH_INDEXING_ENABLED)
     return Response(content=body, media_type="text/plain; charset=utf-8")

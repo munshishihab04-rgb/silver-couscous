@@ -1,0 +1,16 @@
+www.licenzpol.it {
+    redir https://licenzpol.it{uri} permanent
+}
+
+licenzpol.it {
+    encode zstd gzip
+
+    request_body {
+        max_size 1MB
+    }
+
+    reverse_proxy 127.0.0.1:8002 {
+        header_up X-Forwarded-Proto {scheme}
+        header_up X-Forwarded-Host {host}
+    }
+}

@@ -1,0 +1,14 @@
+# Replace the tunnel UUID after creating a named Cloudflare Tunnel.
+tunnel: 00000000-0000-0000-0000-000000000000
+credentials-file: /home/hermesguest/workspace/Licenzpol-definitivamente/.runtime/cloudflared/00000000-0000-0000-0000-000000000000.json
+
+originRequest:
+  connectTimeout: 10s
+  noTLSVerify: false
+
+ingress:
+  - hostname: licenzpol.it
+    service: http://127.0.0.1:8002
+  - hostname: www.licenzpol.it
+    service: http://127.0.0.1:8002
+  - service: http_status:404

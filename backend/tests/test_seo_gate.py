@@ -7,6 +7,12 @@ def test_staging_robots_disallow_all_crawlers():
     assert "Allow: /" not in body
 
 
+def test_production_soft_launch_remains_noindex_until_explicitly_enabled():
+    body = robots_body("production", "https://licenzpol.it/sitemap.xml", indexing_enabled=False)
+    assert "Disallow: /" in body
+    assert "Allow: /" not in body
+
+
 def test_production_robots_allow_public_pages_and_block_private_routes():
     body = robots_body("production", "https://licenzpol.it/sitemap.xml")
     assert "Allow: /" in body

@@ -78,7 +78,14 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Backup MongoDB cifrato, retention 14 copie, scheduler giornaliero single-instance e restore isolato verificato su 10 collezioni/529 documenti.
   - Documentazione: `docs/SECURITY_HARDENING.md` e `docs/BACKUP_RESTORE.md`.
   - Verifica: 79 test backend, 10 test frontend, build, compilazione e QA locale/pubblico completati.
-- [ ] **Fase 8 — Dominio definitivo e soft launch**
+- [ ] **Fase 8 — Dominio definitivo e soft launch** — avviata
+  - Verificato che `licenzpol.it` serve ancora il placeholder GoDaddy e non l'applicazione.
+  - Preparati template Caddy, systemd, ambiente produzione fail-closed e smoke test dominio.
+  - Introdotto `SEARCH_INDEXING_ENABLED=false` per mantenere il soft launch noindex anche in produzione.
+  - Verificato via Azure IMDS che la NIC è privata (`10.42.1.5`) e non ha Public IP; l'IP osservato esternamente è soltanto NAT di uscita.
+  - Cutover DNS bloccato correttamente finché non sono disponibili accesso delegato GoDaddy/Cloudflare e privilegi amministrativi per un tunnel nominato persistente (oppure Public IP/NSG/Caddy).
+  - Piano operativo: `docs/PHASE8_DOMAIN_SOFT_LAUNCH.md`.
+  - Verifica iniziale: 80 test backend passati; template Cloudflare ingress e unit systemd validati; smoke test staging e canary produzione noindex/HSTS/redirect `www` superati.
 - [ ] **Fase 9 — Pagamento Nexi con l'utente**
 - [ ] **Fase 10 — Google Merchant Center**
 
