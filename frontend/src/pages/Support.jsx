@@ -29,9 +29,9 @@ export default function Support() {
           <p className="text-zinc-400 mt-4 leading-relaxed max-w-md">{t.support.sub}</p>
           <div className="mt-10 space-y-6">
             {[
-              { i: Mail, t: t.support.email, v: "support@licenzpol.example" },
-              { i: MessageSquare, t: "Live chat", v: lang === "it" ? "Non ancora attiva — in arrivo" : "Not active yet — coming soon" },
-              { i: Clock, t: lang === "it" ? "Orari" : "Hours", v: lang === "it" ? "Lun-Ven, 9-18 (CET)" : "Mon-Fri, 9-18 (CET)" },
+              { i: Mail, t: t.support.email, v: "supporto@licenzpol.it" },
+              { i: MessageSquare, t: lang === "it" ? "Telefono" : "Phone", v: "+39 393 684 1051" },
+              { i: Clock, t: lang === "it" ? "Sede" : "Registered office", v: "Via Aldo Pio Manuzio 24, 40132 Bologna (BO), Italia" },
             ].map((it, i) => {
               const Icon = it.i;
               return (

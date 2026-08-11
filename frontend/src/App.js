@@ -6,6 +6,7 @@ import { CartProvider } from "@/lib/cart";
 import { SiteSettingsProvider, useTrackPageView } from "@/lib/tracking";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 import CartDrawer from "@/components/CartDrawer";
 import Home from "@/pages/Home";
 import Catalog from "@/pages/Catalog";
@@ -76,6 +77,7 @@ function App() {
           <LangProvider>
             <CartProvider>
               <Root />
+              <CookieBanner />
               <Toaster theme="dark" position="bottom-right" toastOptions={{ style: { background: "#0B0B0D", color: "#fff", border: "1px solid rgba(255,255,255,0.1)" } }} />
             </CartProvider>
           </LangProvider>

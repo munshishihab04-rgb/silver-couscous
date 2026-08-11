@@ -22,11 +22,11 @@ export default function Home() {
 
   useSEO({
     title: lang === "it"
-      ? "LicenzPøl — Software originale, chiavi verificate, consegna via email"
-      : "LicenzPøl — Genuine software, verified keys, email delivery",
+      ? "LicenzPol — ambiente di pre-lancio"
+      : "LicenzPol — pre-launch environment",
     description: lang === "it"
-      ? "Centinaia di edizioni Microsoft, Adobe, Autodesk, Kaspersky e altre suite. Confronta, scegli e attiva la tua licenza in pochi minuti."
-      : "Hundreds of Microsoft, Adobe, Autodesk, Kaspersky and other suites. Compare, choose and activate your license in minutes.",
+      ? "Catalogo, prezzi, disponibilità e checkout sono in verifica. Nessun pagamento reale è attivo."
+      : "Catalogue, prices, availability and checkout are under review. No real payment is active.",
     keywords: "licenze software, microsoft office, windows, adobe, autodesk, antivirus, chiavi digitali, licenzpol",
     type: "website",
     locale: lang === "it" ? "it_IT" : "en_US",

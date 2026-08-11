@@ -80,8 +80,8 @@ export function Legal({ kind }) {
         <h1 className="font-display text-4xl md:text-5xl tracking-tight">{title}</h1>
         <div className="mt-8 text-zinc-400 space-y-4 leading-relaxed">
           <p>{it
-            ? "Questa è una pagina segnaposto per il prototipo. Amministrala dal pannello admin."
-            : "Placeholder page. Manage from the admin panel."}</p>
+            ? "Il contenuto informativo non è temporaneamente disponibile. Per assistenza scrivi a supporto@licenzpol.it."
+            : "This policy is temporarily unavailable. Contact supporto@licenzpol.it for assistance."}</p>
         </div>
       </CmsRender>
     </div>

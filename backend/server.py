@@ -29,6 +29,7 @@ from config import (
     validate_production_startup, is_production,
 )
 from services import license_inventory
+from privacy import prepare_analytics_event
 
 
 BUNDLE_TIERS = [
@@ -596,7 +597,7 @@ app.include_router(payments_router)
 PUBLIC_SETTINGS_FIELDS = {
     "logo_text", "logo_url", "site_title", "site_description",
     "primary_email", "ga4_measurement_id", "gtm_container_id", "meta_pixel_id",
-    "custom_head_html", "custom_body_html", "demo_banner",
+    "demo_banner",
 }
 
 
@@ -626,24 +627,24 @@ class TrackEvent(BaseModel):
     language: Optional[str] = None
     value_eur: Optional[float] = None
     extra: Optional[dict] = None
+    analytics_consent: bool = False
 
 
 @app.post("/api/analytics/track")
 async def analytics_track(evt: TrackEvent, request: Request):
     doc = evt.model_dump()
-    ip = request.client.host if request.client else None
-    ua = request.headers.get("user-agent")
     ref = doc.get("referrer") or ""
     try:
         host = urlparse(ref).hostname if ref else None
     except Exception:
         host = None
-    doc["ip"] = ip
-    doc["user_agent"] = ua
     doc["referrer_host"] = host
+    doc = prepare_analytics_event(doc)
+    if doc is None:
+        return {"ok": True, "stored": False}
     doc["ts"] = datetime.now(timezone.utc).isoformat()
     await db.analytics_events.insert_one(doc)
-    return {"ok": True}
+    return {"ok": True, "stored": True}
 
 
 app.add_middleware(

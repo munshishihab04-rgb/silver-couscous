@@ -40,7 +40,7 @@ export default function ProductDetail() {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
     return {
       title: product.name,
-      description: shortDesc || `${product.name} — ${product.brand}. Consegna via email, chiave verificata.`,
+      description: shortDesc || `${product.name} — ${product.brand}. Scheda in revisione; acquisto e consegna non ancora attivi.`,
       keywords: `${product.name}, ${product.brand}, ${product.category}, licenza, ${product.licenseType}`,
       image: product.image_url ? (product.image_url.startsWith("http") ? product.image_url : origin + product.image_url) : undefined,
       type: "product",

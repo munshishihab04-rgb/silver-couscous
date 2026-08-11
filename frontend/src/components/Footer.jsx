@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "../lib/i18n";
+import { resetConsent } from "../lib/privacy";
 
 export default function Footer() {
   const { t } = useLang();
@@ -35,6 +36,7 @@ export default function Footer() {
               <li><Link to="/legal/privacy" className="text-zinc-400 hover:text-white transition-colors">{t.footer.privacy}</Link></li>
               <li><Link to="/legal/terms" className="text-zinc-400 hover:text-white transition-colors">{t.footer.terms}</Link></li>
               <li><Link to="/legal/cookies" className="text-zinc-400 hover:text-white transition-colors">{t.footer.cookies}</Link></li>
+              <li><button type="button" onClick={resetConsent} className="text-zinc-400 hover:text-white transition-colors text-left">Preferenze cookie</button></li>
               <li><Link to="/legal/withdrawal" className="text-zinc-400 hover:text-white transition-colors">Diritto di recesso</Link></li>
               <li><Link to="/legal/delivery" className="text-zinc-400 hover:text-white transition-colors">Consegna digitale</Link></li>
               <li><Link to="/legal/refunds" className="text-zinc-400 hover:text-white transition-colors">Rimborsi</Link></li>
