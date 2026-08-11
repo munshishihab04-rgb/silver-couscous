@@ -8,6 +8,7 @@ import ProductCard from "../components/ProductCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
 import { toast } from "sonner";
 import { trackEvent } from "../lib/tracking";
+import { productPrice } from "../lib/productPricing";
 import { Check, Mail, FileText, KeyRound, Cpu, ChevronRight, Layers } from "lucide-react";
 
 export default function ProductDetail() {
@@ -32,8 +33,7 @@ export default function ProductDetail() {
   // SEO — computed once product is loaded (hook must run every render)
   const seoData = useMemo(() => {
     if (!product) return {};
-    const prices = product.variants.map(v => v.price_eur);
-    const minPrice = Math.min(...prices);
+    const minPrice = productPrice(product);
     const tagline = lang === "it" ? product.tagline_it : product.tagline_en;
     const desc = lang === "it" ? product.description_it : product.description_en;
     const shortDesc = (desc || tagline || "").slice(0, 160);
@@ -52,16 +52,16 @@ export default function ProductDetail() {
         "description": shortDesc,
         "brand": { "@type": "Brand", "name": product.brand },
         "category": product.category,
-        "sku": product.slug,
+        "sku": product.sku,
         "image": product.image_url ? [product.image_url.startsWith("http") ? product.image_url : origin + product.image_url] : undefined,
-        "offers": {
+        ...(product.purchasable && minPrice !== null ? { "offers": {
           "@type": "AggregateOffer",
           "priceCurrency": "EUR",
           "lowPrice": minPrice,
-          "highPrice": Math.max(...prices),
+          "highPrice": minPrice,
           "offerCount": product.variants.length,
           "availability": "https://schema.org/InStock",
-        },
+        }} : {}),
       },
     };
   }, [product, lang]);
@@ -78,6 +78,7 @@ export default function ProductDetail() {
   };
 
   const doAdd = () => {
+    if (!product.purchasable || !Number.isFinite(variant.price_eur)) return;
     addItem(product, variant);
     setAdded(true);
     toast.success(lang === "it" ? "Aggiunto al carrello" : "Added to cart");
@@ -195,7 +196,7 @@ export default function ProductDetail() {
               <div>
                 <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Price</p>
                 <div className="flex items-baseline gap-3">
-                  <p data-testid="product-price" className="font-display text-white text-4xl">{money(variant.price_eur)}</p>
+                  <p data-testid="product-price" className="font-display text-white text-4xl">{Number.isFinite(variant.price_eur) ? money(variant.price_eur) : (lang === "it" ? "In verifica" : "Under review")}</p>
                   {variant.list_price_eur && variant.list_price_eur > variant.price_eur && (
                     <p className="text-sm font-mono text-zinc-500 line-through">{money(variant.list_price_eur)}</p>
                   )}
@@ -204,9 +205,9 @@ export default function ProductDetail() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <button data-testid="add-to-cart-button" onClick={doAdd}
-                className="pill-btn bg-white text-black hover:bg-zinc-200 flex-1">
-                {added ? (<><Check size={16}/> {t.product.added}</>) : t.product.addToCart}
+              <button data-testid="add-to-cart-button" onClick={doAdd} disabled={!product.purchasable}
+                className="pill-btn bg-white text-black hover:bg-zinc-200 flex-1 disabled:bg-zinc-700 disabled:text-zinc-300 disabled:cursor-not-allowed">
+                {!product.purchasable ? (lang === "it" ? "Non disponibile — dati in verifica" : "Unavailable — data under review") : added ? (<><Check size={16}/> {t.product.added}</>) : t.product.addToCart}
               </button>
               <button data-testid="add-to-compare-button" onClick={doCompare}
                 className="pill-btn border border-white/20 text-white hover:bg-white/5">

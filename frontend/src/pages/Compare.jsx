@@ -2,6 +2,7 @@ import { useCart } from "../lib/cart";
 import { useLang, money } from "../lib/i18n";
 import { Link } from "react-router-dom";
 import { Trash2, Layers } from "lucide-react";
+import { productPrice } from "../lib/productPricing";
 
 export default function Compare() {
   const { compare, removeCompare, addItem } = useCart();
@@ -56,7 +57,7 @@ export default function Compare() {
             {row(t.compare.cols.brand, p => p.brand)}
             {row(t.compare.cols.platforms, p => p.platforms.join(", "))}
             {row(t.compare.cols.licenseType, p => p.licenseType)}
-            {row(t.compare.cols.startingAt, p => money(Math.min(...p.variants.map(v => v.price_eur))))}
+            {row(t.compare.cols.startingAt, p => productPrice(p) === null ? (lang === "it" ? "In verifica" : "Under review") : money(productPrice(p)))}
             {row(t.compare.cols.variants, p => `${p.variants.length}`)}
             {row(t.compare.cols.features, p => (
               <ul className="space-y-1 text-xs">{(lang === "it" ? p.features_it : p.features_en).slice(0, 4).map((f, i) => <li key={i}>· {f}</li>)}</ul>
@@ -65,7 +66,7 @@ export default function Compare() {
               <td></td>
               {compare.map(p => (
                 <td key={p.slug} className="p-4">
-                  <button onClick={() => addItem(p, p.variants[0])} className="pill-btn bg-white text-black hover:bg-zinc-200 w-full text-sm">{t.compare.add}</button>
+                  <button disabled={!p.purchasable} onClick={() => p.purchasable && addItem(p, p.variants[0])} className="pill-btn bg-white text-black hover:bg-zinc-200 w-full text-sm disabled:bg-zinc-700 disabled:text-zinc-300 disabled:cursor-not-allowed">{p.purchasable ? t.compare.add : (lang === "it" ? "Non disponibile" : "Unavailable")}</button>
                 </td>
               ))}
             </tr>

@@ -372,38 +372,26 @@ def _copy(brand: str, name: str, category: str, edition: str, devices: int, lice
         compat_it = "Vedi i requisiti ufficiali sul sito del produttore."
         compat_en = "See official requirements on the vendor's website."
 
-    desc_it = (f"{name} in edizione {edition}. Licenza {license_type.lower()} "
-               f"per {devices} dispositiv{'o' if devices == 1 else 'i'}. "
-               "Ricevi la chiave via email e attivala in pochi minuti.")
-    desc_en = (f"{name}, {edition} edition. {license_type} licence "
-               f"for {devices} device{'s' if devices != 1 else ''}. "
-               "You receive the key by email and activate in minutes.")
+    desc_it = (
+        f"{name}, edizione {edition}, configurazione indicativa per {devices} "
+        f"dispositiv{'o' if devices == 1 else 'i'}. Scheda preliminare: prezzo, "
+        "disponibilità, provenienza e condizioni commerciali sono in verifica; "
+        "il prodotto non è acquistabile."
+    )
+    desc_en = (
+        f"{name}, {edition} edition, indicative configuration for {devices} "
+        f"device{'s' if devices != 1 else ''}. Preliminary record: price, "
+        "availability, provenance and commercial terms are under review; "
+        "the product cannot be purchased."
+    )
 
-    what_it = ["Chiave di attivazione originale", "Link al download ufficiale", "Guida rapida in italiano", "Fattura elettronica UE"]
-    what_en = ["Genuine activation key", "Link to the official download", "Quick-start guide", "EU electronic invoice"]
-    act_it = [
-        "Ricevi la chiave via email entro pochi minuti.",
-        "Scarica l'installer ufficiale dal produttore.",
-        "Inserisci la chiave durante o dopo l'installazione.",
-        "Attiva e sei pronto." + (" Nessuna scadenza." if license_type == "Perpetua" else " Rinnovi quando vuoi."),
-    ]
-    act_en = [
-        "Receive your key by email within minutes.",
-        "Download the official installer from the vendor.",
-        "Enter the key during or after installation.",
-        "Activate and go." + (" No expiry." if license_type == "Perpetua" else " Renew whenever you like."),
-    ]
+    what_it = []
+    what_en = []
+    act_it = []
+    act_en = []
     faq = [
-        {"q_it": "La licenza è originale?", "a_it": "Sì, ogni chiave è verificabile presso il produttore.",
-         "q_en": "Is the licence genuine?", "a_en": "Yes, every key is verifiable with the vendor."},
-        {"q_it": "Ricevo una fattura?", "a_it": "Sì, riceverai una fattura elettronica valida in tutta la UE.",
-         "q_en": "Do I get an invoice?", "a_en": "Yes, you receive an EU-compliant electronic invoice."},
-        {"q_it": "Posso trasferire la licenza su un altro PC?",
-         "a_it": "Le licenze perpetue possono essere reinstallate su un nuovo dispositivo dopo aver rimosso la precedente installazione.",
-         "q_en": "Can I move the licence to another PC?",
-         "a_en": "Perpetual licences can be reinstalled on a new device once you remove the previous install."},
-        {"q_it": "Che sistema mi serve?", "a_it": compat_it,
-         "q_en": "What system do I need?", "a_en": compat_en},
+        {"q_it": "Quali requisiti di sistema sono indicati?", "a_it": compat_it,
+         "q_en": "Which system requirements are indicated?", "a_en": compat_en},
     ]
     return tag_it, tag_en, desc_it, desc_en, features_it, features_en, compat_it, compat_en, what_it, what_en, act_it, act_en, faq
 
@@ -429,11 +417,9 @@ def _load_csv():
                 continue
             price_raw = (row.get("reference_price_private") or "").strip()
             try:
-                price = float(price_raw)
+                reference_price = float(price_raw) if price_raw else None
             except (TypeError, ValueError):
-                continue
-            if price <= 0:
-                continue
+                reference_price = None
             # Merchant-authoritative fields (from CSV)
             selling_price_raw = (row.get("selling_price") or "").strip()
             try:
@@ -442,10 +428,14 @@ def _load_csv():
                 selling_price = None
             gtin_status = (row.get("gtin_status") or "").strip().lower()
             gtin_val = (row.get("gtin") or "").strip()
-            # Only accept GTIN if flagged valid by original catalog
-            gtin = gtin_val if gtin_status == "valid" else None
+            # A checksum-valid source value is still private until assignment
+            # evidence for this exact product is reviewed by an operator.
+            gtin = gtin_val if gtin_status == "verified" else None
+            gtin_checksum_status = (row.get("gtin_checksum_status") or "").strip().lower() or None
             sku = (row.get("sku") or "").strip() or None
-            mpn = (row.get("mpn") or "").strip() or None
+            mpn_candidate = (row.get("mpn") or "").strip() or None
+            mpn_status = (row.get("mpn_status") or "").strip().lower() or "assignment_unverified"
+            mpn = mpn_candidate if mpn_status == "verified" else None
             availability_raw = (row.get("availability") or "").strip()
             merchant_approved = (row.get("merchant_approved") or "").strip().lower() in {"true", "1", "yes"}
             seen_slugs.add(slug)
@@ -464,6 +454,19 @@ def _load_csv():
              compat_it, compat_en, what_it, what_en, act_it, act_en, faq) = _copy(
                 brand, name, category, edition, devices, license_type
             )
+            if not merchant_approved:
+                tag_it = "Scheda prodotto in revisione."
+                tag_en = "Product record under review."
+                features_it = []
+                features_en = []
+                compat_it = "Consulta i requisiti ufficiali del produttore prima di qualsiasi futuro acquisto."
+                compat_en = "Check the vendor's official requirements before any future purchase."
+                faq = [{
+                    "q_it": "Qual è lo stato della scheda?",
+                    "a_it": "Prezzo, disponibilità, identificatori e condizioni commerciali sono ancora in verifica.",
+                    "q_en": "What is the status of this record?",
+                    "a_en": "Price, availability, identifiers and commercial terms are still under review.",
+                }]
 
             duration = 0 if license_type == "Perpetua" else 12
 
@@ -480,7 +483,8 @@ def _load_csv():
                     "edition": edition,
                     "duration_months": duration,
                     "devices": devices,
-                    "price_eur": round(price, 2),
+                    "price_eur": round(selling_price, 2) if selling_price is not None else None,
+                    "reference_price_private": round(reference_price, 2) if reference_price is not None else None,
                     "list_price_eur": None,
                 }],
                 "compatibility_it": compat_it, "compatibility_en": compat_en,
@@ -491,7 +495,11 @@ def _load_csv():
                 "sku": sku,
                 "gtin": gtin,
                 "gtin_status": gtin_status or None,
+                "gtin_checksum_status": gtin_checksum_status,
+                "gtin_candidate_private": gtin_val or None,
                 "mpn": mpn,
+                "mpn_status": mpn_status,
+                "mpn_candidate_private": mpn_candidate,
                 "condition": "new",
                 "selling_price_eur": selling_price,
                 "availability_status": availability_raw or "PendingReview",

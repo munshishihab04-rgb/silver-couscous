@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLang, money } from "../lib/i18n";
 import { Monitor, Apple, Cpu, Check } from "lucide-react";
+import { productPrice } from "../lib/productPricing";
 
 const platformIcon = (p) => {
   if (p === "Windows") return <Monitor size={12} />;
@@ -10,9 +11,10 @@ const platformIcon = (p) => {
 
 export default function ProductCard({ product, testid }) {
   const { lang, t } = useLang();
-  const min = Math.min(...product.variants.map(v => v.price_eur));
-  const max = Math.max(...product.variants.map(v => v.list_price_eur ?? v.price_eur));
-  const hasDiscount = max > min;
+  const min = productPrice(product);
+  const listPrices = product.variants.map(v => v.list_price_eur).filter(v => Number.isFinite(v) && v > 0);
+  const max = listPrices.length ? Math.max(...listPrices) : null;
+  const hasDiscount = min !== null && max !== null && max > min;
   const tagline = lang === "it" ? product.tagline_it : product.tagline_en;
 
   return (
@@ -59,9 +61,9 @@ export default function ProductCard({ product, testid }) {
         <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2">{tagline}</p>
         <div className="mt-auto pt-3 flex items-end justify-between border-t border-white/5">
           <div>
-            <p className="text-[10px] uppercase tracking-widest font-mono text-zinc-600">{t.compare.cols.startingAt}</p>
+            <p className="text-[10px] uppercase tracking-widest font-mono text-zinc-600">{min === null ? (lang === "it" ? "Prezzo" : "Price") : t.compare.cols.startingAt}</p>
             <div className="flex items-baseline gap-2">
-              <p className="font-display text-white text-2xl">{money(min)}</p>
+              <p className="font-display text-white text-2xl">{min === null ? (lang === "it" ? "In verifica" : "Under review") : money(min)}</p>
               {hasDiscount && <p className="text-xs font-mono text-zinc-600 line-through">{money(max)}</p>}
             </div>
           </div>

@@ -7,6 +7,7 @@ product documents that predate the merchant-authoritative schema.
 """
 
 from datetime import datetime, timezone
+from copy import deepcopy
 from typing import List
 
 from legal_content import LEGAL_PAGES
@@ -15,7 +16,11 @@ MERCHANT_FIELD_DEFAULTS = {
     "sku": None,
     "gtin": None,
     "gtin_status": None,
+    "gtin_checksum_status": None,
+    "gtin_candidate_private": None,
     "mpn": None,
+    "mpn_status": None,
+    "mpn_candidate_private": None,
     "condition": "new",
     "selling_price_eur": None,
     "availability_status": "PendingReview",
@@ -33,9 +38,7 @@ async def migrate_products_if_empty(db, seed_products: List[dict]) -> int:
     """If db.products is empty, insert all seed_products. Returns number inserted."""
     count = await db.products.estimated_document_count()
     if count > 0:
-        # DB already populated — backfill merchant fields idempotently.
-        await backfill_merchant_fields(db, seed_products)
-        return 0
+        return await reconcile_catalog_products(db, seed_products)
     if not seed_products:
         return 0
     docs = []
@@ -45,6 +48,31 @@ async def migrate_products_if_empty(db, seed_products: List[dict]) -> int:
         docs.append(d)
     await db.products.insert_many(docs)
     return len(docs)
+
+
+def catalog_reconciliation_patch(existing: dict, seed: dict) -> dict:
+    """Return a clean seed patch without overwriting an approved human record."""
+    if existing.get("merchant_approved") is True:
+        return {}
+    return {key: deepcopy(value) for key, value in seed.items() if key != "_id"}
+
+
+async def reconcile_catalog_products(db, seed_products: List[dict]) -> int:
+    """Upsert all draft seed products while preserving human-approved offers."""
+    inserted = 0
+    for seed in seed_products:
+        slug = seed["slug"]
+        existing = await db.products.find_one({"slug": slug})
+        if existing is None:
+            doc = deepcopy(seed)
+            doc["_id"] = slug
+            await db.products.insert_one(doc)
+            inserted += 1
+            continue
+        patch = catalog_reconciliation_patch(existing, seed)
+        if patch:
+            await db.products.update_one({"_id": existing["_id"]}, {"$set": patch})
+    return inserted
 
 
 async def backfill_merchant_fields(db, seed_products: List[dict]) -> int:

@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field
 
 from auth import current_admin
 from services import license_inventory
+from publication import offer_gate_failures
 
 
 merchant_admin_router = APIRouter(prefix="/api/admin/merchant")
@@ -35,11 +36,12 @@ def compute_risk_score(p: dict) -> dict:
     score = 0
     reasons = []
 
-    # No GTIN → risky
-    gtin_ok = bool(p.get("gtin")) and (p.get("gtin_status") == "valid")
-    if not gtin_ok:
+    # An identifier is acceptable only after assignment evidence is approved.
+    gtin_ok = bool(p.get("gtin")) and (p.get("gtin_status") == "verified")
+    mpn_ok = bool(p.get("mpn")) and (p.get("mpn_status") == "verified")
+    if not (gtin_ok or mpn_ok):
         score += 25
-        reasons.append("gtin missing or invalid")
+        reasons.append("product identifier assignment not verified")
 
     # No SKU → risky
     if not p.get("sku"):
@@ -56,7 +58,7 @@ def compute_risk_score(p: dict) -> dict:
     variants = p.get("variants") or []
     if variants:
         try:
-            ref = min(v.get("price_eur", 0) for v in variants if v.get("price_eur"))
+            ref = min(v.get("reference_price_private", 0) for v in variants if v.get("reference_price_private"))
         except Exception:
             ref = None
     sell = p.get("selling_price_eur")
@@ -91,6 +93,13 @@ def compute_risk_score(p: dict) -> dict:
     return {"score": score, "reasons": reasons}
 
 
+def approval_blockers(existing: dict, update: dict) -> list[str]:
+    proposed = {**existing, **update}
+    if update.get("merchant_approved") is True:
+        proposed["status"] = update.get("status", "approved")
+    return offer_gate_failures(proposed)
+
+
 # ---------- Merchant workflow endpoints ------------------------------------
 
 class ApprovalPatch(BaseModel):
@@ -101,7 +110,11 @@ class ApprovalPatch(BaseModel):
     stock: Optional[int] = None
     sku: Optional[str] = None
     gtin: Optional[str] = None
+    gtin_status: Optional[str] = None
     mpn: Optional[str] = None
+    mpn_status: Optional[str] = None
+    availability_status: Optional[str] = None
+    condition: Optional[str] = None
     google_product_category: Optional[str] = None
     status: Optional[str] = None
     admin_notes: Optional[str] = None
@@ -147,9 +160,16 @@ async def merchant_patch(
     user=Depends(current_admin),
 ):
     db = _db(request)
+    existing = await db.products.find_one({"slug": slug})
+    if existing is None:
+        raise HTTPException(status_code=404, detail="Prodotto non trovato.")
     update = {k: v for k, v in body.model_dump(exclude_unset=True).items() if v is not None}
     if not update:
         raise HTTPException(status_code=400, detail="Nessun campo da aggiornare.")
+    if update.get("merchant_approved") is True:
+        blockers = approval_blockers(existing, update)
+        if blockers:
+            raise HTTPException(status_code=400, detail={"code": "publication_blocked", "blockers": blockers})
     update["merchant_updated_at"] = datetime.now(timezone.utc).isoformat()
     update["merchant_updated_by"] = user.get("email", user["_id"])
     # Auto-status
@@ -181,6 +201,17 @@ async def merchant_bulk_approve(
     body: BulkApproveBody, request: Request, user=Depends(current_admin),
 ):
     db = _db(request)
+    if body.merchant_approved:
+        proposed = {"merchant_approved": True, "status": "approved"}
+        if body.image_rights_approved is not None:
+            proposed["image_rights_approved"] = body.image_rights_approved
+        blocked = {}
+        async for product in db.products.find({"slug": {"$in": body.slugs}}):
+            reasons = approval_blockers(product, proposed)
+            if reasons:
+                blocked[product["slug"]] = reasons
+        if blocked:
+            raise HTTPException(status_code=400, detail={"code": "bulk_publication_blocked", "products": blocked})
     update = {
         "merchant_approved": body.merchant_approved,
         "status": "approved" if body.merchant_approved else "draft",

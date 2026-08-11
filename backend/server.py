@@ -30,7 +30,7 @@ from config import (
 )
 from services import license_inventory
 from privacy import prepare_analytics_event
-from publication import filter_storefront_products
+from publication import filter_storefront_products, public_price
 
 
 BUNDLE_TIERS = [
@@ -220,17 +220,17 @@ async def list_products(
             items = [p for p in items if p["category"] in target_cats]
 
     def base_price(p):
-        return min(v["price_eur"] for v in p["variants"]) if p["variants"] else 0
+        return public_price(p)
 
     if min_price is not None:
-        items = [p for p in items if base_price(p) >= min_price]
+        items = [p for p in items if base_price(p) is not None and base_price(p) >= min_price]
     if max_price is not None:
-        items = [p for p in items if base_price(p) <= max_price]
+        items = [p for p in items if base_price(p) is not None and base_price(p) <= max_price]
 
     if sort == "price_asc":
-        items.sort(key=base_price)
+        items.sort(key=lambda p: (base_price(p) is None, base_price(p) or 0))
     elif sort == "price_desc":
-        items.sort(key=base_price, reverse=True)
+        items.sort(key=lambda p: (base_price(p) is not None, base_price(p) or 0), reverse=True)
     elif sort == "name":
         items.sort(key=lambda p: p["name"])
 
@@ -251,7 +251,7 @@ async def related_products(slug: str, limit: int = 4):
     if not p:
         raise HTTPException(status_code=404, detail="Product not found")
     same_cat = [x for x in storefront_products() if x["category"] == p["category"] and x["slug"] != slug]
-    same_cat.sort(key=lambda x: min(v["price_eur"] for v in x["variants"]))
+    same_cat.sort(key=lambda x: (public_price(x) is None, public_price(x) or 0))
     return same_cat[:limit]
 
 
@@ -346,7 +346,7 @@ def _group_products(products, group_by: str):
     result = []
     for k in order:
         b = buckets[k]
-        b["items"].sort(key=lambda p: p["variants"][0]["price_eur"])
+        b["items"].sort(key=lambda p: (public_price(p) is None, public_price(p) or 0))
         result.append(b)
     return result
 
@@ -367,7 +367,7 @@ async def get_family_detail(slug: str):
         raise HTTPException(status_code=404, detail="Family not found")
     items = _match_family_products(f)
     groups = _group_products(items, f.get("group_by", "all"))
-    featured = sorted(items, key=lambda p: p["variants"][0]["price_eur"])[:4]
+    featured = sorted(items, key=lambda p: (public_price(p) is None, public_price(p) or 0))[:4]
     return {
         **{k: v for k, v in f.items() if k != "match"},
         "product_count": len(items),
@@ -394,8 +394,8 @@ async def orders_quote(payload: dict = Body(...)):
         if not p:
             unavailable.append({"product_slug": slug, "reason": "not_found"})
             continue
-        if is_production() and not p.get("merchant_approved"):
-            unavailable.append({"product_slug": slug, "reason": "not_approved"})
+        if not p.get("purchasable"):
+            unavailable.append({"product_slug": slug, "reason": "not_for_sale"})
             continue
         v = next((x for x in p["variants"] if x["id"] == vid), None)
         if not v:
@@ -443,9 +443,8 @@ async def create_order(order: OrderCreate):
         p = get_product_by_slug(line.product_slug)
         if not p:
             raise HTTPException(status_code=400, detail=f"Prodotto {line.product_slug} non trovato.")
-        # In production only merchant_approved products can be purchased.
-        if is_production() and not p.get("merchant_approved"):
-            raise HTTPException(status_code=400, detail=f"Prodotto {line.product_slug} non disponibile.")
+        if not p.get("purchasable"):
+            raise HTTPException(status_code=400, detail=f"Prodotto {line.product_slug} non disponibile alla vendita.")
         v = next((x for x in p["variants"] if x["id"] == line.variant_id), None)
         if not v:
             raise HTTPException(status_code=400, detail=f"Variante {line.variant_id} non trovata.")
@@ -530,10 +529,10 @@ async def bundle_preset_nuovo_pc():
     _P = storefront_products()
 
     def pick_by(pred):
-        candidates = [p for p in _P if pred(p)]
+        candidates = [p for p in _P if p.get("purchasable") and pred(p)]
         if not candidates:
             return None
-        candidates.sort(key=lambda p: p["variants"][0]["price_eur"])
+        candidates.sort(key=lambda p: (public_price(p) is None, public_price(p) or 0))
         return candidates[0]
 
     picks = []

@@ -47,10 +47,14 @@ def offer_gate_failures(product: dict) -> list[str]:
 
     gtin = product.get("gtin")
     if gtin:
-        if product.get("gtin_status") != "valid" or not valid_gtin(gtin):
+        if not valid_gtin(gtin):
             failures.append("invalid_gtin")
+        elif product.get("gtin_status") != "verified":
+            failures.append("gtin_assignment_unverified")
     elif not product.get("mpn"):
         failures.append("missing_product_identifier")
+    elif product.get("mpn_status") != "verified":
+        failures.append("mpn_assignment_unverified")
     return failures
 
 
@@ -58,8 +62,20 @@ def is_public_offer(product: dict) -> bool:
     return not offer_gate_failures(product)
 
 
+def public_price(product: dict) -> float | None:
+    if not is_public_offer(product):
+        return None
+    price = product.get("selling_price_eur")
+    return float(price) if isinstance(price, (int, float)) and price > 0 else None
+
+
 def to_public_product(product: dict) -> dict:
     public = deepcopy(product)
+    for key in [key for key in public if key.endswith("_private")]:
+        public.pop(key, None)
+    for variant in public.get("variants") or []:
+        for key in [key for key in variant if key.endswith("_private")]:
+            variant.pop(key, None)
     ready = is_public_offer(product)
     if ready:
         variants = public.get("variants") or []

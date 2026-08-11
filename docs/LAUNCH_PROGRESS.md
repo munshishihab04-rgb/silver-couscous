@@ -23,7 +23,17 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Sitemap staging vuota e `robots.txt` con `Disallow: /`.
   - Prezzo pubblico delle offerte approvate deriva da `selling_price_eur`, non dal prezzo sorgente.
   - Verifica: 18 test backend passati; build riuscita; QA locale e pubblico completato.
-- [ ] **Fase 3 — Bonifica dati prodotto e identificatori**
+- [x] **Fase 3 — Bonifica dati prodotto e identificatori**
+  - Catalogo riconciliato a 398 prodotti con slug e SKU LicenzPol univoci.
+  - GTIN riclassificati con algoritmo GS1 corretto: 374 checksum-validi ma assegnazione non verificata, 20 in conflitto per duplicazione, 1 checksum errato, 3 mancanti.
+  - MPN importati trattati come candidati privati finché non verificati contro produttore/fornitore.
+  - Prezzi sorgente spostati in `reference_price_private`; zero prezzi pubblici o commerciali impliciti.
+  - Campi `_private` rimossi da ogni risposta API pubblica.
+  - MongoDB e seed riproducibile riallineati a 398 prodotti; stock e approvazioni restano a zero.
+  - Copy delle bozze reso prudente: nessuna promessa di originalità, consegna, fattura o attivazione.
+  - Dettaglio, card, confronto e bundle mostrano “In verifica” e non consentono acquisti.
+  - Approvazione singola e massiva bloccata lato server finché identificatori e tutti gli altri requisiti non sono verificati.
+  - Verifica: 30 test backend mirati + 10 test frontend passati; build riuscita; QA API e browser pubblico completato.
 - [ ] **Fase 4 — Provenienza e diritti immagini**
 - [ ] **Fase 5 — Catalogo pilota approvato**
 - [ ] **Fase 6 — Inventario licenze ed email**

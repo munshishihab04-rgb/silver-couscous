@@ -124,7 +124,7 @@ export default function AdminProducts() {
                   </td>
                   <td className="px-4 py-3 text-zinc-300">{p.brand}</td>
                   <td className="px-4 py-3"><span className="chip !py-0.5 !text-[10px]">{p.category}</span></td>
-                  <td className="px-4 py-3 text-right font-mono text-white">{money(p.variants?.[0]?.price_eur)}</td>
+                  <td className="px-4 py-3 text-right font-mono text-white">{Number.isFinite(p.selling_price_eur) ? money(p.selling_price_eur) : "—"}</td>
                   <td className="px-4 py-3 text-right space-x-1">
                     <button onClick={() => openEdit(p.slug)} data-testid={`admin-product-edit-${p.slug}`}
                       className="p-2 rounded-md border border-white/10 hover:bg-white/5 text-zinc-300 hover:text-white transition-colors">

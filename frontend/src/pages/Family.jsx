@@ -4,6 +4,7 @@ import { api } from "../lib/api";
 import { useLang } from "../lib/i18n";
 import useSEO from "../lib/useSEO";
 import ProductCard from "../components/ProductCard";
+import { productPrice } from "../lib/productPricing";
 import { ChevronRight, ArrowRight, Layers } from "lucide-react";
 
 export default function Family() {
@@ -100,7 +101,7 @@ export default function Family() {
                   <p className="label-eyebrow text-white/70">{p.brand}</p>
                   <p className="text-white text-sm leading-tight line-clamp-2">{p.name}</p>
                   <p className="mt-2 font-mono text-sm text-white">
-                    {new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(p.variants[0].price_eur)}
+                    {productPrice(p) === null ? (lang === "it" ? "In verifica" : "Under review") : new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR" }).format(productPrice(p))}
                   </p>
                 </Link>
               ))}

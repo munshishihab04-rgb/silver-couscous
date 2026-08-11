@@ -36,7 +36,7 @@ export default function BundleBuilder() {
       const map = {};
       await Promise.all(cats.map(async c => {
         const r = await api.products({ category: c, sort: "price_asc" });
-        map[c] = r.items;
+        map[c] = r.items.filter(product => product.purchasable);
       }));
       setProductsByCat(map);
     })();
@@ -201,6 +201,9 @@ export default function BundleBuilder() {
                         <DialogTitle className="font-display text-2xl">{lang === "it" ? slot.title_it : slot.title_en}</DialogTitle>
                       </DialogHeader>
                       <div className="max-h-[70vh] overflow-y-auto divide-y divide-white/5">
+                        {catProducts.length === 0 && (
+                          <p className="px-6 py-8 text-sm text-zinc-500">{lang === "it" ? "Nessun prodotto approvato e acquistabile in questa categoria." : "No approved, purchasable product in this category."}</p>
+                        )}
                         {catProducts.map(p => (
                           <div key={p.slug} className="px-6 py-4">
                             <div className="flex items-center gap-4">

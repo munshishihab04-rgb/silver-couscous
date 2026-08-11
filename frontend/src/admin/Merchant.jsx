@@ -112,8 +112,10 @@ function ProductRow({ p, onPatch, onImport, m }) {
   const [expand, setExpand] = useState(false);
   const [sellingPrice, setSellingPrice] = useState(p.selling_price_eur ?? "");
   const [sku, setSku] = useState(p.sku || "");
-  const [mpn, setMpn] = useState(p.mpn || "");
-  const [gtin, setGtin] = useState(p.gtin || "");
+  const [mpn, setMpn] = useState(p.mpn || p.mpn_candidate_private || "");
+  const [gtin, setGtin] = useState(p.gtin || p.gtin_candidate_private || "");
+  const [mpnStatus, setMpnStatus] = useState(p.mpn_status || "assignment_unverified");
+  const [gtinStatus, setGtinStatus] = useState(p.gtin_status || "assignment_unverified");
   const [gpc, setGpc] = useState(p.google_product_category || "");
   const [imgOk, setImgOk] = useState(!!p.image_rights_approved);
   const [prov, setProv] = useState(p.provenance_status || "unverified");
@@ -123,6 +125,8 @@ function ProductRow({ p, onPatch, onImport, m }) {
       const body = {
         selling_price_eur: sellingPrice ? Number(sellingPrice) : null,
         sku: sku || null, mpn: mpn || null, gtin: gtin || null,
+        mpn_status: mpn ? mpnStatus : null,
+        gtin_status: gtin ? gtinStatus : null,
         google_product_category: gpc || null,
         image_rights_approved: imgOk,
         provenance_status: prov,
@@ -141,7 +145,8 @@ function ProductRow({ p, onPatch, onImport, m }) {
     } catch (e) { toast.error("Errore: " + (e?.response?.data?.detail || e.message)); }
   };
 
-  const canApprove = sku && p.image_url && Number(sellingPrice) > 0 && imgOk;
+  const identifierVerified = (gtin && gtinStatus === "verified") || (mpn && mpnStatus === "verified");
+  const canApprove = sku && p.image_url && Number(sellingPrice) > 0 && imgOk && prov === "verified" && identifierVerified && p.stock > 0;
 
   return (
     <div className="border-b border-white/5">
@@ -190,11 +195,22 @@ function ProductRow({ p, onPatch, onImport, m }) {
             <label className="label-eyebrow block mb-1">MPN</label>
             <input value={mpn} onChange={e => setMpn(e.target.value)}
               className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white font-mono"/>
+            <select value={mpnStatus} onChange={e => setMpnStatus(e.target.value)} className="mt-1 w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-xs text-white">
+              <option value="assignment_unverified">assignment_unverified</option>
+              <option value="verified">verified</option>
+            </select>
           </div>
           <div>
             <label className="label-eyebrow block mb-1">GTIN (opzionale)</label>
             <input value={gtin} onChange={e => setGtin(e.target.value)}
               className="w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-sm text-white font-mono"/>
+            <select value={gtinStatus} onChange={e => setGtinStatus(e.target.value)} className="mt-1 w-full bg-black/40 border border-white/15 rounded px-2 py-1 text-xs text-white">
+              <option value="assignment_unverified">assignment_unverified</option>
+              <option value="duplicate_conflict">duplicate_conflict</option>
+              <option value="invalid_checksum">invalid_checksum</option>
+              <option value="missing">missing</option>
+              <option value="verified">verified</option>
+            </select>
           </div>
           <div>
             <label className="label-eyebrow block mb-1">Google product category</label>

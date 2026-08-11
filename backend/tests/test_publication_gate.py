@@ -2,6 +2,7 @@ from publication import (
     filter_storefront_products,
     is_public_offer,
     offer_gate_failures,
+    public_price,
     to_public_product,
     valid_gtin,
 )
@@ -16,6 +17,7 @@ def draft_product():
         "image_url": "/products/office-test.webp",
         "sku": "LP-TEST",
         "mpn": "TEST-MPN",
+        "mpn_status": "assignment_unverified",
         "gtin": None,
         "gtin_status": None,
         "condition": "new",
@@ -40,6 +42,7 @@ def approved_product():
         availability_status="InStock",
         stock=3,
         selling_price_eur=19.90,
+        mpn_status="verified",
     )
     return product
 
@@ -71,16 +74,45 @@ def test_staging_keeps_drafts_for_review_but_never_marks_them_purchasable():
     assert preview["purchasable"] is False
 
 
+def test_public_price_is_missing_for_draft_and_authoritative_for_approved_offer():
+    draft = draft_product()
+    draft["variants"][0]["price_eur"] = None
+    assert public_price(draft) is None
+    assert public_price(approved_product()) == 19.90
+
+
 def test_public_product_uses_selling_price_instead_of_reference_price():
-    public = to_public_product(approved_product())
+    product = approved_product()
+    product["gtin_candidate_private"] = "0760947037735"
+    product["mpn_candidate_private"] = "PRIVATE-MPN"
+    product["variants"][0]["reference_price_private"] = 9.99
+    public = to_public_product(product)
     assert public["variants"][0]["price_eur"] == 19.90
     assert public["purchasable"] is True
+    assert "gtin_candidate_private" not in public
+    assert "mpn_candidate_private" not in public
+    assert "reference_price_private" not in public["variants"][0]
 
 
 def test_invalid_gtin_blocks_offer_even_when_mpn_exists():
     product = approved_product()
-    product.update(gtin="0760947037734", gtin_status="valid")
+    product.update(gtin="0760947037734", gtin_status="verified")
     assert "invalid_gtin" in offer_gate_failures(product)
+
+
+def test_checksum_valid_gtin_stays_blocked_until_assignment_is_verified():
+    product = approved_product()
+    product.update(gtin="0760947037735", gtin_status="assignment_unverified")
+    reasons = offer_gate_failures(product)
+    assert "gtin_assignment_unverified" in reasons
+    product["gtin_status"] = "verified"
+    assert offer_gate_failures(product) == []
+
+
+def test_mpn_path_requires_assignment_verification():
+    product = approved_product()
+    product["mpn_status"] = "assignment_unverified"
+    assert "mpn_assignment_unverified" in offer_gate_failures(product)
 
 
 def test_gtin_validator_uses_correct_gs1_check_digit_weighting():
