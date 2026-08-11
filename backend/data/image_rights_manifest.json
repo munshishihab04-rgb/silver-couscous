@@ -14,14 +14,16 @@
   "microsoft-office-2019-home-business-mac": {
     "sku": "LP-B9D5FAE5EA",
     "asset_path": "/products/microsoft-office-2019-home-business-mac.webp",
-    "sha256": "faea66cc0472b7441df8c90c21a74ae729e115e68b433b282edc073a923588b1",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "c05ea4a7589df0efefb6a54a7647445ab5186e1f76e437e8a8f62fa3908357dd",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-office-2019-home-and-student-windows": {
     "sku": "LP-9AB80BACD1",
@@ -86,14 +88,16 @@
   "microsoft-office-2016-home-student-windows": {
     "sku": "LP-8B5CB8D12B",
     "asset_path": "/products/microsoft-office-2016-home-student-windows.webp",
-    "sha256": "a769d0c05a4ac7008eee112489c16a7206f3c56aa15f9432986817329cb4bd72",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "b6c9d210f4712e8edde595c2d427c97d65ae192f183289afa2107b1eb700757d",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-office-2016-home-business-mac": {
     "sku": "LP-97997ACF9C",
@@ -254,14 +258,16 @@
   "microsoft-office-365-pro-plus-windows-mac": {
     "sku": "LP-3E2B87CDE9",
     "asset_path": "/products/microsoft-office-365-pro-plus-windows-mac.webp",
-    "sha256": "0c97e42c3f8b67d39e821e38fb164f7952f1174975a4c1e3b7c2dd6d0e1c3fef",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "4bb9e409d67aa671576dccf905a2a3ea335d065d90500a85181c2291bd5bb98d",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-office-365-business-essentials": {
     "sku": "LP-AE53AB48BD",
@@ -302,14 +308,16 @@
   "microsoft-office-365-home-pc-e-mac": {
     "sku": "LP-24409595D3",
     "asset_path": "/products/microsoft-office-365-home-pc-e-mac.webp",
-    "sha256": "4af8fc681301bc604cdf12fd06328d8bf340faa8785e5ab46f28d96ff80e46b2",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "62ca73e067b79693717697b65805afd4aa4192adc0e6307a594e78184e2b1f5a",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-office-365-personal-pc-o-mac": {
     "sku": "LP-F191064109",
@@ -1916,10 +1924,10 @@
     "status": "approved",
     "rights_basis": "owned",
     "evidence_refs": [
-      "private://documents/pilot-image-generation-2026-08-11"
+      "private://documents/market-image-generation-2026-08-11"
     ],
     "reviewed_by": "automation:hermes-agent",
-    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-windows-11-home": {
     "sku": "LP-EB0F2F2081",
@@ -1962,14 +1970,16 @@
   "microsoft-office-2021-home-business-mac": {
     "sku": "LP-95E5553CD3",
     "asset_path": "/products/microsoft-office-2021-home-business-mac.webp",
-    "sha256": "5481cb790931835468a2391fb49a9f1badee1e24a15297ca251320a73cf03e35",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "a03d8ffff16da8a8a2eda4f15b4b8c5105f883f97112d44d775b81150795b336",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-office-2021-home-and-business-windows": {
     "sku": "LP-1DE0FF13A1",
@@ -2382,14 +2392,16 @@
   "autocad-lt-2022": {
     "sku": "LP-3694C9BFD8",
     "asset_path": "/products/autocad-lt-2022.webp",
-    "sha256": "05c83de29825ddd51b3acf8274ed52f889669b3507eeb5f4d1c93061bc468b93",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "ab33cc47bef5ac5266a7273164e920e8b7b39126490572f592f91ae74832c01d",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "adobe-pack-2022": {
     "sku": "LP-EDE4E6578A",
@@ -2622,14 +2634,16 @@
   "adobe-lightroom-classic-2023": {
     "sku": "LP-CD8EE6FA5D",
     "asset_path": "/products/adobe-lightroom-classic-2023.webp",
-    "sha256": "dbd4895f043aa5597d7c4638373e887d5eaa1485c93ee8f213f0a4afd721bec6",
-    "width": 600,
-    "height": 600,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "2c6d96bfabd2e12ec2c5085c838054ea914cf01c209da3fe861221931130ae39",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "adobe-premiere-pro-2023": {
     "sku": "LP-00AE62EF31",
@@ -3144,10 +3158,10 @@
     "status": "approved",
     "rights_basis": "owned",
     "evidence_refs": [
-      "private://documents/pilot-image-generation-2026-08-11"
+      "private://documents/market-image-generation-2026-08-11"
     ],
     "reviewed_by": "automation:hermes-agent",
-    "reviewed_at": "2026-08-11T03:36:22.748270+00:00"
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-office-2024-home-and-business-windows": {
     "sku": "LP-0D2EA57ECC",
@@ -3262,14 +3276,16 @@
   "microsoft-excel-2024-windows": {
     "sku": "LP-EC5B1D69F2",
     "asset_path": "/products/microsoft-excel-2024-windows.webp",
-    "sha256": "ed69585a29d06f2668285b22fccb462eed0f6b08c8002dfe257df2899c89ee9d",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "48b248d1cec0e2131a583609d6a6d7f7b64d32da458b87d5ad8fb0af56b64133",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-excel-2024-mac": {
     "sku": "LP-C366BDFFC8",
@@ -3370,14 +3386,16 @@
   "microsoft-word-2016-mac": {
     "sku": "LP-2764BAEB9E",
     "asset_path": "/products/microsoft-word-2016-mac.webp",
-    "sha256": "0bb1aefb6d8c7c03d99ddac716c56b422cfa6aa98b2dfb19150c58bd7a6bf55d",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "297ada0d690d07b6b84191c6104b1155d4660c21430ecda785ed96c48556b21c",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-powerpoint-2016-windows": {
     "sku": "LP-C7914BAD65",
@@ -3418,14 +3436,16 @@
   "microsoft-excel-2016-windows": {
     "sku": "LP-F20AC2A02F",
     "asset_path": "/products/microsoft-excel-2016-windows.webp",
-    "sha256": "1eb44bb981ec7f2d3a89d165053a9a18e19071e342543167c52cf7de77b21a06",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "873ab55e33bb0a20257a022c906c56c6bc5805fe5f57a8b257b8b54042c033c0",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-excel-2016-mac-6590": {
     "sku": "LP-4A778FD8DF",
@@ -3538,14 +3558,16 @@
   "microsoft-outlook-2024-windows": {
     "sku": "LP-84D622D9E3",
     "asset_path": "/products/microsoft-outlook-2024-windows.webp",
-    "sha256": "fd89dc56fd05fb4e8d8ed10b85ce8bbe27d4255e4a4dcea0b6cbfd7a22e29cb2",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "2faac88bfebe684cc1c1c16a3f3fcd266420907e36b101fb3a3b88f5339df007",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "microsoft-outlook-2024-mac": {
     "sku": "LP-E7016C50A0",
@@ -3802,14 +3824,16 @@
   "autodesk-fusion-360": {
     "sku": "LP-42D140FFC1",
     "asset_path": "/products/autodesk-fusion-360.webp",
-    "sha256": "621983826d9d5b43e072888988919b42f149feab15139161bfd8a51bc9b99644",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "c9d505b13cd6be87391860b5d2cf3a5bae184d96f2f98c30ebf3415ae3d5d9fe",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "autodesk-hsmworks-ultimate": {
     "sku": "LP-47234E9172",
@@ -4138,26 +4162,30 @@
   "canva-pro": {
     "sku": "LP-76205A98A5",
     "asset_path": "/products/canva-pro.webp",
-    "sha256": "0247228165704363d28b46a6c540a0d15ff9b23ba716c4d73dbb0ff372d4437f",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "ea95266b8fd97d6f0547729e96de51e2ddc15566314bd2310ed16704b540a892",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "adobe-creative-cloud-2025": {
     "sku": "LP-132333FAC6",
     "asset_path": "/products/adobe-creative-cloud-2025.webp",
-    "sha256": "c6e23cda3d9916b7b0c7054f46637c73f01c7bba74f1528b4df03c2898a6adb7",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "ccc13f8b0668448274b0427958c871197068f94b03ab63d63d7200ee244923e9",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "adobe-express-premium": {
     "sku": "LP-B83214B2E6",
@@ -4270,14 +4298,16 @@
   "adobe-lightroom-classic-2025": {
     "sku": "LP-40921524C8",
     "asset_path": "/products/adobe-lightroom-classic-2025.webp",
-    "sha256": "f2c64651ed6234f936b7956f83f7b2bb10e58cca3a93f234e1b046a1db65b7c0",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "4a63ecc7ba9bd4f01ce8c8fe2faea1eb73e70bb5bb051a5ec1b93088145cb1b4",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "adobe-dreamweaver-2025": {
     "sku": "LP-885CB687B4",
@@ -4666,14 +4696,16 @@
   "adobe-acrobat-pro-2026": {
     "sku": "LP-CE62D1E1AF",
     "asset_path": "/products/adobe-acrobat-pro-2026.webp",
-    "sha256": "1d129325d66b27b131472b8b644906b73707f475733f54a1a6186073bf84e80e",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "d71a16e93570a4cb6e5c5f011b88102f7e491338cd2e44ee7d677312591d7dc4",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "coreldraw-technical-suite-2026": {
     "sku": "LP-7DDCF70278",
@@ -4690,26 +4722,30 @@
   "coreldraw-graphics-suite-2026": {
     "sku": "LP-9BA0DBF29D",
     "asset_path": "/products/coreldraw-graphics-suite-2026.webp",
-    "sha256": "185c8714bb167ee13048cb5bab220e145f7b598be514ca3b2f04546dce2a5055",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "6863e5a93d5a946ff0465cac46e0170fc20ad87aa2e0ace07342748c393ffb26",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "autodesk-autocad-2026": {
     "sku": "LP-1182BAB97F",
     "asset_path": "/products/autodesk-autocad-2026.webp",
-    "sha256": "b4113cd9fcbd8c8c07fae3e7f29e319fee79cfa0560d1f74ab2db6a7bee4c3f5",
-    "width": 973,
-    "height": 1000,
-    "status": "unverified",
-    "rights_basis": null,
-    "evidence_refs": [],
-    "reviewed_by": null,
-    "reviewed_at": null
+    "sha256": "c34d98408b0710700868e0d1936693e4ead16a952c213db2de11760343cacea3",
+    "width": 1200,
+    "height": 1200,
+    "status": "approved",
+    "rights_basis": "owned",
+    "evidence_refs": [
+      "private://documents/market-image-generation-2026-08-11"
+    ],
+    "reviewed_by": "automation:hermes-agent",
+    "reviewed_at": "2026-08-11T04:40:58.755675+00:00"
   },
   "autodesk-autocad-lt-2026": {
     "sku": "LP-53DDED6EA5",

@@ -162,6 +162,7 @@ async def merchant_queue(
     only_approved: bool = False,
     only_pending: bool = False,
     pilot_only: bool = False,
+    market_only: bool = False,
     max_risk: Optional[int] = None,
     limit: int = 500,
     user=Depends(current_admin),
@@ -174,6 +175,8 @@ async def merchant_queue(
         q["merchant_approved"] = False
     if pilot_only:
         q["pilot_candidate_private"] = True
+    if market_only:
+        q["market_observed_private"] = True
     items = []
     approved_count = 0
     async for p in db.products.find(q).limit(limit):
@@ -188,6 +191,8 @@ async def merchant_queue(
             approved_count += 1
         items.append(p)
     items.sort(key=lambda x: (
+        not x.get("market_observed_private", False),
+        x.get("market_rank_private") or 9999,
         not x.get("pilot_candidate_private", False),
         x.get("pilot_rank_private") or 9999,
         x.get("merchant_approved", False),
@@ -348,7 +353,12 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
     image_rights_verified = 0
     pilot_candidates = 0
     catalog_review_approved = 0
+    market_previews = 0
+    declared_stock_total = 0
     async for product in db.products.find({}):
+        if product.get("market_observed_private") is True:
+            market_previews += 1
+            declared_stock_total += int(product.get("declared_stock_private") or 0)
         if product.get("pilot_candidate_private") is True:
             pilot_candidates += 1
         if product.get("catalog_review_status") == "approved":
@@ -370,6 +380,8 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
         "feedable_products": feedable,
         "pilot_candidates": pilot_candidates,
         "catalog_review_approved": catalog_review_approved,
+        "market_previews": market_previews,
+        "declared_stock_total": declared_stock_total,
         "provenance_evidence_verified": provenance_verified,
         "image_rights_evidence_verified": image_rights_verified,
     }

@@ -29,6 +29,17 @@ def test_loader_marks_only_the_explicit_pilot_shortlist_without_approving_it():
     assert all("2025" not in product["name"] for product in pilot)
 
 
+def test_ads_transparency_shortlist_is_public_preview_only_with_attested_stock_private():
+    catalog = importlib.import_module("catalog")
+    products = catalog._load_csv()
+    observed = [product for product in products if product.get("market_observed_private")]
+    assert len(observed) == 20
+    assert all(product.get("catalog_visibility_status") == "published_preview" for product in observed)
+    assert all(product.get("declared_stock_private") == 200 for product in observed)
+    assert all(product.get("stock") == 0 and product.get("merchant_approved") is False for product in observed)
+    assert all(product.get("image_rights_approved") is True for product in observed)
+
+
 def test_loader_attaches_asset_fingerprints_without_approving_rights_or_provenance():
     catalog = importlib.import_module("catalog")
     products = catalog._load_csv()
@@ -37,7 +48,7 @@ def test_loader_attaches_asset_fingerprints_without_approving_rights_or_provenan
     assert all(product.get("image_rights_evidence_private", {}).get("sha256") for product in products)
     assert all(product.get("provenance_status") == "unverified" for product in products)
     approved_images = [product for product in products if product.get("image_rights_approved")]
-    assert len(approved_images) == 10
+    assert len(approved_images) == 28
     assert all(product.get("image_rights_evidence_private", {}).get("rights_basis") == "owned" for product in approved_images)
     assert all(product.get("image_rights_approved") is True for product in products if product.get("pilot_candidate_private"))
 

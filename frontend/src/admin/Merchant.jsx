@@ -46,6 +46,8 @@ function StatusBanner({ status }) {
     { k: "Email (Brevo)", v: status.email_configured ? "configurato" : "MANCA API key", ok: status.email_configured },
     { k: "Approvati", v: `${status.approved_products}`, ok: status.approved_products > 0 },
     { k: "Candidati pilota", v: `${status.pilot_candidates}`, ok: status.pilot_candidates > 0 },
+    { k: "Schede Ads pubbliche", v: `${status.market_previews}`, ok: status.market_previews > 0 },
+    { k: "Stock dichiarato", v: `${status.declared_stock_total}`, ok: status.declared_stock_total > 0 },
     { k: "Schede pilota approvate", v: `${status.catalog_review_approved}`, ok: status.catalog_review_approved > 0 },
     { k: "Provenienza verificata", v: `${status.provenance_evidence_verified}`, ok: status.provenance_evidence_verified > 0 },
     { k: "Diritti immagini", v: `${status.image_rights_evidence_verified}`, ok: status.image_rights_evidence_verified > 0 },
@@ -54,7 +56,7 @@ function StatusBanner({ status }) {
   return (
     <div className="rounded-xl border border-white/10 bg-[#0B0B0D] p-5">
       <p className="label-eyebrow mb-3">Stato go-live</p>
-      <div className="grid grid-cols-2 md:grid-cols-5 xl:grid-cols-10 gap-3">
+      <div className="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-3">
         {rows.map(r => (
           <div key={r.k} className="text-center">
             <p className="text-[10px] font-mono uppercase tracking-widest text-zinc-500">{r.k}</p>
@@ -176,6 +178,7 @@ function ProductRow({ p, onPatch, onImport, m }) {
         <div className="col-span-4 min-w-0">
           <p className="text-white truncate">{p.name}</p>
           <p className="text-xs text-zinc-500 font-mono truncate">
+            {p.market_observed_private && <span className="text-fuchsia-300 mr-2">ADS #{p.market_rank_private}</span>}
             {p.pilot_candidate_private && <span className="text-cyan-300 mr-2">PILOT #{p.pilot_rank_private}</span>}
             {p.slug}
           </p>
@@ -186,6 +189,7 @@ function ProductRow({ p, onPatch, onImport, m }) {
         <div className="col-span-1 text-sm text-white font-mono">{p.selling_price_eur ? `€${p.selling_price_eur.toFixed(2)}` : "—"}</div>
         <div className="col-span-1 text-xs font-mono text-zinc-400">
           <span className={p._available_keys > 0 ? "text-emerald-300" : "text-orange-300"}>{p._available_keys}</span> keys
+          {p.declared_stock_private > 0 && <span className="block text-fuchsia-300">{p.declared_stock_private} dichiarati</span>}
         </div>
         <div className="col-span-1">
           {p.merchant_approved
@@ -338,7 +342,8 @@ export default function AdminMerchant() {
   const [data, setData] = useState(null);
   const [q, setQ] = useState("");
   const [onlyPending, setOnlyPending] = useState(true);
-  const [pilotOnly, setPilotOnly] = useState(true);
+  const [pilotOnly, setPilotOnly] = useState(false);
+  const [marketOnly, setMarketOnly] = useState(true);
   const [maxRisk, setMaxRisk] = useState(100);
   const [importSku, setImportSku] = useState(null);
 
@@ -346,12 +351,13 @@ export default function AdminMerchant() {
     const params = { limit: 500 };
     if (onlyPending) params.only_pending = true;
     if (pilotOnly) params.pilot_only = true;
+    if (marketOnly) params.market_only = true;
     if (maxRisk) params.max_risk = maxRisk;
     m.queue(params).then(setData);
     m.status().then(setStatus);
   };
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [onlyPending, pilotOnly, maxRisk]);
+  useEffect(() => { load(); /* eslint-disable-next-line */ }, [onlyPending, pilotOnly, marketOnly, maxRisk]);
 
   const filtered = useMemo(() => {
     if (!data) return [];
@@ -398,6 +404,10 @@ export default function AdminMerchant() {
         <label className="flex items-center gap-2 text-sm text-zinc-300">
           <input type="checkbox" checked={onlyPending} onChange={e => setOnlyPending(e.target.checked)}/>
           Solo da approvare
+        </label>
+        <label className="flex items-center gap-2 text-sm text-cyan-300">
+          <input type="checkbox" checked={marketOnly} onChange={e => setMarketOnly(e.target.checked)}/>
+          Solo prodotti Ads osservati
         </label>
         <label className="flex items-center gap-2 text-sm text-cyan-300">
           <input type="checkbox" checked={pilotOnly} onChange={e => setPilotOnly(e.target.checked)}/>

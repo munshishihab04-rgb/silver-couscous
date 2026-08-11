@@ -53,6 +53,9 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - GTIN candidati verificati formalmente ma 0 associazioni ufficiali trovate; nessun GTIN/MPN promosso a verificato.
   - Microsoft CSP e Bitdefender Partner Advantage individuati come canali ufficiali, ma non costituiscono prova di iscrizione o diritto specifico di LicenzPol.
   - Restano soltanto `identifier_assignment_unverified` e `provenance_evidence_missing` per tutti i 10 prodotti.
+  - Su richiesta del titolare è stato aggiunto un livello meno restrittivo di visibilità catalogo: 20 prodotti osservati negli annunci `ciaokey.it` sono `published_preview`, con immagini originali e senza offerta acquistabile.
+  - Ads Transparency mostrava circa 200 annunci di MACROKEY IT SRL (verificato); il dataset contiene 23 creatività riconducibili a 20 GTIN distinti con checksum valido.
+  - Lo stock dichiarato dal titolare (200 per prodotto, 4.000 totale) è registrato privatamente ma non diventa stock vendibile fino all'importazione delle chiavi reali.
   - La fase non può essere marcata completata senza contratto/fattura/catena di titolarità autentici e identificatori confermati dal produttore, GS1 o distributore autorizzato.
 - [ ] **Fase 6 — Inventario licenze ed email**
 - [ ] **Fase 7 — Sicurezza, test e infrastruttura**

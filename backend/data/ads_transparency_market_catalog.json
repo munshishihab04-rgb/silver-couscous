@@ -1,0 +1,430 @@
+{
+  "version": 1,
+  "source": {
+    "name": "Google Ads Transparency Center",
+    "url": "https://adstransparency.google.com/?region=IT&domain=ciaokey.it",
+    "observed_at": "2026-08-11",
+    "live_result": "~200 ads",
+    "advertiser": "MACROKEY IT SRL",
+    "advertiser_status": "verified",
+    "extracted_creative_rows": 23,
+    "distinct_catalog_products": 20
+  },
+  "policy": {
+    "meaning": "Public catalog preview only",
+    "merchant_feed_enabled": false,
+    "purchasable": false,
+    "stock_rule": "User-attested quantity is recorded privately; sellable stock remains zero until unique keys are imported.",
+    "evidence_limit": "Competitor advertising corroborates market naming and identifier usage but does not prove LicenzPol provenance or authorization."
+  },
+  "items": [
+    {
+      "slug": "adobe-acrobat-pro-2026",
+      "sku": "LP-CE62D1E1AF",
+      "name": "Adobe Acrobat Pro 2026",
+      "candidate_gtin": "7015430391171",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Adobe Acrobat Pro 2026",
+        "ADOBE ACROBAT PRO 2026 - 6 Mesi - Windows"
+      ],
+      "creative_occurrences": 5,
+      "ads_item_ids": [
+        "17718909754268327704",
+        "4501182814456220009",
+        "5586188331621829496"
+      ],
+      "rank": 1,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "adobe-creative-cloud-2025",
+      "sku": "LP-132333FAC6",
+      "name": "Adobe Creative Cloud 2026",
+      "candidate_gtin": "7443539053025",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Adobe Creative Cloud 2026",
+        "ADOBE CREATIVE CLOUD 2026 - 1 Anno - Windows"
+      ],
+      "creative_occurrences": 4,
+      "ads_item_ids": [
+        "14062181689546555823",
+        "14908714245144645616"
+      ],
+      "rank": 2,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "adobe-lightroom-classic-2023",
+      "sku": "LP-CD8EE6FA5D",
+      "name": "Adobe Lightroom Classic 2023",
+      "candidate_gtin": "4251972914178",
+      "checksum_valid": true,
+      "creative_titles": [
+        "ADOBE LIGHTROOM CLASSIC 2023"
+      ],
+      "creative_occurrences": 1,
+      "ads_item_ids": [
+        "11621776696436011270"
+      ],
+      "rank": 3,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "adobe-lightroom-classic-2025",
+      "sku": "LP-40921524C8",
+      "name": "Adobe Lightroom Classic 2025",
+      "candidate_gtin": "7443539952908",
+      "checksum_valid": true,
+      "creative_titles": [
+        "ADOBE LIGHTROOM CLASSIC 2025 - 1 Mese - Windows"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "3011463482690844252"
+      ],
+      "rank": 4,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "autocad-lt-2022",
+      "sku": "LP-3694C9BFD8",
+      "name": "Autocad Lt 2022",
+      "candidate_gtin": "0060612357237",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Autocad Lt 2022",
+        "Autocad Lt 2022 Licenza Perpetua"
+      ],
+      "creative_occurrences": 3,
+      "ads_item_ids": [
+        "12316801463609281704",
+        "5966932501693377991"
+      ],
+      "rank": 5,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "autodesk-autocad-2026",
+      "sku": "LP-1182BAB97F",
+      "name": "Autodesk Autocad 2026",
+      "candidate_gtin": "5098393010312",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Autodesk Autocad 2026"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "18040954864775677204"
+      ],
+      "rank": 6,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "autodesk-fusion-360",
+      "sku": "LP-42D140FFC1",
+      "name": "Autodesk Fusion 360",
+      "candidate_gtin": "7443539554539",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Autodesk Fusion 360"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "7712839626858768567"
+      ],
+      "rank": 7,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "canva-pro",
+      "sku": "LP-76205A98A5",
+      "name": "Canva Pro",
+      "candidate_gtin": "7443539358335",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Canva Pro"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "9372143264063819905"
+      ],
+      "rank": 8,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "coreldraw-graphics-suite-2026",
+      "sku": "LP-9BA0DBF29D",
+      "name": "Coreldraw Graphics Suite 2026",
+      "candidate_gtin": "8346578713310",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Coreldraw Graphics Suite 2026"
+      ],
+      "creative_occurrences": 1,
+      "ads_item_ids": [
+        "1588525098183530822"
+      ],
+      "rank": 9,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-excel-2016-windows",
+      "sku": "LP-F20AC2A02F",
+      "name": "Microsoft Excel 2016 (Windows)",
+      "candidate_gtin": "9781119202066",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Excel 2016 (Windows)"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "5977371667505649171"
+      ],
+      "rank": 10,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-excel-2024-windows",
+      "sku": "LP-EC5B1D69F2",
+      "name": "Microsoft Excel 2024 (Windows)",
+      "candidate_gtin": "9798877325715",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Excel 2024 (windows)"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "1898741568777792103"
+      ],
+      "rank": 11,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-office-2016-home-student-windows",
+      "sku": "LP-8B5CB8D12B",
+      "name": "Microsoft Office 2016 Home & Student (Windows)",
+      "candidate_gtin": "0760947046591",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Office 2016 Home & Student (windows)"
+      ],
+      "creative_occurrences": 1,
+      "ads_item_ids": [
+        "10078620196555689114"
+      ],
+      "rank": 12,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-office-2019-home-business-mac",
+      "sku": "LP-B9D5FAE5EA",
+      "name": "Microsoft Office 2019 Home & Business (Mac)",
+      "candidate_gtin": "0760947037735",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Office 2019 Home & Business (mac)"
+      ],
+      "creative_occurrences": 1,
+      "ads_item_ids": [
+        "15368446848905880039"
+      ],
+      "rank": 13,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-office-2021-home-business-mac",
+      "sku": "LP-95E5553CD3",
+      "name": "Microsoft Office 2021 Home & Business (Mac)",
+      "candidate_gtin": "0889842853001",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Office 2021 Home & Business (mac)"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "5900742570972760559"
+      ],
+      "rank": 14,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-office-2024-home-and-business-mac",
+      "sku": "LP-6A2F0E2B49",
+      "name": "Microsoft Office Home & Business 2024 (Mac)",
+      "candidate_gtin": "0889842095920",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Office 2024 Home And Business (mac)"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "9202938905132116598"
+      ],
+      "rank": 15,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-office-365-home-pc-e-mac",
+      "sku": "LP-24409595D3",
+      "name": "Microsoft Office 365 Home - PC E Mac",
+      "candidate_gtin": "889842086768",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Office 365 Home - Pc E Mac"
+      ],
+      "creative_occurrences": 3,
+      "ads_item_ids": [
+        "2925941245131900852",
+        "8355521418639696"
+      ],
+      "rank": 16,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-office-365-pro-plus-windows-mac",
+      "sku": "LP-3E2B87CDE9",
+      "name": "Microsoft Office 365 Pro Plus (Windows & Mac)",
+      "candidate_gtin": "762223223252",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Office 365 Pro Plus (windows & Mac)"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "6973413039878340860"
+      ],
+      "rank": 17,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-outlook-2024-windows",
+      "sku": "LP-84D622D9E3",
+      "name": "Microsoft Outlook 2024 (Windows)",
+      "candidate_gtin": "8721098483743",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Outlook 2024 (windows)"
+      ],
+      "creative_occurrences": 1,
+      "ads_item_ids": [
+        "4988058302592032706"
+      ],
+      "rank": 18,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-windows-11-professional",
+      "sku": "LP-E18A63310E",
+      "name": "Microsoft Windows 11 Pro",
+      "candidate_gtin": "0889842905892",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Windows 11 Professional"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "1799843171291670260"
+      ],
+      "rank": 19,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    },
+    {
+      "slug": "microsoft-word-2016-mac",
+      "sku": "LP-2764BAEB9E",
+      "name": "Microsoft Word 2016 (Mac)",
+      "candidate_gtin": "9783954312887",
+      "checksum_valid": true,
+      "creative_titles": [
+        "Microsoft Word 2016 (Mac)"
+      ],
+      "creative_occurrences": 2,
+      "ads_item_ids": [
+        "1018278755706558987"
+      ],
+      "rank": 20,
+      "catalog_visibility_status": "published_preview",
+      "identifier_status": "market_correlated_unverified",
+      "declared_stock_private": 200,
+      "stock_attestation_status_private": "user_attested_pending_key_import",
+      "real_key_inventory_count": 0
+    }
+  ]
+}

@@ -21,6 +21,7 @@ PILOT_CATALOG_PATH = Path(__file__).parent / "data" / "pilot_catalog.json"
 GOOGLE_TAXONOMY_PILOT_PATH = Path(__file__).parent / "data" / "google_taxonomy_pilot.json"
 PILOT_PRICING_PATH = Path(__file__).parent / "data" / "pilot_pricing.json"
 PILOT_CONTENT_PATH = Path(__file__).parent / "data" / "pilot_content.json"
+MARKET_CATALOG_PATH = Path(__file__).parent / "data" / "ads_transparency_market_catalog.json"
 
 CATEGORIES = [
     {"key": "os",       "color": "work",    "name_it": "Sistemi Operativi",       "name_en": "Operating Systems"},
@@ -432,6 +433,15 @@ def _load_pilot_overlay():
         return {}
 
 
+def _load_market_overlay():
+    try:
+        with open(MARKET_CATALOG_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+        return {item["slug"]: item for item in data.get("items", [])}
+    except Exception:
+        return {}
+
+
 def _load_csv():
     products = []
     seen_slugs = set()
@@ -439,6 +449,7 @@ def _load_csv():
     provenance_manifest = _load_evidence_overlay(PROVENANCE_MANIFEST_PATH)
     image_rights_manifest = _load_evidence_overlay(IMAGE_RIGHTS_MANIFEST_PATH)
     pilot_manifest = _load_pilot_overlay()
+    market_manifest = _load_market_overlay()
     google_category_mapping = _load_evidence_overlay(GOOGLE_TAXONOMY_PILOT_PATH).get("mapping", {})
     pilot_prices = _load_evidence_overlay(PILOT_PRICING_PATH).get("prices", {})
     pilot_content = _load_evidence_overlay(PILOT_CONTENT_PATH)
@@ -489,6 +500,7 @@ def _load_csv():
             provenance_evidence = provenance_manifest.get(slug) or {}
             image_rights_evidence = image_rights_manifest.get(slug) or {}
             pilot_record = pilot_manifest.get(slug)
+            market_record = market_manifest.get(slug)
             (tag_it, tag_en, desc_it, desc_en, features_it, features_en,
              compat_it, compat_en, what_it, what_en, act_it, act_en, faq) = _copy(
                 brand, name, category, edition, devices, license_type
@@ -547,6 +559,12 @@ def _load_csv():
                 "pilot_candidate_private": bool(pilot_record),
                 "pilot_rank_private": pilot_record.get("rank") if pilot_record else None,
                 "catalog_review_status": pilot_record.get("catalog_review_status", "pending") if pilot_record else "not_selected",
+                "market_observed_private": bool(market_record),
+                "market_rank_private": market_record.get("rank") if market_record else None,
+                "market_observation_private": market_record or None,
+                "catalog_visibility_status": market_record.get("catalog_visibility_status") if market_record else "private_review",
+                "declared_stock_private": market_record.get("declared_stock_private", 0) if market_record else 0,
+                "stock_attestation_status_private": market_record.get("stock_attestation_status_private") if market_record else None,
                 "image_rights_approved": image_rights_evidence_verified(image_rights_evidence),
                 "image_rights_evidence_private": image_rights_evidence,
                 "provenance_status": "verified" if provenance_evidence_verified(provenance_evidence) else "unverified",

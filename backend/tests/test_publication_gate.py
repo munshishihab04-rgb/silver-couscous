@@ -101,10 +101,34 @@ def test_production_storefront_contains_only_public_offers():
     ]
 
 
-def test_staging_keeps_drafts_for_review_but_never_marks_them_purchasable():
+def test_staging_can_preview_draft_without_making_it_purchasable():
     [preview] = filter_storefront_products([draft_product()], "staging")
     assert preview["merchant_ready"] is False
     assert preview["purchasable"] is False
+
+
+def test_production_can_show_market_observed_preview_without_creating_an_offer():
+    product = draft_product()
+    product.update({
+        "catalog_visibility_status": "published_preview",
+        "image_rights_approved": True,
+        "declared_stock_private": 200,
+        "image_rights_evidence_private": {
+            "asset_path": "/products/office-test.webp",
+            "sha256": "a" * 64,
+            "width": 1200,
+            "height": 1200,
+            "rights_basis": "owned",
+            "evidence_refs": ["private://documents/generated"],
+            "reviewed_by": "automation:hermes-agent",
+            "reviewed_at": "2026-08-11T00:00:00+00:00",
+        },
+    })
+    [preview] = filter_storefront_products([product], "production")
+    assert preview["purchasable"] is False
+    assert preview["selling_price_eur"] is None
+    assert "declared_stock_private" not in preview
+    assert filter_storefront_products([draft_product()], "production") == []
 
 
 def test_public_price_is_missing_for_draft_and_authoritative_for_approved_offer():

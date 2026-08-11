@@ -5,6 +5,7 @@ from copy import deepcopy
 from typing import Iterable
 
 from evidence import image_rights_evidence_verified, provenance_evidence_verified
+from market_catalog import is_catalog_visible
 
 
 def valid_gtin(value: str | None) -> bool:
@@ -100,5 +101,5 @@ def to_public_product(product: dict) -> dict:
 
 def filter_storefront_products(products: Iterable[dict], app_env: str) -> list[dict]:
     if app_env == "production":
-        return [to_public_product(product) for product in products if is_public_offer(product)]
+        return [to_public_product(product) for product in products if is_public_offer(product) or is_catalog_visible(product)]
     return [to_public_product(product) for product in products]

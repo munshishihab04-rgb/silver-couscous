@@ -129,6 +129,7 @@ MERCHANT_CONTROLLED_FIELDS = {
     "stock", "sku", "gtin", "gtin_status", "mpn", "mpn_status",
     "availability_status", "condition", "google_product_category", "status",
     "catalog_review_status", "catalog_reviewed_at", "catalog_reviewed_by",
+    "catalog_visibility_status",
 }
 
 

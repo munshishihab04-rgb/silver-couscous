@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "generator": "backend/pilot_images.py",
+  "method": "Deterministic Pillow rendering using only text, geometric primitives and DejaVu fonts.",
+  "source_assets": [],
+  "vendor_logos_used": false,
+  "imported_package_art_used": false,
+  "rights_basis": "owned",
+  "items": [
+    {
+      "slug": "adobe-acrobat-pro-2026",
+      "asset_path": "/products/adobe-acrobat-pro-2026.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "d71a16e93570a4cb6e5c5f011b88102f7e491338cd2e44ee7d677312591d7dc4",
+      "source_assets": []
+    },
+    {
+      "slug": "adobe-creative-cloud-2025",
+      "asset_path": "/products/adobe-creative-cloud-2025.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "ccc13f8b0668448274b0427958c871197068f94b03ab63d63d7200ee244923e9",
+      "source_assets": []
+    },
+    {
+      "slug": "adobe-lightroom-classic-2023",
+      "asset_path": "/products/adobe-lightroom-classic-2023.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2c6d96bfabd2e12ec2c5085c838054ea914cf01c209da3fe861221931130ae39",
+      "source_assets": []
+    },
+    {
+      "slug": "adobe-lightroom-classic-2025",
+      "asset_path": "/products/adobe-lightroom-classic-2025.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "4a63ecc7ba9bd4f01ce8c8fe2faea1eb73e70bb5bb051a5ec1b93088145cb1b4",
+      "source_assets": []
+    },
+    {
+      "slug": "autocad-lt-2022",
+      "asset_path": "/products/autocad-lt-2022.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "ab33cc47bef5ac5266a7273164e920e8b7b39126490572f592f91ae74832c01d",
+      "source_assets": []
+    },
+    {
+      "slug": "autodesk-autocad-2026",
+      "asset_path": "/products/autodesk-autocad-2026.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "c34d98408b0710700868e0d1936693e4ead16a952c213db2de11760343cacea3",
+      "source_assets": []
+    },
+    {
+      "slug": "autodesk-fusion-360",
+      "asset_path": "/products/autodesk-fusion-360.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "c9d505b13cd6be87391860b5d2cf3a5bae184d96f2f98c30ebf3415ae3d5d9fe",
+      "source_assets": []
+    },
+    {
+      "slug": "canva-pro",
+      "asset_path": "/products/canva-pro.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "ea95266b8fd97d6f0547729e96de51e2ddc15566314bd2310ed16704b540a892",
+      "source_assets": []
+    },
+    {
+      "slug": "coreldraw-graphics-suite-2026",
+      "asset_path": "/products/coreldraw-graphics-suite-2026.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "6863e5a93d5a946ff0465cac46e0170fc20ad87aa2e0ace07342748c393ffb26",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-excel-2016-windows",
+      "asset_path": "/products/microsoft-excel-2016-windows.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "873ab55e33bb0a20257a022c906c56c6bc5805fe5f57a8b257b8b54042c033c0",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-excel-2024-windows",
+      "asset_path": "/products/microsoft-excel-2024-windows.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "48b248d1cec0e2131a583609d6a6d7f7b64d32da458b87d5ad8fb0af56b64133",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-2016-home-student-windows",
+      "asset_path": "/products/microsoft-office-2016-home-student-windows.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "b6c9d210f4712e8edde595c2d427c97d65ae192f183289afa2107b1eb700757d",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-2019-home-business-mac",
+      "asset_path": "/products/microsoft-office-2019-home-business-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "c05ea4a7589df0efefb6a54a7647445ab5186e1f76e437e8a8f62fa3908357dd",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-2021-home-business-mac",
+      "asset_path": "/products/microsoft-office-2021-home-business-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "a03d8ffff16da8a8a2eda4f15b4b8c5105f883f97112d44d775b81150795b336",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-2024-home-and-business-mac",
+      "asset_path": "/products/microsoft-office-2024-home-and-business-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "7f445fdc9c1d00ddfeff72086a284d083d01035b35eb88e94ba239e736b0cd68",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-365-home-pc-e-mac",
+      "asset_path": "/products/microsoft-office-365-home-pc-e-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "62ca73e067b79693717697b65805afd4aa4192adc0e6307a594e78184e2b1f5a",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-office-365-pro-plus-windows-mac",
+      "asset_path": "/products/microsoft-office-365-pro-plus-windows-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "4bb9e409d67aa671576dccf905a2a3ea335d065d90500a85181c2291bd5bb98d",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-outlook-2024-windows",
+      "asset_path": "/products/microsoft-outlook-2024-windows.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "2faac88bfebe684cc1c1c16a3f3fcd266420907e36b101fb3a3b88f5339df007",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-windows-11-professional",
+      "asset_path": "/products/microsoft-windows-11-professional.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "231acc8ef1f8e6677b8f00e4f288df852d8cc3a9a802f492c1266f0a4d5db777",
+      "source_assets": []
+    },
+    {
+      "slug": "microsoft-word-2016-mac",
+      "asset_path": "/products/microsoft-word-2016-mac.webp",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "297ada0d690d07b6b84191c6104b1155d4660c21430ecda785ed96c48556b21c",
+      "source_assets": []
+    }
+  ]
+}
