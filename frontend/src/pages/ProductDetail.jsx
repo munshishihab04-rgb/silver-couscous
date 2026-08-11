@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../lib/api";
 import { useLang, money } from "../lib/i18n";
+import useSEO from "../lib/useSEO";
 import { useCart } from "../lib/cart";
 import ProductCard from "../components/ProductCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
@@ -28,12 +29,49 @@ export default function ProductDetail() {
     window.scrollTo(0, 0);
   }, [slug]);
 
+  // SEO — computed once product is loaded (hook must run every render)
+  const seoData = useMemo(() => {
+    if (!product) return {};
+    const prices = product.variants.map(v => v.price_eur);
+    const minPrice = Math.min(...prices);
+    const tagline = lang === "it" ? product.tagline_it : product.tagline_en;
+    const desc = lang === "it" ? product.description_it : product.description_en;
+    const shortDesc = (desc || tagline || "").slice(0, 160);
+    const origin = typeof window !== "undefined" ? window.location.origin : "";
+    return {
+      title: product.name,
+      description: shortDesc || `${product.name} — ${product.brand}. Consegna via email, chiave verificata.`,
+      keywords: `${product.name}, ${product.brand}, ${product.category}, licenza, ${product.licenseType}`,
+      image: product.image_url ? (product.image_url.startsWith("http") ? product.image_url : origin + product.image_url) : undefined,
+      type: "product",
+      locale: lang === "it" ? "it_IT" : "en_US",
+      jsonLd: {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": product.name,
+        "description": shortDesc,
+        "brand": { "@type": "Brand", "name": product.brand },
+        "category": product.category,
+        "sku": product.slug,
+        "image": product.image_url ? [product.image_url.startsWith("http") ? product.image_url : origin + product.image_url] : undefined,
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "EUR",
+          "lowPrice": minPrice,
+          "highPrice": Math.max(...prices),
+          "offerCount": product.variants.length,
+          "availability": "https://schema.org/InStock",
+        },
+      },
+    };
+  }, [product, lang]);
+  useSEO(seoData);
+
   if (!product) return <div className="max-w-[1400px] mx-auto px-6 py-24 text-center text-zinc-500">Loading...</div>;
   const variant = product.variants.find(v => v.id === variantId) || product.variants[0];
   const editions = [...new Set(product.variants.map(v => v.edition))];
   const durations = [...new Set(product.variants.filter(v => v.edition === variant.edition).map(v => v.duration_months))];
   const devices = [...new Set(product.variants.filter(v => v.edition === variant.edition && v.duration_months === variant.duration_months).map(v => v.devices))];
-
   const pickVariant = (edition, duration, dev) => {
     const found = product.variants.find(v => v.edition === edition && v.duration_months === duration && v.devices === dev);
     if (found) setVariantId(found.id);

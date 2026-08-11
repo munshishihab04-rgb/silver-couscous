@@ -77,13 +77,8 @@ export function SiteSettingsProvider({ children }) {
   useEffect(() => {
     if (!settings) return;
 
-    if (settings.site_title) document.title = settings.site_title;
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement("meta"); metaDesc.name = "description";
-      document.head.appendChild(metaDesc);
-    }
-    metaDesc.content = settings.site_description || "";
+    // Note: document.title and meta[description] are managed per-page by useSEO.
+    // Only inject analytics scripts and custom HTML from here.
 
     // GA4
     if (settings.ga4_measurement_id) {

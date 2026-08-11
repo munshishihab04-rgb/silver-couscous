@@ -20,6 +20,7 @@ from families import FAMILIES, get_family
 from auth import seed_admin, ensure_indexes
 from db_migration import migrate_products_if_empty, load_products_from_db, ensure_default_pages, ensure_default_settings
 from admin_routes import admin_router
+from exports_seo import exports_router, seo_router
 
 
 BUNDLE_TIERS = [
@@ -471,6 +472,8 @@ async def bundle_preview(req: BundlePreviewRequest):
 
 app.include_router(api_router)
 app.include_router(admin_router)
+app.include_router(exports_router)
+app.include_router(seo_router)
 
 
 # ---------- Public settings, CMS pages and analytics ------------------------

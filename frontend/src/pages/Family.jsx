@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../lib/api";
 import { useLang } from "../lib/i18n";
+import useSEO from "../lib/useSEO";
 import ProductCard from "../components/ProductCard";
 import { ChevronRight, ArrowRight, Layers } from "lucide-react";
 
@@ -16,6 +17,21 @@ export default function Family() {
     window.scrollTo(0, 0);
     api.family(slug).then(setFamily).finally(() => setLoading(false));
   }, [slug]);
+
+  const seoData = useMemo(() => {
+    if (!family) return {};
+    const name = lang === "it" ? family.name_it : family.name_en;
+    const tagline = lang === "it" ? family.tagline_it : family.tagline_en;
+    return {
+      title: `${name} — ${lang === "it" ? "Tutte le edizioni" : "All editions"}`,
+      description: tagline || (lang === "it"
+        ? `Scopri la famiglia ${name}: ${family.product_count || 0} edizioni con prezzi trasparenti.`
+        : `Discover the ${name} family: ${family.product_count || 0} editions with transparent pricing.`),
+      keywords: `${name}, ${family.brand}, famiglia software, edizioni`,
+      locale: lang === "it" ? "it_IT" : "en_US",
+    };
+  }, [family, lang]);
+  useSEO(seoData);
 
   if (loading || !family) {
     return <div className="max-w-[1400px] mx-auto px-6 py-24 text-center text-zinc-500">Loading...</div>;
@@ -116,6 +132,14 @@ export default function Family() {
 export function FamiliesIndex() {
   const { lang } = useLang();
   const [families, setFamilies] = useState([]);
+  useSEO({
+    title: lang === "it" ? "Le famiglie di software" : "Software families",
+    description: lang === "it"
+      ? "Esplora le grandi collezioni: Microsoft, Adobe, Autodesk e altre famiglie con la loro storia."
+      : "Explore the big collections: Microsoft, Adobe, Autodesk and other families with their own story.",
+    keywords: "famiglie software, microsoft, adobe, autodesk, kaspersky, corel",
+    locale: lang === "it" ? "it_IT" : "en_US",
+  });
   useEffect(() => { api.families().then(setFamilies); }, []);
   return (
     <div className="max-w-[1400px] mx-auto px-6 md:px-10 py-16" data-testid="families-index">

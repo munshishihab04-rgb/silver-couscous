@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../lib/api";
 import { useLang } from "../lib/i18n";
+import useSEO from "../lib/useSEO";
 import ProductCard from "../components/ProductCard";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
 import {
@@ -18,6 +19,29 @@ export default function Home() {
   const [cats, setCats] = useState([]);
   const [families, setFamilies] = useState([]);
   const [curated, setCurated] = useState([]);
+
+  useSEO({
+    title: lang === "it"
+      ? "LicenzPøl — Software originale, chiavi verificate, consegna via email"
+      : "LicenzPøl — Genuine software, verified keys, email delivery",
+    description: lang === "it"
+      ? "Centinaia di edizioni Microsoft, Adobe, Autodesk, Kaspersky e altre suite. Confronta, scegli e attiva la tua licenza in pochi minuti."
+      : "Hundreds of Microsoft, Adobe, Autodesk, Kaspersky and other suites. Compare, choose and activate your license in minutes.",
+    keywords: "licenze software, microsoft office, windows, adobe, autodesk, antivirus, chiavi digitali, licenzpol",
+    type: "website",
+    locale: lang === "it" ? "it_IT" : "en_US",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "LicenzPøl",
+      "url": typeof window !== "undefined" ? window.location.origin : "",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": typeof window !== "undefined" ? `${window.location.origin}/catalog?q={search_term_string}` : "",
+        "query-input": "required name=search_term_string",
+      },
+    },
+  });
 
   useEffect(() => {
     Promise.all([api.needs(), api.categories(), api.families(), api.products({ limit: 8 })])

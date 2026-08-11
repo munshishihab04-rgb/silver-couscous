@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { api } from "../lib/api";
 import { useLang } from "../lib/i18n";
+import useSEO from "../lib/useSEO";
 import ProductCard from "../components/ProductCard";
 import { SlidersHorizontal, X } from "lucide-react";
 
@@ -21,6 +22,16 @@ export default function Catalog() {
   const license_type = sp.get("license_type") || "";
   const sort = sp.get("sort") || "featured";
   const max_price = sp.get("max_price") || "";
+
+  useSEO({
+    title: lang === "it"
+      ? `Catalogo licenze software${category ? " · " + category : ""}${q ? " · " + q : ""}`
+      : `Software licenses catalog${category ? " · " + category : ""}${q ? " · " + q : ""}`,
+    description: lang === "it"
+      ? "Sfoglia oltre 390 edizioni: Windows, Office, Adobe Creative Cloud, Autodesk, sicurezza e utility. Filtri smart per piattaforma, brand e prezzo."
+      : "Browse 390+ editions: Windows, Office, Adobe Creative Cloud, Autodesk, security and utilities. Smart filters by platform, brand and price.",
+    keywords: "catalogo software, licenze, filtri, prezzo, brand, piattaforma",
+  });
 
   useEffect(() => { api.categories().then(setCats); }, []);
 

@@ -39,6 +39,6 @@
   "notes": {
     "mocked": "Order creation is a DEMO by design (no real payment gateway). POST /api/orders returns demo=true and status=demo_confirmed.",
     "credentials": "None required (guest checkout). /app/memory/test_credentials.md is empty which is expected.",
-    "urls_used": "REACT_APP_BACKEND_URL from /app/frontend/.env (https://software-made-simple.preview.emergentagent.com)"
+    "urls_used": "REACT_APP_BACKEND_URL from /app/frontend/.env (https://silver-build.preview.emergentagent.com)"
   }
 }

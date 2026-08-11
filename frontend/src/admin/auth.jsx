@@ -54,7 +54,33 @@ export function adminApi(token) {
     deleteProduct: (slug) => client.delete(`/products/${slug}`).then(r => r.data),
     customers: (q) => client.get(`/customers`, { params: q ? { q } : {} }).then(r => r.data),
     customer: (email) => client.get(`/customers/${encodeURIComponent(email)}`).then(r => r.data),
-    orders: () => client.get(`/orders`).then(r => r.data),
+    orders: (params) => client.get(`/orders`, { params: params || {} }).then(r => r.data),
+    order: (ref) => client.get(`/orders/${ref}`).then(r => r.data),
+    updateOrder: (ref, b) => client.patch(`/orders/${ref}`, b).then(r => r.data),
+    deleteOrder: (ref) => client.delete(`/orders/${ref}`).then(r => r.data),
+    exportUrl: (kind, params = {}) => {
+      const search = new URLSearchParams(params).toString();
+      return `${API}/exports/${kind}.csv${search ? `?${search}` : ""}`;
+    },
+    downloadExport: async (kind, params = {}) => {
+      const url = adminApi(token).exportUrl(kind, params);
+      const res = await fetch(url, {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      });
+      if (!res.ok) throw new Error(`Export ${kind} failed (${res.status})`);
+      const blob = await res.blob();
+      const cd = res.headers.get("content-disposition") || "";
+      const m = cd.match(/filename="?([^";]+)"?/i);
+      const filename = m ? m[1] : `${kind}.csv`;
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+      return filename;
+    },
     tickets: (status) => client.get(`/tickets`, { params: status ? { status } : {} }).then(r => r.data),
     updateTicket: (id, b) => client.patch(`/tickets/${id}`, b).then(r => r.data),
     pages: () => client.get(`/pages`).then(r => r.data),

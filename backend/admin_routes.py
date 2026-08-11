@@ -291,14 +291,88 @@ async def admin_customer_detail(email: str, request: Request, user=Depends(curre
 
 # ---------- Orders ----------------------------------------------------------
 
+ALLOWED_ORDER_STATUSES = {
+    "pending", "demo_confirmed", "paid", "delivered", "cancelled", "refunded",
+}
+
+
+class OrderStatusUpdate(BaseModel):
+    status: str
+    admin_notes: Optional[str] = None
+
+
 @admin_router.get("/orders")
-async def admin_orders(request: Request, limit: int = 100, user=Depends(current_admin)):
+async def admin_orders(
+    request: Request,
+    limit: int = 200,
+    skip: int = 0,
+    q: Optional[str] = None,
+    status: Optional[str] = None,
+    start: Optional[str] = None,
+    end: Optional[str] = None,
+    user=Depends(current_admin),
+):
     db = _db(request)
-    out = []
-    async for o in db.orders.find({}).sort("created_at", -1).limit(limit):
+    query = {}
+    if q:
+        query["$or"] = [
+            {"email": {"$regex": q, "$options": "i"}},
+            {"reference": {"$regex": q, "$options": "i"}},
+            {"first_name": {"$regex": q, "$options": "i"}},
+            {"last_name": {"$regex": q, "$options": "i"}},
+        ]
+    if status:
+        query["status"] = status
+    if start:
+        query.setdefault("created_at", {})["$gte"] = start
+    if end:
+        query.setdefault("created_at", {})["$lte"] = end
+
+    total = await db.orders.count_documents(query)
+    items = []
+    async for o in db.orders.find(query).sort("created_at", -1).skip(skip).limit(limit):
         o.pop("_id", None)
-        out.append(o)
-    return out
+        items.append(o)
+    return {"total": total, "items": items}
+
+
+@admin_router.get("/orders/{reference}")
+async def admin_get_order(reference: str, request: Request, user=Depends(current_admin)):
+    db = _db(request)
+    o = await db.orders.find_one({"reference": reference})
+    if not o:
+        raise HTTPException(status_code=404, detail="Ordine non trovato.")
+    o.pop("_id", None)
+    return o
+
+
+@admin_router.patch("/orders/{reference}")
+async def admin_update_order(
+    reference: str, body: OrderStatusUpdate,
+    request: Request, user=Depends(current_admin),
+):
+    db = _db(request)
+    if body.status not in ALLOWED_ORDER_STATUSES:
+        raise HTTPException(status_code=400, detail=f"Status non valido. Consentiti: {sorted(ALLOWED_ORDER_STATUSES)}")
+    update = {"status": body.status,
+              "updated_at": datetime.now(timezone.utc).isoformat()}
+    if body.admin_notes is not None:
+        update["admin_notes"] = body.admin_notes
+    res = await db.orders.update_one({"reference": reference}, {"$set": update})
+    if res.matched_count == 0:
+        raise HTTPException(status_code=404, detail="Ordine non trovato.")
+    o = await db.orders.find_one({"reference": reference})
+    o.pop("_id", None)
+    return o
+
+
+@admin_router.delete("/orders/{reference}")
+async def admin_delete_order(reference: str, request: Request, user=Depends(current_admin)):
+    db = _db(request)
+    res = await db.orders.delete_one({"reference": reference})
+    if res.deleted_count == 0:
+        raise HTTPException(status_code=404, detail="Ordine non trovato.")
+    return {"ok": True}
 
 
 # ---------- Tickets (support messages) --------------------------------------

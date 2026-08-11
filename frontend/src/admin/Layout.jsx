@@ -3,11 +3,12 @@ import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAdminAuth } from "./auth.jsx";
 import {
   LayoutDashboard, Package, Users, LifeBuoy, FileText, Settings,
-  BarChart3, LogOut, Menu, X, ExternalLink, ShieldCheck
+  BarChart3, LogOut, Menu, X, ExternalLink, ShieldCheck, ShoppingBag
 } from "lucide-react";
 
 const items = [
   { to: "/admin", end: true, label: "Dashboard", icon: LayoutDashboard },
+  { to: "/admin/orders", label: "Ordini", icon: ShoppingBag },
   { to: "/admin/products", label: "Prodotti", icon: Package },
   { to: "/admin/customers", label: "Clienti", icon: Users },
   { to: "/admin/tickets", label: "Ticket", icon: LifeBuoy },
