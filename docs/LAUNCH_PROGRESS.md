@@ -57,7 +57,16 @@ Questo file è il riferimento persistente tra sessioni. Ogni fase viene conclusa
   - Ads Transparency mostrava circa 200 annunci di MACROKEY IT SRL (verificato); il dataset contiene 23 creatività riconducibili a 20 GTIN distinti con checksum valido.
   - Lo stock dichiarato dal titolare (200 per prodotto, 4.000 totale) è registrato privatamente ma non diventa stock vendibile fino all'importazione delle chiavi reali.
   - La fase è chiusa per la pubblicazione catalogo concordata; conversione dello stock dichiarato in chiavi disponibili, feed Merchant e acquisto restano esplicitamente nella Fase 6.
-- [ ] **Fase 6 — Inventario licenze ed email**
+- [x] **Fase 6 — Inventario licenze ed email** — pipeline tecnica completata in modalità fail-closed
+  - Cifratura Fernet con chiave dedicata separata dal JWT; fingerprint HMAC e indice univoco impediscono doppie importazioni.
+  - Import CSV privato dry-run/apply confinato a `.runtime/`, con validazione SKU, audit per conteggi e nessuna chiave nei log.
+  - Stock derivato esclusivamente dalle chiavi `available`, sincronizzato dopo importazione/prenotazione/rilascio e a ogni avvio.
+  - Prenotazione, rilascio e claim consegna atomici; eventi PSP e ordini idempotenti; transizioni protette da compare-and-set.
+  - Outbox email idempotente e template escaped per ordine ricevuto, pagamento, consegna e problema.
+  - `EMAIL_DELIVERY_MODE=dry-run`: nessun invio simulato consuma inventario o marca chiavi come consegnate.
+  - Stato esterno reale: 0 chiavi importate e Brevo non configurato; attivazione commerciale resta bloccata fino alla fornitura delle chiavi e delle credenziali.
+  - Workflow operativo: `docs/INVENTORY_EMAIL_WORKFLOW.md`.
+  - Verifica: 70 test backend locali passati, 10 test frontend passati, build completata e QA locale/pubblico superato.
 - [ ] **Fase 7 — Sicurezza, test e infrastruttura**
 - [ ] **Fase 8 — Dominio definitivo e soft launch**
 - [ ] **Fase 9 — Pagamento Nexi con l'utente**

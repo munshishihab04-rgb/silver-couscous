@@ -8,6 +8,7 @@ load_dotenv(ROOT_DIR / '.env')
 
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
+from pymongo.errors import DuplicateKeyError
 import logging
 from pydantic import BaseModel, Field
 from typing import List, Optional
@@ -28,7 +29,7 @@ from config import (
     APP_ENV, COMMERCE_ENABLED, CATALOG_PREVIEW_SCOPE, cors_origins,
     validate_production_startup, is_production,
 )
-from services import license_inventory
+from services import license_inventory, email_outbox, transactional_dispatch
 from privacy import prepare_analytics_event
 from publication import filter_storefront_products, public_price
 
@@ -120,10 +121,20 @@ async def _startup():
     logging.info(f"[startup] APP_ENV={APP_ENV}  COMMERCE_ENABLED={COMMERCE_ENABLED}")
     await ensure_indexes(db)
     await license_inventory.ensure_indexes(db)
+    await email_outbox.ensure_indexes(db)
+    await db.psp_events.create_index("event_id", unique=True)
+    await db.orders.create_index("reference", unique=True)
+    await db.orders.create_index(
+        "idempotency_key",
+        unique=True,
+        partialFilterExpression={"idempotency_key": {"$type": "string"}},
+    )
     await seed_admin(db)
     inserted = await migrate_products_if_empty(db, _CSV_PRODUCTS)
     if inserted:
         logging.info(f"[startup] migrated {inserted} products from CSV into MongoDB")
+    inventory_counts = await license_inventory.sync_all_product_stocks(db)
+    logging.info("[startup] synchronized %s available license keys across %s SKUs", sum(inventory_counts.values()), len(inventory_counts))
     await ensure_default_pages(db)
     await ensure_default_settings(db)
     await _reload_products()
@@ -488,7 +499,37 @@ async def create_order(order: OrderCreate):
         "consent": order.consent.model_dump(),
         "idempotency_key": order.idempotency_key,
     }
-    await db.orders.insert_one(doc)
+    try:
+        await db.orders.insert_one(doc)
+    except DuplicateKeyError:
+        if not order.idempotency_key:
+            raise
+        existing = await db.orders.find_one({"idempotency_key": order.idempotency_key})
+        if not existing:
+            raise
+        return OrderResponse(
+            id=existing["id"], reference=existing["reference"],
+            created_at=existing["created_at"], status=existing["status"],
+            demo=existing.get("demo", True), total_eur=existing["total_eur"],
+        )
+    event_key = f"order:{ref}:received"
+    await email_outbox.enqueue(
+        db,
+        event_key=event_key,
+        template="order_received",
+        recipient=order.email,
+        context={
+            "customer_name": order.first_name or order.email,
+            "order_reference": ref,
+            "total_eur": total,
+            "items": resolved_items,
+            "delivery_note": "Ordine demo: nessun pagamento o consegna reale." if demo else "Riceverai un aggiornamento dopo il pagamento.",
+        },
+    )
+    try:
+        await transactional_dispatch.dispatch(db, event_key)
+    except Exception:
+        logging.exception("Transactional order-received email failed for %s", ref)
     return OrderResponse(
         id=doc["id"], reference=ref, created_at=doc["created_at"],
         status=initial_status, demo=demo, total_eur=total,

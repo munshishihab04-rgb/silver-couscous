@@ -24,6 +24,13 @@ def test_unapproved_product_is_reconciled_from_clean_seed():
     assert patch["variants"][0]["reference_price_private"] == 9.99
 
 
+def test_server_inventory_stock_survives_catalog_reconciliation():
+    existing = {"slug": "product-a", "merchant_approved": False, "stock": 5}
+    seed = {"slug": "product-a", "merchant_approved": False, "stock": 0}
+    patch = catalog_reconciliation_patch(existing, seed)
+    assert patch["stock"] == 5
+
+
 def test_human_approved_product_is_not_overwritten_by_catalog_cleanup():
     existing = {"slug": "product-a", "merchant_approved": True, "selling_price_eur": 29.90}
     seed = {"slug": "product-a", "merchant_approved": False, "selling_price_eur": None}

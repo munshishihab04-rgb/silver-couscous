@@ -66,6 +66,9 @@ def catalog_reconciliation_patch(existing: dict, seed: dict) -> dict:
     if existing.get("merchant_approved") is True:
         return {}
     patch = {key: deepcopy(value) for key, value in seed.items() if key != "_id"}
+    # Stock is server-inventory state and must never be reset from a catalog seed.
+    if "stock" in existing:
+        patch["stock"] = existing["stock"]
     if existing.get("merchant_updated_at"):
         reviewed_fields = {
             "selling_price_eur", "stock", "availability_status", "merchant_approved",

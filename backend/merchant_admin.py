@@ -319,12 +319,25 @@ async def merchant_import_licenses(
     body: LicenseImportBody, request: Request, user=Depends(current_admin),
 ):
     db = _db(request)
-    added = await license_inventory.import_keys(db, body.sku, body.keys, source=body.source)
-    # sync stock on all products with that SKU
+    if len(body.keys) > 5000:
+        raise HTTPException(status_code=413, detail="Massimo 5000 chiavi per importazione.")
+    if not await db.products.find_one({"sku": body.sku}, {"_id": 1}):
+        raise HTTPException(status_code=404, detail="SKU catalogo non trovato.")
+    report = await license_inventory.import_keys(db, body.sku, body.keys, source=body.source)
+    # Stock is derived exclusively from encrypted server-side inventory.
     n_avail = await license_inventory.available_count(db, body.sku)
     await db.products.update_many({"sku": body.sku}, {"$set": {"stock": n_avail}})
+    await db.merchant_audit.insert_one({
+        "action": "license_import",
+        "sku": body.sku,
+        "source": body.source[:200],
+        "counts": report,
+        "available_now": n_avail,
+        "actor": user.get("email", user.get("_id")),
+        "ts": datetime.now(timezone.utc).isoformat(),
+    })
     await _reload(request)
-    return {"imported": added, "available_now": n_avail}
+    return {**report, "available_now": n_avail}
 
 
 @merchant_admin_router.get("/licenses/{sku}")
@@ -345,7 +358,7 @@ async def merchant_license_status(sku: str, request: Request, user=Depends(curre
 async def merchant_status(request: Request, user=Depends(current_admin)):
     from config import APP_ENV, COMMERCE_ENABLED, PUBLIC_SITE_URL, is_production
     from nexi_xpay import is_configured as nexi_configured
-    from config import BREVO_API_KEY
+    from config import BREVO_API_KEY, EMAIL_DELIVERY_MODE, LICENSE_KEY_ENCRYPTION_KEY
     db = _db(request)
     approved = await db.products.count_documents({"merchant_approved": True})
     feedable = 0
@@ -369,6 +382,14 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
             image_rights_verified += 1
         if is_production() and product.get("merchant_approved") and not offer_gate_failures(product):
             feedable += 1
+    inventory_counts = {
+        status: await db.license_keys.count_documents({"status": status})
+        for status in ("available", "reserved", "delivered")
+    }
+    email_outbox_counts = {
+        status: await db.email_outbox.count_documents({"status": status})
+        for status in ("queued", "sending", "dry_run", "sent", "failed")
+    }
     return {
         "app_env": APP_ENV,
         "commerce_enabled": COMMERCE_ENABLED,
@@ -376,6 +397,10 @@ async def merchant_status(request: Request, user=Depends(current_admin)):
         "is_production": is_production(),
         "psp_configured": nexi_configured(),
         "email_configured": bool(BREVO_API_KEY),
+        "email_delivery_mode": EMAIL_DELIVERY_MODE,
+        "inventory_encryption_configured": bool(LICENSE_KEY_ENCRYPTION_KEY),
+        "inventory_counts": inventory_counts,
+        "email_outbox_counts": email_outbox_counts,
         "approved_products": approved,
         "feedable_products": feedable,
         "pilot_candidates": pilot_candidates,

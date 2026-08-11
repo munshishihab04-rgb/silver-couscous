@@ -23,12 +23,16 @@ if CATALOG_PREVIEW_SCOPE not in {"all", "market"}:
     CATALOG_PREVIEW_SCOPE = "all"
 
 JWT_SECRET = os.environ.get("JWT_SECRET", "")
+LICENSE_KEY_ENCRYPTION_KEY = os.environ.get("LICENSE_KEY_ENCRYPTION_KEY", "")
 
 # Brevo
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY", "")
 BREVO_SENDER_EMAIL = os.environ.get("BREVO_SENDER_EMAIL", "supporto@licenzpol.it")
 BREVO_SENDER_NAME = os.environ.get("BREVO_SENDER_NAME", "LicenzPol")
 BREVO_WEBHOOK_SECRET = os.environ.get("BREVO_WEBHOOK_SECRET", "")
+EMAIL_DELIVERY_MODE = (os.environ.get("EMAIL_DELIVERY_MODE") or "dry-run").lower().strip()
+if EMAIL_DELIVERY_MODE not in {"dry-run", "live"}:
+    EMAIL_DELIVERY_MODE = "dry-run"
 
 # Nexi XPay REST API (Hosted Payment Page)
 NEXI_ENV = os.environ.get("NEXI_ENV", "sandbox").lower()  # sandbox | production
@@ -62,6 +66,8 @@ def validate_production_startup() -> List[str]:
         missing.append("JWT_SECRET (>=32 chars)")
     if COMMERCE_ENABLED and not NEXI_API_KEY:
         missing.append("NEXI_API_KEY")
+    if COMMERCE_ENABLED and not LICENSE_KEY_ENCRYPTION_KEY:
+        missing.append("LICENSE_KEY_ENCRYPTION_KEY")
     if COMMERCE_ENABLED and not BREVO_API_KEY:
         missing.append("BREVO_API_KEY")
     if cors_origins() == []:
