@@ -434,6 +434,20 @@ def _load_csv():
                 continue
             if price <= 0:
                 continue
+            # Merchant-authoritative fields (from CSV)
+            selling_price_raw = (row.get("selling_price") or "").strip()
+            try:
+                selling_price = float(selling_price_raw) if selling_price_raw else None
+            except (TypeError, ValueError):
+                selling_price = None
+            gtin_status = (row.get("gtin_status") or "").strip().lower()
+            gtin_val = (row.get("gtin") or "").strip()
+            # Only accept GTIN if flagged valid by original catalog
+            gtin = gtin_val if gtin_status == "valid" else None
+            sku = (row.get("sku") or "").strip() or None
+            mpn = (row.get("mpn") or "").strip() or None
+            availability_raw = (row.get("availability") or "").strip()
+            merchant_approved = (row.get("merchant_approved") or "").strip().lower() in {"true", "1", "yes"}
             seen_slugs.add(slug)
             raw_name = html.unescape(row.get("product_name") or "")
             name = _title_case(raw_name)
@@ -473,6 +487,21 @@ def _load_csv():
                 "whatYouGet_it": what_it, "whatYouGet_en": what_en,
                 "activation_it": act_it, "activation_en": act_en,
                 "faq": faq,
+                # Merchant-authoritative merchant fields
+                "sku": sku,
+                "gtin": gtin,
+                "gtin_status": gtin_status or None,
+                "mpn": mpn,
+                "condition": "new",
+                "selling_price_eur": selling_price,
+                "availability_status": availability_raw or "PendingReview",
+                "stock": 0,  # Real stock only after license keys are imported
+                "merchant_approved": False,  # ALWAYS default false; admin must approve manually
+                "image_rights_approved": False,
+                "provenance_status": "unverified",
+                "status": "draft",
+                "google_product_category": None,
+                "risk_score": None,
             })
     return products
 

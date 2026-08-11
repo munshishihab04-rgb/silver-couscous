@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter, HTTPException, Request
+from fastapi import FastAPI, APIRouter, HTTPException, Request, Body
 from dotenv import load_dotenv
 from pathlib import Path
 import os
@@ -21,6 +21,13 @@ from auth import seed_admin, ensure_indexes
 from db_migration import migrate_products_if_empty, load_products_from_db, ensure_default_pages, ensure_default_settings
 from admin_routes import admin_router
 from exports_seo import exports_router, seo_router
+from merchant_feed import merchant_router
+from merchant_admin import merchant_admin_router
+from config import (
+    APP_ENV, COMMERCE_ENABLED, cors_origins,
+    validate_production_startup, is_production,
+)
+from services import license_inventory
 
 
 BUNDLE_TIERS = [
@@ -97,7 +104,15 @@ app.state.reload_products = _reload_products
 
 @app.on_event("startup")
 async def _startup():
+    # Fail-closed guard in production
+    missing = validate_production_startup()
+    if missing:
+        raise RuntimeError(
+            "Production startup aborted: missing settings: " + ", ".join(missing)
+        )
+    logging.info(f"[startup] APP_ENV={APP_ENV}  COMMERCE_ENABLED={COMMERCE_ENABLED}")
     await ensure_indexes(db)
+    await license_inventory.ensure_indexes(db)
     await seed_admin(db)
     inserted = await migrate_products_if_empty(db, _CSV_PRODUCTS)
     if inserted:
@@ -110,11 +125,14 @@ async def _startup():
 
 class OrderLineItem(BaseModel):
     product_slug: str
-    product_name: str
     variant_id: str
-    variant_label: str
-    quantity: int
-    unit_price_eur: float
+    quantity: int = 1
+
+
+class ConsentBlock(BaseModel):
+    accept_terms: bool = False
+    immediate_delivery_consent: bool = False  # loses right of withdrawal
+    consent_version: str = "2026-08-11"
 
 
 class OrderCreate(BaseModel):
@@ -125,9 +143,9 @@ class OrderCreate(BaseModel):
     company: Optional[str] = None
     vat: Optional[str] = None
     items: List[OrderLineItem]
-    subtotal_eur: float
-    total_eur: float
     language: str = "it"
+    consent: ConsentBlock = Field(default_factory=ConsentBlock)
+    idempotency_key: Optional[str] = None
 
 
 class OrderResponse(BaseModel):
@@ -351,15 +369,106 @@ async def get_family_detail(slug: str):
     }
 
 
+@api_router.post("/orders/quote")
+async def orders_quote(payload: dict = Body(...)):
+    """Server-side quote: recompute totals to validate the client cart.
+
+    Body: { items: [{ product_slug, variant_id, quantity }] }
+    """
+    items = payload.get("items") or []
+    resolved = []
+    subtotal = 0.0
+    unavailable = []
+    for line in items:
+        slug = line.get("product_slug")
+        vid = line.get("variant_id")
+        qty = max(1, int(line.get("quantity") or 1))
+        p = get_product_by_slug(slug)
+        if not p:
+            unavailable.append({"product_slug": slug, "reason": "not_found"})
+            continue
+        if is_production() and not p.get("merchant_approved"):
+            unavailable.append({"product_slug": slug, "reason": "not_approved"})
+            continue
+        v = next((x for x in p["variants"] if x["id"] == vid), None)
+        if not v:
+            unavailable.append({"product_slug": slug, "reason": "variant_not_found"})
+            continue
+        unit = p.get("selling_price_eur") or v["price_eur"]
+        line_total = round(unit * qty, 2)
+        subtotal += line_total
+        resolved.append({
+            "product_slug": p["slug"], "product_name": p["name"],
+            "variant_id": v["id"], "quantity": qty,
+            "unit_price_eur": round(unit, 2), "line_total_eur": line_total,
+            "sku": p.get("sku"),
+        })
+    return {
+        "items": resolved,
+        "unavailable": unavailable,
+        "subtotal_eur": round(subtotal, 2),
+        "total_eur": round(subtotal, 2),
+        "currency": "EUR",
+        "commerce_enabled": COMMERCE_ENABLED,
+    }
+
+
 @api_router.post("/orders", response_model=OrderResponse)
 async def create_order(order: OrderCreate):
+    # ---- Server-authoritative validation ----
+    if not order.consent.accept_terms:
+        raise HTTPException(status_code=400, detail="Devi accettare i Termini di vendita.")
+
+    # Idempotency: if a key was provided and we already have an order for it, return it.
+    if order.idempotency_key:
+        existing = await db.orders.find_one({"idempotency_key": order.idempotency_key})
+        if existing:
+            return OrderResponse(
+                id=existing["id"], reference=existing["reference"],
+                created_at=existing["created_at"], status=existing["status"],
+                demo=existing.get("demo", True), total_eur=existing["total_eur"],
+            )
+
+    # Recompute totals from the server-side catalog. Reject unknown / not-for-sale items.
+    resolved_items = []
+    subtotal = 0.0
+    for line in order.items:
+        p = get_product_by_slug(line.product_slug)
+        if not p:
+            raise HTTPException(status_code=400, detail=f"Prodotto {line.product_slug} non trovato.")
+        # In production only merchant_approved products can be purchased.
+        if is_production() and not p.get("merchant_approved"):
+            raise HTTPException(status_code=400, detail=f"Prodotto {line.product_slug} non disponibile.")
+        v = next((x for x in p["variants"] if x["id"] == line.variant_id), None)
+        if not v:
+            raise HTTPException(status_code=400, detail=f"Variante {line.variant_id} non trovata.")
+        qty = max(1, int(line.quantity or 1))
+        # Prefer authoritative selling_price_eur, fall back to variant price for legacy demo
+        unit = p.get("selling_price_eur") or v["price_eur"]
+        line_total = round(unit * qty, 2)
+        subtotal += line_total
+        resolved_items.append({
+            "product_slug": p["slug"],
+            "product_name": p["name"],
+            "variant_id": v["id"],
+            "variant_label": f"{v['edition']} · {'Perpetua' if v['duration_months'] == 0 else str(v['duration_months']) + 'm'} · {v['devices']}pc",
+            "quantity": qty,
+            "unit_price_eur": round(unit, 2),
+            "sku": p.get("sku"),
+        })
+
+    total = round(subtotal, 2)
     ref = "LP-" + uuid.uuid4().hex[:8].upper()
+
+    demo = not COMMERCE_ENABLED
+    initial_status = "demo_confirmed" if demo else "pending_payment"
+
     doc = {
         "id": str(uuid.uuid4()),
         "reference": ref,
         "created_at": datetime.now(timezone.utc).isoformat(),
-        "status": "demo_confirmed",
-        "demo": True,
+        "status": initial_status,
+        "demo": demo,
         "email": order.email,
         "first_name": order.first_name,
         "last_name": order.last_name,
@@ -367,14 +476,16 @@ async def create_order(order: OrderCreate):
         "company": order.company,
         "vat": order.vat,
         "language": order.language,
-        "items": [i.model_dump() for i in order.items],
-        "subtotal_eur": order.subtotal_eur,
-        "total_eur": order.total_eur,
+        "items": resolved_items,
+        "subtotal_eur": round(subtotal, 2),
+        "total_eur": total,
+        "consent": order.consent.model_dump(),
+        "idempotency_key": order.idempotency_key,
     }
     await db.orders.insert_one(doc)
     return OrderResponse(
         id=doc["id"], reference=ref, created_at=doc["created_at"],
-        status="demo_confirmed", demo=True, total_eur=order.total_eur
+        status=initial_status, demo=demo, total_eur=total,
     )
 
 
@@ -474,6 +585,8 @@ app.include_router(api_router)
 app.include_router(admin_router)
 app.include_router(exports_router)
 app.include_router(seo_router)
+app.include_router(merchant_router)
+app.include_router(merchant_admin_router)
 
 
 # ---------- Public settings, CMS pages and analytics ------------------------
@@ -534,7 +647,7 @@ async def analytics_track(evt: TrackEvent, request: Request):
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=cors_origins() or ["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

@@ -12,6 +12,7 @@ const AdminPages = lazy(() => import("./Pages.jsx"));
 const AdminSettings = lazy(() => import("./Settings.jsx"));
 const AdminAnalytics = lazy(() => import("./Analytics.jsx"));
 const AdminOrders = lazy(() => import("./Orders.jsx"));
+const AdminMerchant = lazy(() => import("./Merchant.jsx"));
 
 export default function AdminApp() {
   return (
@@ -22,6 +23,7 @@ export default function AdminApp() {
           <Route element={<AdminLayout />}>
             <Route index element={<AdminDashboard />} />
             <Route path="orders" element={<AdminOrders />} />
+            <Route path="merchant" element={<AdminMerchant />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="customers" element={<AdminCustomers />} />
             <Route path="tickets" element={<AdminTickets />} />

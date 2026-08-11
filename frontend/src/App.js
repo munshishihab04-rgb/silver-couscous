@@ -41,6 +41,9 @@ function PublicShell() {
           <Route path="/legal/privacy" element={<Legal kind="privacy" />} />
           <Route path="/legal/terms" element={<Legal kind="terms" />} />
           <Route path="/legal/cookies" element={<Legal kind="cookies" />} />
+          <Route path="/legal/withdrawal" element={<Legal kind="withdrawal" />} />
+          <Route path="/legal/delivery" element={<Legal kind="delivery" />} />
+          <Route path="/legal/refunds" element={<Legal kind="refunds" />} />
         </Routes>
       </main>
       <CartDrawer />
