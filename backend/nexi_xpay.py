@@ -1,99 +1,195 @@
-"""Nexi XPay integration scaffold.
+"""Nexi XPay REST API integration (Hosted Payment Page).
 
-Status: PLACEHOLDER — requires real NEXI_XPAY_ALIAS and NEXI_XPAY_MAC_KEY.
+Documented endpoints:
+  Sandbox:    https://xpaysandbox.nexigroup.com/api/phoenix-0.0/psp/api/v1
+  Production: https://xpay.nexigroup.com/api/phoenix-0.0/psp/api/v1
 
-API reference (Nexi XPay Build):
-  - Sandbox: https://int-ecommerce.nexi.it/ecomm/ecomm/DispatcherServlet
-  - Production: https://ecommerce.nexi.it/ecomm/ecomm/DispatcherServlet
+Auth: X-Api-Key header. Correlation-Id per request.
 
 Flow:
-  1) `create_payment_request()` returns a signed redirect URL for XPay.
-  2) User is redirected there for card entry.
-  3) Nexi calls our webhook `/api/payments/nexi/webhook` with the outcome.
-  4) We verify the MAC signature, then finalize the order.
-
-Until real credentials are provided the module returns HTTP 503 to keep the
-flow honest and prevent silent "fake success" states in production.
+  1. Client submits an OrderCreate → server persists a pending payment row.
+  2. Server POSTs /orders/hpp with amount (cents string), currency, orderId,
+     paymentSession { resultUrl, cancelUrl, notificationUrl }.
+  3. Nexi returns { hostedPage, securityToken }. Server stores securityToken.
+  4. Client is redirected to hostedPage.
+  5. Nexi calls our webhook. Verify securityToken (constant-time), then persist.
+  6. Never trust the browser redirect — the result page re-queries
+     /orders/{orderId} to get the authoritative outcome before fulfilling.
 """
 
-import hashlib
-import logging
-from decimal import Decimal
-from typing import Dict, Optional
+from __future__ import annotations
 
-from config import NEXI_XPAY_ALIAS, NEXI_XPAY_MAC_KEY, NEXI_XPAY_ENV, COMMERCE_ENABLED, is_production
+import hmac
+import logging
+import uuid
+from decimal import Decimal, ROUND_HALF_UP
+from typing import Any, Dict, Optional
+
+import httpx
+
+from config import (
+    NEXI_ENV, NEXI_API_KEY, NEXI_TENANT_ID, NEXI_MERCHANT_ID,
+    NEXI_TERMINAL_ID, NEXI_PUBLIC_API_URL, PUBLIC_SITE_URL,
+    COMMERCE_ENABLED,
+)
 
 log = logging.getLogger("licenzpol.nexi")
 
-ENDPOINTS = {
-    "test": "https://int-ecommerce.nexi.it/ecomm/ecomm/DispatcherServlet",
-    "prod": "https://ecommerce.nexi.it/ecomm/ecomm/DispatcherServlet",
-}
+SANDBOX_BASE = "https://xpaysandbox.nexigroup.com/api/phoenix-0.0/psp/api/v1"
+PROD_BASE = "https://xpay.nexigroup.com/api/phoenix-0.0/psp/api/v1"
+
+
+def base_url() -> str:
+    return PROD_BASE if NEXI_ENV in {"prod", "production"} else SANDBOX_BASE
 
 
 def is_configured() -> bool:
-    return bool(NEXI_XPAY_ALIAS and NEXI_XPAY_MAC_KEY)
+    return bool(NEXI_API_KEY)
 
 
-def endpoint_url() -> str:
-    return ENDPOINTS["prod" if NEXI_XPAY_ENV == "prod" else "test"]
+def _headers() -> Dict[str, str]:
+    return {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "X-Api-Key": NEXI_API_KEY,
+        "Correlation-Id": str(uuid.uuid4()),
+    }
 
 
-def _mac(params: Dict[str, str]) -> str:
-    """Compute Nexi MAC signature for the given request params.
-
-    XPay Build MAC = SHA1(codTrans=...&divisa=...&importo=...<MAC_KEY>).
-    """
-    raw = f"codTrans={params['codTrans']}&divisa={params['divisa']}&importo={params['importo']}{NEXI_XPAY_MAC_KEY}"
-    return hashlib.sha1(raw.encode("utf-8")).hexdigest()
+def _cents(eur: float) -> str:
+    """Convert a EUR float to a minor-unit string (Nexi requires cents string)."""
+    value = Decimal(str(eur)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    return str(int(value * 100))
 
 
-def create_payment_request(
+def _public_site_url() -> str:
+    return PUBLIC_SITE_URL or (NEXI_PUBLIC_API_URL or "")
+
+
+def _api_url() -> str:
+    return NEXI_PUBLIC_API_URL or PUBLIC_SITE_URL or ""
+
+
+async def create_hosted_payment(
     *,
     order_reference: str,
-    total_eur: Decimal,
-    return_url: str,
-    cancel_url: str,
-    email: Optional[str] = None,
-) -> Dict[str, str]:
-    """Return the params + endpoint the frontend can POST to.
+    total_eur: float,
+    description: str,
+    language: str = "ITA",
+) -> Dict[str, Any]:
+    """Create a hosted-page payment session on Nexi. Returns
+    { orderId, hostedPage, securityToken }.
 
-    Amount is in cents (Nexi expects integer, no decimals).
+    Raises NexiError if the API call fails or the response is malformed.
     """
     if not COMMERCE_ENABLED:
-        raise RuntimeError("Commerce is disabled (COMMERCE_ENABLED=false)")
+        raise NexiError("Commerce is disabled (COMMERCE_ENABLED=false)")
     if not is_configured():
-        raise RuntimeError("Nexi XPay is not configured — set NEXI_XPAY_ALIAS and NEXI_XPAY_MAC_KEY")
+        raise NexiError("Nexi XPay is not configured (missing NEXI_API_KEY)")
 
-    cents = int(Decimal(total_eur).quantize(Decimal("0.01")) * 100)
-    params = {
-        "alias": NEXI_XPAY_ALIAS,
-        "importo": str(cents),
-        "divisa": "EUR",
-        "codTrans": order_reference[:30],
-        "url": return_url,
-        "url_back": cancel_url,
+    site = _public_site_url()
+    api = _api_url()
+    if not site or not api:
+        raise NexiError("PUBLIC_SITE_URL or NEXI_PUBLIC_API_URL not configured")
+
+    amount = _cents(total_eur)
+    order_id = order_reference[:27]  # Nexi limit is ~27 chars for orderId
+
+    payload = {
+        "order": {
+            "orderId": order_id,
+            "amount": amount,
+            "currency": "EUR",
+            "description": description[:200],
+        },
+        "paymentSession": {
+            "actionType": "PAY",
+            "amount": amount,
+            "paymentService": "CARDS",
+            "captureType": "IMPLICIT",
+            "language": language,
+            "resultUrl": f"{site}/checkout/result/{order_id}",
+            "cancelUrl": f"{site}/checkout/cancelled/{order_id}",
+            "notificationUrl": f"{api}/api/payments/nexi/webhook",
+        },
     }
-    if email:
-        params["mail"] = email
-    params["mac"] = _mac(params)
-    return {"endpoint": endpoint_url(), **params}
+
+    log.info("nexi.create_hpp order=%s amount=%s env=%s", order_id, amount, NEXI_ENV)
+
+    try:
+        async with httpx.AsyncClient(timeout=20.0) as client:
+            resp = await client.post(f"{base_url()}/orders/hpp",
+                                     headers=_headers(), json=payload)
+    except httpx.HTTPError as e:
+        log.error("nexi network error: %s", e)
+        raise NexiError(f"Network error contacting Nexi: {e}")
+
+    if resp.is_error:
+        # Log full body server-side (safe, no key), redact from response
+        log.error("nexi hpp %s: %s", resp.status_code, resp.text[:800])
+        raise NexiError(f"Nexi HTTP {resp.status_code}")
+
+    data = resp.json()
+    hosted_page = data.get("hostedPage")
+    security_token = data.get("securityToken")
+    if not hosted_page or not security_token:
+        log.error("nexi malformed response: keys=%s", list(data.keys()))
+        raise NexiError("Nexi response missing hostedPage or securityToken")
+
+    return {
+        "orderId": order_id,
+        "hostedPage": hosted_page,
+        "securityToken": security_token,
+    }
 
 
-def verify_webhook(params: Dict[str, str]) -> bool:
-    """Verify the MAC returned in the Nexi webhook."""
+async def query_order(order_id: str) -> Dict[str, Any]:
+    """Fetch the authoritative status of an order from Nexi."""
     if not is_configured():
+        raise NexiError("Nexi not configured")
+    try:
+        async with httpx.AsyncClient(timeout=15.0) as client:
+            resp = await client.get(f"{base_url()}/orders/{order_id}",
+                                    headers=_headers())
+    except httpx.HTTPError as e:
+        raise NexiError(f"Network error querying Nexi: {e}")
+    if resp.is_error:
+        log.warning("nexi query %s: %s", resp.status_code, resp.text[:500])
+        raise NexiError(f"Nexi HTTP {resp.status_code}")
+    return resp.json()
+
+
+def verify_notification_token(notification_security_token: str,
+                              stored_security_token: str) -> bool:
+    """Constant-time comparison between the token in the webhook and the token
+    saved when the HPP was created for this order."""
+    if not notification_security_token or not stored_security_token:
         return False
-    received = params.get("mac", "")
-    raw = (
-        f"codTrans={params.get('codTrans','')}"
-        f"&esito={params.get('esito','')}"
-        f"&importo={params.get('importo','')}"
-        f"&divisa={params.get('divisa','')}"
-        f"&data={params.get('data','')}"
-        f"&orario={params.get('orario','')}"
-        f"&codAut={params.get('codAut','')}"
-        f"{NEXI_XPAY_MAC_KEY}"
-    )
-    computed = hashlib.sha1(raw.encode("utf-8")).hexdigest()
-    return computed == received
+    return hmac.compare_digest(str(notification_security_token),
+                               str(stored_security_token))
+
+
+# Documented Nexi operationResult values → our internal status map.
+NEXI_RESULT_TO_STATUS = {
+    "AUTHORIZED": "paid",
+    "EXECUTED": "paid",
+    "PENDING": "pending_payment",
+    "DECLINED": "failed",
+    "DENIED_BY_RISK": "failed",
+    "THREEDS_FAILED": "failed",
+    "CANCELED": "cancelled",
+    "CANCELLED": "cancelled",
+    "VOIDED": "cancelled",
+    "REFUNDED": "refunded",
+    "FAILED": "failed",
+}
+
+
+def map_result_to_status(result: Optional[str]) -> str:
+    if not result:
+        return "pending_payment"
+    return NEXI_RESULT_TO_STATUS.get(result.upper(), "pending_payment")
+
+
+class NexiError(Exception):
+    pass

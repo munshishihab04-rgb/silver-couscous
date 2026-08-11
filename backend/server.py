@@ -23,6 +23,7 @@ from admin_routes import admin_router
 from exports_seo import exports_router, seo_router
 from merchant_feed import merchant_router
 from merchant_admin import merchant_admin_router
+from payments import payments_router
 from config import (
     APP_ENV, COMMERCE_ENABLED, cors_origins,
     validate_production_startup, is_production,
@@ -587,6 +588,7 @@ app.include_router(exports_router)
 app.include_router(seo_router)
 app.include_router(merchant_router)
 app.include_router(merchant_admin_router)
+app.include_router(payments_router)
 
 
 # ---------- Public settings, CMS pages and analytics ------------------------

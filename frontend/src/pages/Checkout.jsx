@@ -13,17 +13,23 @@ export default function Checkout() {
   const nav = useNavigate();
   const [step, setStep] = useState(items.length ? 1 : 0);
   const [form, setForm] = useState({ email: "", first_name: "", last_name: "", country: "IT", company: "", vat: "" });
+  const [consent, setConsent] = useState({ accept_terms: false, immediate_delivery_consent: false });
   const [order, setOrder] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [payConfig, setPayConfig] = useState({ commerce_enabled: false, psp: null });
 
   useEffect(() => {
     if (items.length > 0 && !order) {
       trackEvent({ event_type: "checkout_start", value_eur: subtotal });
     }
+    // Fetch server payments config
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/config`)
+      .then(r => r.json()).then(setPayConfig).catch(() => {});
     // eslint-disable-next-line
   }, []);
 
   const canProceed1 = form.email && form.first_name && form.last_name && form.country;
+  const canPay = consent.accept_terms;
 
   if (items.length === 0 && !order) {
     return (
@@ -35,23 +41,52 @@ export default function Checkout() {
   }
 
   const confirm = async () => {
+    if (!consent.accept_terms) {
+      toast.error(lang === "it" ? "Devi accettare i Termini di vendita." : "You must accept the Terms.");
+      return;
+    }
     setLoading(true);
     try {
+      // Idempotency key: same cart+customer → same key across retries within 30 minutes
+      const idKey = `${form.email}-${Math.floor(Date.now() / (30 * 60 * 1000))}-${items.map(it => it.slug + it.variantId + it.qty).join("_")}`;
       const payload = {
         email: form.email, first_name: form.first_name, last_name: form.last_name,
         country: form.country, company: form.company || null, vat: form.vat || null,
         items: items.map(it => ({
-          product_slug: it.slug, product_name: it.name,
+          product_slug: it.slug,
           variant_id: it.variantId,
-          variant_label: `${it.edition} · ${it.duration_months === 0 ? t.product.perpetual : it.duration_months + " " + t.product.months} · ${it.devices} ${it.devices === 1 ? t.product.device : t.product.devices}`,
-          quantity: it.qty, unit_price_eur: it.price,
+          quantity: it.qty,
         })),
-        subtotal_eur: subtotal, total_eur: subtotal, language: lang,
+        language: lang,
+        consent: {
+          accept_terms: consent.accept_terms,
+          immediate_delivery_consent: consent.immediate_delivery_consent,
+          consent_version: "2026-08-11",
+        },
+        idempotency_key: idKey,
       };
       const res = await api.createOrder(payload);
       setOrder(res);
+      trackEvent({ event_type: "order_confirmed", value_eur: res.total_eur, extra: { reference: res.reference } });
+
+      // If commerce is enabled, redirect to Nexi HPP
+      if (payConfig.commerce_enabled && payConfig.psp === "nexi") {
+        const payResp = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/payments/create/${res.reference}`, { method: "POST" });
+        const payData = await payResp.json();
+        if (!payResp.ok) {
+          toast.error(payData.detail || "Errore avvio pagamento");
+          setLoading(false);
+          return;
+        }
+        if (payData.hosted_page) {
+          clear();
+          window.location.href = payData.hosted_page;
+          return;
+        }
+      }
+
+      // Otherwise (demo mode) go to confirmation step
       setStep(3);
-      trackEvent({ event_type: "order_confirmed", value_eur: subtotal, extra: { reference: res.reference } });
       clear();
     } catch (e) {
       toast.error(lang === "it" ? "Errore, riprova" : "Something went wrong, try again");
@@ -114,24 +149,58 @@ export default function Checkout() {
 
           {step === 2 && (
             <div className="rounded-xl border border-white/10 bg-[#0B0B0D] p-6 md:p-8">
-              <div className="flex items-start gap-3 rounded-lg border border-orange-500/30 bg-orange-500/[0.06] p-4 mb-6">
-                <AlertTriangle size={18} className="text-orange-400 mt-0.5 shrink-0" />
-                <div>
-                  <p className="text-orange-200 font-heading">Demo Mode</p>
-                  <p className="text-sm text-orange-100/70 mt-1">{t.checkout.demoNotice}</p>
+              {!payConfig.commerce_enabled ? (
+                <div className="flex items-start gap-3 rounded-lg border border-orange-500/30 bg-orange-500/[0.06] p-4 mb-6">
+                  <AlertTriangle size={18} className="text-orange-400 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-orange-200 font-heading">Modalità demo</p>
+                    <p className="text-sm text-orange-100/70 mt-1">{t.checkout.demoNotice}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="border border-dashed border-white/10 rounded-lg p-6 flex items-center gap-4">
-                <ShieldCheck size={24} className="text-zinc-500" />
-                <div className="text-sm text-zinc-400">
-                  {lang === "it" ? "Nessuna carta o dettaglio di pagamento verrà richiesto." : "No card or payment details will be requested."}
+              ) : (
+                <div className="flex items-start gap-3 rounded-lg border border-emerald-500/30 bg-emerald-500/[0.06] p-4 mb-6">
+                  <ShieldCheck size={18} className="text-emerald-400 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-emerald-200 font-heading">Pagamento sicuro Nexi XPay</p>
+                    <p className="text-sm text-emerald-100/70 mt-1">
+                      {lang === "it"
+                        ? "Ti reindirizzeremo alla pagina sicura di Nexi per completare il pagamento con carta (3D Secure)."
+                        : "You'll be redirected to the secure Nexi page to complete the card payment (3D Secure)."}
+                    </p>
+                  </div>
                 </div>
+              )}
+
+              {/* Consent capture — required by Codice del Consumo art. 59 lett. o) */}
+              <div className="space-y-3 border-t border-white/10 pt-6">
+                <label className="flex items-start gap-3 cursor-pointer text-sm">
+                  <input type="checkbox" checked={consent.accept_terms} data-testid="consent-terms"
+                    onChange={e => setConsent(c => ({ ...c, accept_terms: e.target.checked }))}
+                    className="mt-1 accent-white"/>
+                  <span className="text-zinc-300">
+                    {lang === "it" ? "Accetto i " : "I accept the "}
+                    <Link to="/legal/terms" target="_blank" className="underline text-white">{lang === "it" ? "Termini e Condizioni di Vendita" : "Sales Terms"}</Link>
+                    {lang === "it" ? " e la " : " and the "}
+                    <Link to="/legal/privacy" target="_blank" className="underline text-white">{lang === "it" ? "Privacy Policy" : "Privacy Policy"}</Link>.
+                  </span>
+                </label>
+                <label className="flex items-start gap-3 cursor-pointer text-sm">
+                  <input type="checkbox" checked={consent.immediate_delivery_consent} data-testid="consent-immediate"
+                    onChange={e => setConsent(c => ({ ...c, immediate_delivery_consent: e.target.checked }))}
+                    className="mt-1 accent-white"/>
+                  <span className="text-zinc-300">
+                    {lang === "it"
+                      ? "Chiedo l'inizio immediato della fornitura della licenza digitale e prendo atto della perdita del diritto di recesso una volta ricevuta la chiave (art. 59 lett. o Codice del Consumo)."
+                      : "I request immediate provision of the digital license and acknowledge losing the right of withdrawal once the key is delivered (Consumer Code art. 59 lit. o)."}
+                  </span>
+                </label>
               </div>
+
               <div className="mt-6 flex flex-col sm:flex-row gap-3">
                 <button onClick={() => setStep(1)} className="pill-btn border border-white/20 text-white hover:bg-white/5">Back</button>
-                <button data-testid="checkout-confirm-order" onClick={confirm} disabled={loading}
+                <button data-testid="checkout-confirm-order" onClick={confirm} disabled={loading || !canPay}
                   className="pill-btn bg-white text-black hover:bg-zinc-200 disabled:opacity-40">
-                  {loading ? "..." : t.checkout.pay}
+                  {loading ? "..." : (payConfig.commerce_enabled ? (lang === "it" ? "Vai al pagamento" : "Go to payment") : t.checkout.pay)}
                 </button>
               </div>
             </div>

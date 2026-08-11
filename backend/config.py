@@ -26,10 +26,13 @@ BREVO_SENDER_EMAIL = os.environ.get("BREVO_SENDER_EMAIL", "supporto@licenzpol.it
 BREVO_SENDER_NAME = os.environ.get("BREVO_SENDER_NAME", "LicenzPol")
 BREVO_WEBHOOK_SECRET = os.environ.get("BREVO_WEBHOOK_SECRET", "")
 
-# Nexi XPay (Poste/Nexi Pagamenti)
-NEXI_XPAY_ALIAS = os.environ.get("NEXI_XPAY_ALIAS", "")
-NEXI_XPAY_MAC_KEY = os.environ.get("NEXI_XPAY_MAC_KEY", "")
-NEXI_XPAY_ENV = os.environ.get("NEXI_XPAY_ENV", "test").lower()  # test | prod
+# Nexi XPay REST API (Hosted Payment Page)
+NEXI_ENV = os.environ.get("NEXI_ENV", "sandbox").lower()  # sandbox | production
+NEXI_API_KEY = os.environ.get("NEXI_API_KEY", "")
+NEXI_TENANT_ID = os.environ.get("NEXI_TENANT_ID", "")
+NEXI_MERCHANT_ID = os.environ.get("NEXI_MERCHANT_ID", "")
+NEXI_TERMINAL_ID = os.environ.get("NEXI_TERMINAL_ID", "")
+NEXI_PUBLIC_API_URL = (os.environ.get("NEXI_PUBLIC_API_URL") or PUBLIC_SITE_URL or "").rstrip("/")
 
 CORS_ORIGINS_RAW = os.environ.get("CORS_ORIGINS", "*")
 
@@ -53,8 +56,8 @@ def validate_production_startup() -> List[str]:
         missing.append("PUBLIC_SITE_URL")
     if not JWT_SECRET or len(JWT_SECRET) < 32:
         missing.append("JWT_SECRET (>=32 chars)")
-    if COMMERCE_ENABLED and not (NEXI_XPAY_ALIAS and NEXI_XPAY_MAC_KEY):
-        missing.append("NEXI_XPAY_ALIAS/NEXI_XPAY_MAC_KEY")
+    if COMMERCE_ENABLED and not NEXI_API_KEY:
+        missing.append("NEXI_API_KEY")
     if COMMERCE_ENABLED and not BREVO_API_KEY:
         missing.append("BREVO_API_KEY")
     if cors_origins() == []:
